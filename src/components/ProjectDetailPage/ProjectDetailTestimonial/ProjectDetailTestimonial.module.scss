@@ -1,0 +1,35 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.testimonial {
+  padding: 56px $container-padding;
+  background-color: $color-white;
+}
+
+.inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  @include eyebrow;
+  margin-bottom: 14px;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: $color-text-dark;
+  margin-bottom: 32px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 24px;
+  }
+}
+
+.cardWrap {
+  text-align: left;
+}

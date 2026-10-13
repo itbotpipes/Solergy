@@ -1,0 +1,299 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.calculator {
+  padding: 24px $container-padding 64px;
+  background-color: $color-white;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  @include eyebrow;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: $color-text-dark;
+  margin-bottom: 16px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 28px;
+  }
+}
+
+.highlight {
+  color: $color-primary;
+}
+
+.subheading {
+  font-size: 16px;
+  line-height: 1.6;
+  color: $color-text-desc;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+.card {
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: 24px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+    padding: 28px;
+    gap: 32px;
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label,
+  .groupLabel {
+    font-size: 14px;
+    font-weight: 700;
+    color: $color-text-dark;
+  }
+}
+
+.billRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.billValue {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 22px;
+  font-weight: 800;
+  color: $color-primary;
+}
+
+.slider {
+  --slider-fill: #{$color-primary};
+  --slider-track: #{$color-border};
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: $color-primary;
+    border: 4px solid $color-white;
+    box-shadow: 0 0 0 1.5px $color-text-dark;
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: $color-primary;
+    border: 4px solid $color-white;
+    box-shadow: 0 0 0 1.5px $color-text-dark;
+    cursor: pointer;
+  }
+}
+
+.select {
+  width: 100%;
+  font-family: $font-family;
+  font-size: 15px;
+  color: $color-text-dark;
+  border: 1px solid $color-border;
+  border-radius: 12px;
+  padding: 14px 16px;
+  background-color: $color-white;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+.segmented {
+  display: flex;
+  gap: 8px;
+  background-color: $color-bg-alt;
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.segment {
+  flex: 1;
+  border: none;
+  background: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-family: $font-family;
+  font-size: 14px;
+  font-weight: 700;
+  color: $color-text-dark;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.segmentActive {
+  background-color: $color-text-dark;
+  color: $color-white;
+}
+
+.smallPrint {
+  font-size: 12px;
+  color: $color-text-desc;
+  margin-top: 4px;
+}
+
+.visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.panelGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.panelTile {
+  aspect-ratio: 1.4;
+  border-radius: 4px;
+  background-color: $color-bg-alt;
+  border: 1.5px solid $color-border;
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.panelTileLit {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  transform: scale(1.03);
+}
+
+.panelCaption {
+  font-size: 13.5px;
+  color: $color-text-desc;
+  text-align: center;
+
+  strong {
+    color: $color-text-dark;
+    font-family: "Proxima Nova Extrabold", $font-family;
+  }
+}
+
+.resultsRow {
+  max-width: 1000px;
+  margin: 36px auto 0;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.resultTile {
+  background-color: $color-bg-alt;
+  border: 1.5px solid $color-border;
+  border-radius: 16px;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.resultLabel {
+  font-size: 12.5px;
+  color: $color-text-desc;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.resultValue {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 24px;
+  font-weight: 800;
+  color: $color-primary;
+}
+
+.resultSub {
+  font-size: 12px;
+  color: $color-text-desc;
+}
+
+.co2Strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: $color-text-desc;
+  margin-top: 20px;
+  text-align: center;
+
+  strong {
+    color: $color-text-dark;
+    font-family: "Proxima Nova Extrabold", $font-family;
+  }
+}
+
+.disclaimer {
+  font-size: 13px;
+  line-height: 1.6;
+  color: $color-text-desc;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  // max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}

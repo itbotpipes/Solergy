@@ -1,0 +1,156 @@
+@use "../../../styles/variables" as *;
+
+.scene {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.beaconSvg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.groundLine {
+  stroke: $color-border;
+  stroke-width: 1.4;
+}
+
+.pole {
+  stroke: $color-text-dark;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.poleFoot {
+  fill: none;
+  stroke: $color-text-dark;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wire {
+  fill: none;
+  stroke: $color-primary;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 3 4;
+  opacity: 0.7;
+}
+
+.panelFrame {
+  fill: #fdece0;
+  stroke: $color-text-dark;
+  stroke-width: 1.6;
+}
+
+.panelLine {
+  stroke: $color-primary;
+  stroke-width: 1.4;
+}
+
+.ring path {
+  fill: none;
+  stroke: $color-primary;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.ring {
+  opacity: 0;
+  animation: ringBroadcast 2.4s ease-out infinite;
+  transform-origin: center;
+}
+
+@keyframes ringBroadcast {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(4px);
+  }
+  15% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.08) translateY(-4px);
+  }
+}
+
+.beaconCore {
+  fill: $color-primary;
+}
+
+.sunRay {
+  stroke: $color-primary;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  opacity: 0.6;
+}
+
+.sunCore {
+  fill: none;
+  stroke: $color-primary;
+  stroke-width: 1.6;
+  opacity: 0.75;
+}
+
+.bubbleGroup {
+  animation: bubbleBob 3.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes bubbleBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.bubbleShape {
+  fill: $color-white;
+  stroke: $color-text-dark;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+}
+
+.bubbleDot {
+  fill: $color-primary;
+  animation: dotBlink 1.6s ease-in-out infinite;
+}
+
+.bubbleDot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.bubbleDot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.bubbleDot:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+@keyframes dotBlink {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring,
+  .bubbleGroup,
+  .bubbleDot {
+    animation: none;
+    opacity: 1;
+  }
+}

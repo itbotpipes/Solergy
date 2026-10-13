@@ -1,0 +1,163 @@
+@use "../../../styles/variables" as *;
+
+.calcScene {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.calcSvg {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  overflow: visible;
+}
+
+.body {
+  fill: $color-white;
+  stroke: $color-text-dark;
+  stroke-width: 2;
+}
+
+.screen {
+  fill: $color-icon-bg;
+  stroke: $color-border;
+  stroke-width: 1.5;
+}
+
+.screenLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  fill: $color-text-desc;
+}
+
+.oldBill {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 20px;
+  font-weight: 700;
+  fill: $color-text-desc;
+  opacity: 0.7;
+}
+
+.strike {
+  stroke: $color-text-desc;
+  stroke-width: 1.6;
+  opacity: 0.7;
+}
+
+.newBill {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 30px;
+  font-weight: 800;
+  fill: $color-primary;
+  animation: pop 2.6s ease-in-out infinite;
+}
+
+.key {
+  fill: $color-white;
+  stroke: $color-border;
+  stroke-width: 1.4;
+  animation: keyPress 3.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.keyAccent {
+  fill: $color-primary;
+  stroke: $color-primary;
+}
+
+.sunGroup {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sunPulse 3s ease-in-out infinite;
+}
+
+.sunCore {
+  fill: $color-primary;
+  opacity: 0.9;
+}
+
+.sunRays {
+  stroke: $color-primary;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.coin {
+  fill: $color-primary;
+  opacity: 0;
+  animation: coinRise 3.5s ease-in infinite;
+
+  circle {
+    fill: $color-primary;
+  }
+
+  text {
+    font-family: "Proxima Nova Extrabold", $font-family;
+    font-size: 13px;
+    font-weight: 800;
+    fill: $color-white;
+  }
+}
+
+@keyframes pop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes keyPress {
+  0%,
+  85%,
+  100% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes sunPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+@keyframes coinRise {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  15% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .newBill,
+  .key,
+  .sunGroup,
+  .coin {
+    animation: none;
+  }
+}

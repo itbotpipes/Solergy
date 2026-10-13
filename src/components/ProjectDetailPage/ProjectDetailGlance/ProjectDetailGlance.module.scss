@@ -1,0 +1,82 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.glance {
+  padding: 56px $container-padding;
+  background-color: $color-text-dark;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.intro {
+  max-width: 720px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.eyebrow {
+  @include eyebrow;
+  margin-bottom: 14px;
+}
+.highlight {
+  color: $color-primary;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: $color-white;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 26px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cell {
+  background-color: rgba($color-white, 0.06);
+  border: 1px solid rgba($color-white, 0.15);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.value {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 24px;
+  font-weight: 800;
+  color: $color-primary;
+  margin-bottom: 8px;
+}
+
+.label {
+  font-size: 13px;
+  color: rgba($color-white, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.footnote {
+  font-size: 13px;
+  color: rgba($color-white, 0.55);
+  text-align: center;
+  margin-top: 24px;
+}

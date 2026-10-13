@@ -1,0 +1,141 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.missionVision {
+  padding: 64px $container-padding;
+  background-color: $color-white;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.intro {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 40px;
+}
+
+.eyebrow {
+  @include eyebrow;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: $color-text-dark;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 28px;
+  }
+}
+
+.highlight {
+  color: $color-primary;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.connector {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $color-primary;
+  z-index: 1;
+
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.card {
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid $color-border;
+  background-color: $color-white;
+}
+
+.cardDark {
+  background-color: $color-text-dark;
+  border-color: $color-text-dark;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background-color: BLACK;
+  color: $color-primary;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color-primary;
+  }
+}
+
+.cardDark .pill {
+  background-color: rgba(236, 77, 0, 0.16);
+}
+
+.iconBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: $color-icon-bg;
+  margin-bottom: 24px;
+}
+
+.cardDark .iconBadge {
+  background-color: rgba(236, 77, 0, 0.14);
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: $color-text-dark;
+  margin-bottom: 16px;
+}
+
+.cardDark .cardTitle {
+  color: $color-white;
+}
+
+.cardDescription {
+  font-size: 16px;
+  line-height: 1.7;
+  color: $color-text-desc;
+}
+
+.cardDark .cardDescription {
+  color: rgba(255, 255, 255, 0.72);
+}

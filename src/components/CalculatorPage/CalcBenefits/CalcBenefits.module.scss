@@ -1,0 +1,95 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.benefits {
+  padding: 64px $container-padding;
+  background-color: $color-white;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.intro {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: $color-text-dark;
+  margin-bottom: 16px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 28px;
+  }
+}
+
+.highlight {
+  color: $color-primary;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: $color-text-desc;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: 24px;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.timelineItem {
+  padding: 32px 24px;
+  border-right: 1px solid $color-border;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    border-right: none;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.iconBadge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: $color-icon-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.itemTitle {
+  font-size: 17px;
+  font-weight: 800;
+  color: $color-text-dark;
+  margin-bottom: 8px;
+}
+
+.itemDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  color: $color-text-desc;
+}

@@ -1,0 +1,131 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: #94a3b8;
+  }
+}
+
+.exportBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.tablePanel {
+  background: #14171a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.filters {
+  padding: 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  input, select {
+    background: #0d0f11;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    outline: none;
+
+    &:focus {
+      border-color: #ec4d00;
+    }
+  }
+
+  input {
+    min-width: 240px;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+
+  th {
+    padding: 14px 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  td {
+    padding: 16px 20px;
+    font-size: 0.875rem;
+    color: #cbd5e1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.statusTag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+
+  &.new {
+    background: rgba(236, 77, 0, 0.15);
+    color: #ec4d00;
+  }
+  &.contacted {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+  }
+  &.in_progress {
+    background: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+  }
+  &.converted {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+  }
+  &.closed {
+    background: rgba(100, 116, 139, 0.15);
+    color: #94a3b8;
+  }
+  &.spam {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+  }
+}

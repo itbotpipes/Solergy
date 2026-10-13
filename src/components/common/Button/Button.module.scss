@@ -1,0 +1,51 @@
+@use "../../../styles/variables" as *;
+
+.button {
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: $font-family;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  white-space: nowrap;
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease,
+    color 0.3s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.primary {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+.secondary {
+  background-color: $color-white;
+  color: #000000;
+  border-color: #000000;
+
+  &:hover {
+    opacity: 1;
+    background-color: #000000;
+    color: $color-white;
+  }
+}
+
+.dark {
+  background-color: $color-text-dark;
+  color: $color-white;
+}
+
+.arrow {
+  font-size: 16px;
+  line-height: 1;
+}

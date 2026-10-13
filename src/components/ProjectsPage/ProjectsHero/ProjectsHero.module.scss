@@ -1,0 +1,117 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.hero {
+  padding: 64px $container-padding 0;
+  background-color: $color-white;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 48px $container-padding 0;
+  }
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  align-items: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: $color-text-dark;
+  margin-bottom: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 34px;
+  }
+}
+
+.highlight {
+  color: $color-primary;
+}
+
+.description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: $color-text-desc;
+  max-width: 460px;
+  margin-bottom: 32px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+
+  button,
+  a {
+    text-transform: uppercase;
+  }
+}
+
+.sceneWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    order: -1;
+  }
+}
+
+.statsStrip {
+  display: flex;
+  max-width: $container-max-width;
+  margin: 48px auto 0;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-wrap: wrap;
+  }
+}
+
+.stat {
+  flex: 1;
+  padding: 24px 10px;
+  text-align: center;
+  border-right: 1px solid $color-border;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    flex: 1 1 33%;
+    border-bottom: 1px solid $color-border;
+  }
+}
+
+.statValue {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 30px;
+  font-weight: 800;
+  color: $color-primary;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: $color-text-desc;
+  margin-top: 4px;
+}

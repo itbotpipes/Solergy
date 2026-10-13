@@ -1,0 +1,59 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.otherProjects {
+  padding: 56px $container-padding;
+  background-color: $color-white;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  @include eyebrow;
+  margin-bottom: 12px;
+}
+.highlight {
+  color: $color-primary;
+}
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: $color-text-dark;
+  margin-bottom: 32px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 26px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+  margin-bottom: 32px;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+
+  a,
+  button {
+    text-transform: uppercase;
+  }
+}

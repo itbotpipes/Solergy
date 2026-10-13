@@ -1,0 +1,147 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.solution {
+  padding: 56px $container-padding;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.intro {
+  max-width: 460px;
+}
+
+.eyebrow {
+  @include eyebrow;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.eyebrowDash {
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background-color: $color-primary;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: $color-text-dark;
+  margin-bottom: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 26px;
+  }
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 1.7;
+  color: $color-text-desc;
+  margin-bottom: 14px;
+
+  &:last-child {
+    margin-bottom: 24px;
+  }
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: $color-text-dark;
+  color: $color-white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 999px;
+}
+
+.pillDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $color-primary;
+}
+
+.subLabel {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $color-primary;
+  margin-bottom: 20px;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 20px;
+}
+
+.timelineMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.timelineIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid $color-border;
+  color: $color-primary;
+  flex-shrink: 0;
+}
+
+.timelineLine {
+  flex: 1;
+  width: 1px;
+  min-height: 24px;
+  background-color: $color-border;
+  margin: 4px 0;
+}
+
+.pointIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.timelineContent {
+  padding-bottom: 28px;
+}
+
+.pointTitle {
+  font-size: 17px;
+  font-weight: 800;
+  color: $color-text-dark;
+  margin-bottom: 6px;
+}
+
+.pointDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  color: $color-text-desc;
+}

@@ -1,0 +1,67 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.cta {
+  background-color: $color-text-dark;
+  color: $color-white;
+  padding: 88px $container-padding;
+}
+
+.inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  @include eyebrow;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: $color-white;
+  margin-bottom: 16px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 26px;
+  }
+}
+
+.description {
+  color: #a9a9a6;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 30px;
+
+  button,
+  a {
+    text-transform: uppercase;
+  }
+}
+
+.backLink {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #a9a9a6;
+  text-transform: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-white;
+  }
+}

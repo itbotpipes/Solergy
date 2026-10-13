@@ -1,0 +1,141 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.team {
+  padding: 64px $container-padding;
+  background-color: $color-white;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: $color-text-dark;
+  max-width: 760px;
+  margin: 0 auto 12px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 28px;
+  }
+}
+
+.highlight {
+  color: $color-primary;
+}
+
+.subheading {
+  font-size: 16px;
+  line-height: 1.6;
+  color: $color-text-desc;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cardReveal {
+  height: 100%;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  height: 100%;
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: 20px;
+  padding: 32px 24px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  display: block;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: 800;
+  color: $color-text-dark;
+  margin-bottom: 6px;
+}
+
+.role {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $color-primary;
+  margin-bottom: 12px;
+}
+
+.bio {
+  font-size: 14px;
+  line-height: 1.6;
+  color: $color-text-desc;
+}
+
+.founderWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.founderCard {
+  max-width: 420px;
+}
+
+.linkedinButton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background-color: $color-primary;
+  color: $color-white;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}

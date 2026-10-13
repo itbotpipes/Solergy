@@ -1,0 +1,148 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.contact {
+  background-color: #0a0a0a;
+  padding: 40px $container-padding 40px;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  border-radius: 24px;
+  padding: 48px;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+}
+
+.info {
+  position: relative;
+}
+
+.eyebrow {
+  @include eyebrow;
+  // color: $color-white;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: $color-white;
+  margin-bottom: 16px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 32px;
+  }
+}
+
+.highlight {
+  color: $color-white;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: $color-text-desc;
+  margin-bottom: 32px;
+  max-width: 420px;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.trustLine {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: $color-text-desc;
+
+    svg {
+      color: $color-primary;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.dots {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(236, 77, 0, 0.25);
+}
+
+.form {
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: 20px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+}
+
+.formHeading {
+  @include eyebrow;
+  color: $color-text-desc;
+  margin-bottom: 8px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  font-family: $font-family;
+  font-size: 15px;
+  color: $color-text-dark;
+  border: 1px solid $color-border;
+  border-radius: 12px;
+  padding: 14px 16px;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+.textarea {
+  resize: vertical;
+}

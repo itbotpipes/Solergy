@@ -1,0 +1,105 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.section {
+  padding: 72px $container-padding;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: start;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 30px;
+  font-weight: 800;
+  color: $color-text-dark;
+  margin-bottom: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 24px;
+  }
+}
+
+.paragraph {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: $color-text-desc;
+  margin-bottom: 18px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.specsCard {
+  background-color: $color-bg-alt;
+  border-radius: 20px;
+  padding: 32px 28px;
+  position: sticky;
+  top: 100px;
+
+  @media (max-width: $breakpoint-tablet) {
+    position: static;
+  }
+}
+
+.specsTitle {
+  font-size: 15px;
+  font-weight: 800;
+  color: $color-text-dark;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.specsList {
+  list-style: none;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid $color-border;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.specLabel {
+  font-size: 13.5px;
+  color: $color-text-desc;
+}
+
+.specValue {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: $color-text-dark;
+  text-align: right;
+}

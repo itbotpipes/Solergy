@@ -1,0 +1,112 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.hero {
+  padding: 64px $container-padding 56px;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-border;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 48px $container-padding 40px;
+  }
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 46px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: $color-text-dark;
+  margin-bottom: 18px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 32px;
+  }
+}
+
+.highlight {
+  color: $color-primary;
+}
+
+.description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: $color-text-desc;
+  max-width: 460px;
+  margin-bottom: 36px;
+}
+
+.quickLinks {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.quickLink {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  transition: transform 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.quickIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid $color-text-dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-dark;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.quickLink:hover .quickIcon {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  color: $color-white;
+}
+
+.quickTitle {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: $color-text-dark;
+}
+
+.quickSub {
+  font-size: 12px;
+  color: $color-text-desc;
+}
+
+.sceneWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    order: -1;
+  }
+}

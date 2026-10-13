@@ -1,0 +1,208 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  max-width: 1200px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: #14171a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 24px;
+
+  h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.infoItem {
+  .label {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .value {
+    font-size: 0.9375rem;
+    color: #ffffff;
+    font-weight: 500;
+  }
+}
+
+.messageBox {
+  margin-top: 16px;
+  background: #0d0f11;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  white-space: pre-wrap;
+}
+
+.quickActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+
+  &.whatsapp {
+    background: #25d366;
+    color: #000000;
+
+    &:hover {
+      background: #20bd5a;
+    }
+  }
+
+  &.email {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+
+    &:hover {
+      background: rgba(59, 130, 246, 0.25);
+    }
+  }
+
+  &.copy {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+  }
+}
+
+.statusChanger {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  select {
+    width: 100%;
+    background: #0d0f11;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    outline: none;
+
+    &:focus {
+      border-color: #ec4d00;
+    }
+  }
+}
+
+.notesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.noteForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  textarea {
+    width: 100%;
+    background: #0d0f11;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    min-height: 80px;
+    outline: none;
+
+    &:focus {
+      border-color: #ec4d00;
+    }
+  }
+
+  button {
+    align-self: flex-end;
+    background: #ec4d00;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: #ff570a;
+    }
+  }
+}
+
+.notesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.noteCard {
+  background: #0d0f11;
+  border-left: 3px solid #ec4d00;
+  padding: 12px 14px;
+  border-radius: 0 6px 6px 0;
+
+  .noteMeta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6875rem;
+    color: #64748b;
+    margin-bottom: 6px;
+  }
+
+  .noteContent {
+    font-size: 0.875rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+  }
+}

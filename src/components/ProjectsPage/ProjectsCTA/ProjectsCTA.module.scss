@@ -1,0 +1,74 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.cta {
+  background-color: $color-text-dark;
+  color: $color-white;
+  padding: 96px $container-padding;
+}
+
+.inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  @include eyebrow;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 38px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: $color-white;
+  margin-bottom: 16px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 28px;
+  }
+}
+
+.description {
+  color: #a9a9a6;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 26px;
+
+  button,
+  a {
+    text-transform: uppercase;
+  }
+}
+
+.trust {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-size: 13.5px;
+  color: #a9a9a6;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.chk {
+  color: $color-primary;
+  font-weight: 700;
+}

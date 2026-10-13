@@ -1,0 +1,86 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.aboutHero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  // padding: -64px $container-padding 32px;
+  background-color: $color-white;
+
+  @media (max-width: $breakpoint-tablet) {
+    min-height: auto;
+    padding: 64px $container-padding 48px;
+  }
+}
+
+.inner {
+  max-width: $container-max-width;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  gap: 24px;
+  align-items: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.content {
+  max-width: 480px;
+}
+
+.eyebrow {
+  @include eyebrow;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: $color-text-dark;
+  margin-bottom: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 32px;
+  }
+}
+
+.highlight {
+  color: $color-primary;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: $color-text-desc;
+  margin-bottom: 32px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
+  button,
+  a {
+    text-transform: uppercase;
+  }
+}
+
+.trustLine {
+  font-size: 14px;
+  color: $color-text-desc;
+}
+
+.imageWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,139 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.story {
+  padding: 32px $container-padding 64px;
+  background-color: $color-white;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.heading {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: $color-text-dark;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 26px;
+  }
+}
+
+.highlight {
+  color: $color-primary;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-text-desc;
+  }
+}
+
+.copy p.tagline {
+  font-family: "Proxima Nova Extrabold", $font-family;
+  font-size: 18px;
+  font-weight: 800;
+  color: $color-text-dark;
+}
+
+// .timeline {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   background-color: $color-white;
+//   border: 1px solid $color-border;
+//   border-radius: 24px;
+//   margin-bottom: 40px;
+
+//   @media (max-width: $breakpoint-tablet) {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// .timelineItem {
+//   padding: 32px 24px;
+//   border-right: 1px solid $color-border;
+
+//   &:last-child {
+//     border-right: none;
+//   }
+
+//   @media (max-width: $breakpoint-tablet) {
+//     border-right: none;
+//     border-bottom: 1px solid $color-border;
+
+//     &:last-child {
+//       border-bottom: none;
+//     }
+//   }
+// }
+
+// .iconBadge {
+//   width: 44px;
+//   height: 44px;
+//   border-radius: 50%;
+//   background-color: $color-icon-bg;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin-bottom: 16px;
+// }
+
+// .year {
+//   display: inline-block;
+//   font-size: 12px;
+//   font-weight: 700;
+//   letter-spacing: 0.5px;
+//   text-transform: uppercase;
+//   color: $color-primary;
+//   margin-bottom: 8px;
+// }
+
+// .itemTitle {
+//   font-size: 17px;
+//   font-weight: 800;
+//   color: $color-text-dark;
+//   margin-bottom: 8px;
+// }
+
+// .itemDescription {
+//   font-size: 14px;
+//   line-height: 1.6;
+//   color: $color-text-desc;
+// }
+
+// .stats {
+//   background-color: $color-white;
+//   border: 1px solid $color-border;
+//   border-radius: 20px;
+//   padding: 28px 32px;
+//   display: flex;
+//   gap: 32px;
+
+//   @media (max-width: $breakpoint-mobile) {
+//     flex-wrap: wrap;
+//     gap: 20px;
+//     padding: 20px;
+//   }
+// }
+
