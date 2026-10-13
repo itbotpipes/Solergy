@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import logo from "@/assets/solergy-black.png";
 import styles from "./page.module.scss";
 
 export default function AdminLoginPage() {
@@ -43,8 +45,17 @@ export default function AdminLoginPage() {
     <div className={styles.loginWrap}>
       <div className={styles.card}>
         <div className={styles.header}>
-          <div className={styles.logo}>S</div>
-          <h1>Solergy Admin</h1>
+          <div className={styles.logoWrap}>
+            <Image
+              src={logo}
+              alt="Solergy"
+              width={140}
+              height={32}
+              priority
+              className={styles.logoImage}
+            />
+          </div>
+          <h1>Admin Portal</h1>
           <p>Sign in with your authorized admin credentials</p>
         </div>
 

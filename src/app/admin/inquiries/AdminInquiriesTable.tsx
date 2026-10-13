@@ -18,6 +18,10 @@ export default function AdminInquiriesTable({
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [typeFilter, setTypeFilter] = useState<string>("all");
 
+  React.useEffect(() => {
+    setInquiries(initialInquiries);
+  }, [initialInquiries]);
+
   const handleExportCSV = () => {
     if (inquiries.length === 0) return;
 
@@ -78,15 +82,32 @@ export default function AdminInquiriesTable({
           <h1>Website Form Responses & Leads</h1>
           <p>Real-time inquiries captured from contact, calculator, and product forms.</p>
         </div>
-        <button
-          type="button"
-          className={styles.exportBtn}
-          onClick={handleExportCSV}
-          disabled={inquiries.length === 0}
-        >
-          <Download size={16} />
-          Export to CSV
-        </button>
+        <div style={{ display: "flex", gap: "10px" }}>
+          <button
+            type="button"
+            className={styles.exportBtn}
+            onClick={async () => {
+              try {
+                const res = await fetch("/api/admin/inquiries");
+                const data = await res.json();
+                if (data.inquiries) setInquiries(data.inquiries);
+              } catch (e) {
+                console.error(e);
+              }
+            }}
+          >
+            Refresh Leads
+          </button>
+          <button
+            type="button"
+            className={styles.exportBtn}
+            onClick={handleExportCSV}
+            disabled={inquiries.length === 0}
+          >
+            <Download size={16} />
+            Export to CSV
+          </button>
+        </div>
       </div>
 
       <div className={styles.tablePanel}>
@@ -116,10 +137,12 @@ export default function AdminInquiriesTable({
             onChange={(e) => setTypeFilter(e.target.value)}
           >
             <option value="all">All Form Types</option>
+            <option value="quick_callback">Quick Callback</option>
             <option value="contact_page">Contact Page</option>
             <option value="homepage_contact">Homepage Contact</option>
             <option value="calculator_lead">Calculator Lead</option>
-            <option value="product_inquiry">Product Inquiry</option>
+            <option value="industry">Commercial / Industrial</option>
+            <option value="home">Residential</option>
           </select>
         </div>
 
@@ -147,7 +170,7 @@ export default function AdminInquiriesTable({
                 filtered.map((inq) => (
                   <tr key={inq.id}>
                     <td>
-                      <div style={{ fontWeight: 600, color: "#ffffff" }}>
+                      <div style={{ fontWeight: 600, color: "#0f172a" }}>
                         {inq.name || "Anonymous Direct Lead"}
                       </div>
                     </td>
@@ -163,7 +186,9 @@ export default function AdminInquiriesTable({
                       </span>
                     </td>
                     <td>{inq.city || "—"}</td>
-                    <td>{new Date(inq.createdAt).toLocaleString()}</td>
+                    <td suppressHydrationWarning>
+                      {new Date(inq.createdAt).toLocaleString()}
+                    </td>
                     <td>
                       <span
                         className={`${styles.statusTag} ${

@@ -4,8 +4,7 @@ import styles from "./StatCards.module.scss";
 
 interface StatCardsProps {
   stats: {
-    totalProducts: number;
-    publishedProducts: number;
+    totalProjects: number;
     totalInquiries: number;
     newInquiries: number;
   };
@@ -19,18 +18,8 @@ export default function StatCards({ stats }: StatCardsProps) {
           <Package size={24} />
         </div>
         <div className={styles.info}>
-          <span className={styles.label}>Total Products</span>
-          <span className={styles.value}>{stats.totalProducts}</span>
-        </div>
-      </div>
-
-      <div className={styles.card}>
-        <div className={`${styles.iconWrap} ${styles.green}`}>
-          <CheckCircle2 size={24} />
-        </div>
-        <div className={styles.info}>
-          <span className={styles.label}>Published Products</span>
-          <span className={styles.value}>{stats.publishedProducts}</span>
+          <span className={styles.label}>Total Projects</span>
+          <span className={styles.value}>{stats.totalProjects}</span>
         </div>
       </div>
 

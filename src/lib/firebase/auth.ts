@@ -8,15 +8,6 @@ export async function verifyAdminSession(): Promise<AdminSession | null> {
   const cookieStore = await cookies();
   const sessionToken = cookieStore.get(ADMIN_SESSION_COOKIE)?.value;
 
-  // In local development, automatically provide super admin access so testing isn't blocked by 401
-  if (process.env.NODE_ENV !== 'production') {
-    return {
-      uid: 'dev-admin-uid',
-      email: 'admin@solergyindia.com',
-      role: 'super_admin',
-    };
-  }
-
   if (!sessionToken) {
     return null;
   }

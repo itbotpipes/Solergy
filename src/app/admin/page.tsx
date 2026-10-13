@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Plus, Search, ArrowRight } from "lucide-react";
-import { getAllProducts } from "@/services/products";
+import { getAllProjects } from "@/services/projects";
 import { getInquiries, getInquiryStats } from "@/services/inquiries";
 import StatCards from "@/components/admin/StatCards";
 import styles from "./page.module.scss";
@@ -9,15 +9,14 @@ import styles from "./page.module.scss";
 export const dynamic = "force-dynamic";
 
 export default async function AdminDashboardPage() {
-  const [products, inquiryStats, recentInquiries] = await Promise.all([
-    getAllProducts(),
+  const [projects, inquiryStats, recentInquiries] = await Promise.all([
+    getAllProjects(),
     getInquiryStats(),
     getInquiries({ limit: 5 }),
   ]);
 
   const stats = {
-    totalProducts: products.length,
-    publishedProducts: products.filter((p) => p.status === "published").length,
+    totalProjects: projects.length,
     totalInquiries: inquiryStats.total,
     newInquiries: inquiryStats.new,
   };
@@ -27,12 +26,12 @@ export default async function AdminDashboardPage() {
       <div className={styles.welcome}>
         <div>
           <h1>Operations Overview</h1>
-          <p>Real-time statistics across products, customer inquiries, and SEO metadata.</p>
+          <p>Real-time statistics across completed projects, customer inquiries, and SEO metadata.</p>
         </div>
         <div className={styles.actions}>
-          <Link href="/admin/products/new" className={styles.btnPrimary}>
+          <Link href="/admin/projects/new" className={styles.btnPrimary}>
             <Plus size={16} />
-            Add New Product
+            Add New Project
           </Link>
           <Link href="/admin/seo" className={styles.btnSecondary}>
             <Search size={16} />

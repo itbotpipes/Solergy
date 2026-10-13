@@ -16,34 +16,37 @@ export async function POST(req: NextRequest) {
     const adminAuth = getAdminAuth();
     const db = getAdminFirestore();
 
-    // Development / fallback mode if Firebase credentials are not yet configured in local env
+    // Check built-in admin credentials first for quick access
+    const adminEmail = process.env.ADMIN_EMAIL || 'admin@solergyindia.com';
+    const adminPassword = process.env.ADMIN_PASSWORD || 'solergy2026';
+
+    if (email.toLowerCase() === adminEmail.toLowerCase() && password === adminPassword) {
+      const response = NextResponse.json({
+        success: true,
+        user: {
+          uid: 'super-admin-uid',
+          email: adminEmail,
+          displayName: 'Solergy Administrator',
+          role: 'super_admin',
+        },
+      });
+
+      response.cookies.set({
+        name: ADMIN_SESSION_COOKIE,
+        value: `dev_session_${Date.now()}`,
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+        path: '/',
+        maxAge: 60 * 60 * 24 * 7, // 7 days
+      });
+
+      return response;
+    }
+
     if (!adminAuth || !db) {
-      if (email === 'admin@solergyindia.com' && (password === 'solergy2026' || password.length >= 6)) {
-        const response = NextResponse.json({
-          success: true,
-          user: {
-            uid: 'dev-admin-uid',
-            email: 'admin@solergyindia.com',
-            displayName: 'Solergy Admin',
-            role: 'super_admin',
-          },
-        });
-
-        response.cookies.set({
-          name: ADMIN_SESSION_COOKIE,
-          value: `dev_session_${Date.now()}`,
-          httpOnly: true,
-          secure: process.env.NODE_ENV === 'production',
-          sameSite: 'lax',
-          path: '/',
-          maxAge: 60 * 60 * 24 * 7, // 7 days
-        });
-
-        return response;
-      }
-
       return NextResponse.json(
-        { error: 'Invalid credentials or Firebase Admin not configured' },
+        { error: 'Invalid admin credentials' },
         { status: 401 }
       );
     }

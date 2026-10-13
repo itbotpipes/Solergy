@@ -21,7 +21,11 @@ function ProjectCard({ project, highlighted }: { project: any; highlighted: bool
   return (
     <div className={`${styles.card} ${highlighted ? styles.cardHighlight : ''}`}>
       <div className={styles.thumb}>
-        <Image src={project.image} alt={project.title} className={styles.thumbImage} />
+        {typeof project.image === 'string' ? (
+          <img src={project.image} alt={project.title} className={styles.thumbImage} />
+        ) : (
+          <Image src={project.image} alt={project.title} className={styles.thumbImage} />
+        )}
       </div>
       <div className={styles.body}>
         <div className={styles.tagRow}>
@@ -45,13 +49,16 @@ export interface ProjectsGridProps {
   filter?: string;
   setFilter?: (f: string) => void;
   highlightCity?: string | null;
+  initialProjects?: any[];
 }
 
 export default function ProjectsGrid({
   filter: externalFilter,
   setFilter: externalSetFilter,
   highlightCity,
+  initialProjects,
 }: ProjectsGridProps) {
+  const allProjects = initialProjects && initialProjects.length > 0 ? initialProjects : PROJECTS;
   const [internalFilter, setInternalFilter] = useState('all');
   const activeFilter = externalFilter ?? internalFilter;
   const handleSetFilter = externalSetFilter ?? setInternalFilter;
@@ -74,8 +81,8 @@ export default function ProjectsGrid({
     setShowAll(false);
   }, [activeFilter]);
 
-  const filteredProjects = PROJECTS.filter(
-    (project) => activeFilter === 'all' || project.category.toLowerCase() === activeFilter
+  const filteredProjects = allProjects.filter(
+    (project: any) => activeFilter === 'all' || project.category?.toLowerCase() === activeFilter
   );
   const visibleProjects = showAll
     ? filteredProjects

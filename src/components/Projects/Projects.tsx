@@ -7,11 +7,16 @@ import PROJECTS, { FEATURED_PROJECT_IDS } from '../../data/projects';
 import styles from './Projects.module.scss';
 import reveal from '../../styles/reveal.module.scss';
 
-const FEATURED_PROJECTS = FEATURED_PROJECT_IDS.map((id) =>
-  PROJECTS.find((project: any) => project.id === id)
-).filter(Boolean) as any[];
+interface ProjectsProps {
+  initialProjects?: any[];
+}
 
-export default function Projects() {
+export default function Projects({ initialProjects }: ProjectsProps) {
+  const allProjects = initialProjects && initialProjects.length > 0 ? initialProjects : PROJECTS;
+  const featuredProjects = FEATURED_PROJECT_IDS.map((id) =>
+    allProjects.find((project: any) => project.id === id)
+  ).filter(Boolean) as any[];
+
   const gridRef = useRef<HTMLDivElement>(null);
   const visible = useInView(gridRef);
   const sectionRef = useRef<HTMLElement>(null);
@@ -31,7 +36,7 @@ export default function Projects() {
         </h2>
 
         <div className={styles.grid} ref={gridRef}>
-          {FEATURED_PROJECTS.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <div
               key={project.id}
               className={`${styles.cardReveal} ${visible ? styles.cardVisible : ''}`}

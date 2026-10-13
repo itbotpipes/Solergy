@@ -14,10 +14,10 @@ export default async function EditSEOPage({ params }: EditSEOPageProps) {
   return (
     <div>
       <div style={{ marginBottom: "24px" }}>
-        <h1 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#ffffff" }}>
+        <h1 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#0f172a" }}>
           Edit SEO: {decodedPageKey}
         </h1>
-        <p style={{ fontSize: "0.875rem", color: "#94a3b8" }}>
+        <p style={{ fontSize: "0.875rem", color: "#64748b" }}>
           Configure title tags, meta descriptions, canonical URLs, and Open Graph previews.
         </p>
       </div>

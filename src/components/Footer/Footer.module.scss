@@ -28,8 +28,11 @@
 }
 
 .logo {
-  height: 26px;
-  width: auto;
+  height: 26px !important;
+  width: auto !important;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
   margin-bottom: 20px;
 }
 

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { getProjectById, getAllProjects } from "@/data/projects";
+import { getProjectById, getAllProjects } from "@/services/projects";
 import { generateSEOMetadata } from "@/lib/seo/metadata";
 import ProjectDetailHero from "@/components/ProjectDetailPage/ProjectDetailHero/ProjectDetailHero";
 import ProjectDetailOverview from "@/components/ProjectDetailPage/ProjectDetailOverview/ProjectDetailOverview";
@@ -19,16 +19,13 @@ interface ProjectPageProps {
   params: Promise<{ id: string }>;
 }
 
-export async function generateStaticParams() {
-  const projects = getAllProjects();
-  return projects.map((p) => ({ id: p.id }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
   const { id } = await params;
-  const project = getProjectById(id);
+  const project = await getProjectById(id);
 
   if (!project) {
     return {
@@ -48,25 +45,27 @@ export async function generateMetadata({
 
 export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const { id } = await params;
-  const project = getProjectById(id);
+  const project = await getProjectById(id);
 
   if (!project) {
     notFound();
   }
 
+  const allProjects = await getAllProjects();
+
   return (
     <main>
       <ProjectDetailHero project={project} />
       <ProjectDetailOverview project={project} />
-      <ProjectDetailGlance project={project} />
-      <ProjectDetailStory project={project} />
       <ProjectDetailChallenge project={project} />
       <ProjectDetailSolution project={project} />
+      <ProjectDetailGlance project={project} />
+      <ProjectDetailStory project={project} />
       <ProjectDetailProcess project={project} />
       <ProjectDetailImpact project={project} />
       <ProjectDetailGallery project={project} />
       <ProjectDetailTestimonial project={project} />
-      <ProjectDetailOtherProjects project={project} />
+      <ProjectDetailOtherProjects project={project} otherProjects={allProjects} />
       <ProjectDetailCTA />
     </main>
   );

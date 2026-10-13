@@ -8,10 +8,10 @@ const FOOTER_COLUMNS = [
     title: 'Company',
     links: [
       { label: 'About Us', href: '/about' },
-      { label: 'Our Products', href: '/products' },
       { label: 'Our Services', href: '/#services' },
       { label: 'Projects', href: '/projects' },
-      { label: 'Solar Calculator', href: '/calculator' },
+      { label: 'Why Choose Us', href: '/#why-solergy' },
+      { label: 'Testimonials', href: '/#testimonials' },
       { label: 'Contact Us', href: '/contact' },
     ],
   },
@@ -20,7 +20,7 @@ const FOOTER_COLUMNS = [
     links: [
       { label: 'Residential Solar', href: '/#services' },
       { label: 'Commercial Solar', href: '/#services' },
-      { label: 'Battery Storage', href: '/products' },
+      { label: 'Battery Storage', href: '/#services' },
       { label: 'EV Charging', href: '/#services' },
       { label: 'Solar Maintenance', href: '/#services' },
       { label: 'Solar Consultation', href: '/contact' },
@@ -30,19 +30,20 @@ const FOOTER_COLUMNS = [
     title: 'Resources',
     links: [
       { label: 'FAQs', href: '/#faq' },
-      { label: 'Solar Calculator', href: '/calculator' },
-      { label: 'Product Catalog', href: '/products' },
+      { label: 'Blog & News', href: '/#blog' },
+      { label: 'Solar Guide', href: '/#guide' },
       { label: 'Financing Options', href: '/calculator' },
+      { label: 'Warranty', href: '/#warranty' },
       { label: 'Privacy Policy', href: '#privacy' },
     ],
   },
 ];
 
 const CONTACT_LINES = [
-  { icon: 'phone', value: '+91 78886 79770' },
-  { icon: 'mail', value: 'info@solergyindia.com' },
-  { icon: 'pin', value: 'Chaura Bazaar, Ludhiana, Punjab' },
-  { icon: 'clock', value: 'Monday to Saturday, 9 AM – 7 PM' },
+  { icon: 'phone', value: '+1 (888) 555-0199' },
+  { icon: 'mail', value: 'hello@abbaspecialtys.com' },
+  { icon: 'pin', value: '245 Green Energy Avenue' },
+  { icon: 'clock', value: 'Monday to Friday' },
 ];
 
 const SOCIAL_ICONS = ['facebook', 'instagram', 'youtube', 'pinterest'];
@@ -147,10 +148,17 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.brand}>
-          <Image src={logo} alt="Solergy" className={styles.logo} style={{ width: 'auto', height: 'auto' }} />
+          <Image
+            src={logo}
+            alt="Solergy"
+            width={115}
+            height={26}
+            className={styles.logo}
+            priority
+          />
           <p className={styles.tagline}>
             We design, install, and maintain solar power systems for homes and
-            businesses across Gujarat and North India — helping our customers cut electricity
+            businesses across Gujarat — helping our customers cut electricity
             costs and switch to clean, reliable energy.
           </p>
           <div className={styles.social}>
@@ -215,10 +223,8 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <div className={styles.bottomInner}>
-          <p>&copy; {new Date().getFullYear()} Solergy. All rights reserved.</p>
+          <p>&copy; 2026 Solergy. All rights reserved.</p>
           <div className={styles.legal}>
-            <Link href="/admin/login" style={{ opacity: 0.4, fontSize: '12px' }}>Admin Portal</Link>
-            <span className={styles.dot}>&middot;</span>
             <a href="#privacy">Privacy</a>
             <span className={styles.dot}>&middot;</span>
             <a href="#terms">Terms</a>

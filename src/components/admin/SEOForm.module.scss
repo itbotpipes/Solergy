@@ -6,29 +6,31 @@
 }
 
 .panel {
-  background: #14171a;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
   padding: 28px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 
   h2 {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #0f172a;
     margin-bottom: 20px;
     padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid #f1f5f9;
   }
 }
 
 .serpPreview {
   background: #ffffff;
   color: #202124;
+  border: 1px solid #e2e8f0;
   border-radius: 10px;
   padding: 20px;
   font-family: Arial, sans-serif;
   margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 
   .serpUrl {
     font-size: 0.8125rem;
@@ -70,37 +72,43 @@
     justify-content: space-between;
     font-size: 0.8125rem;
     font-weight: 600;
-    color: #cbd5e1;
+    color: #475569;
 
     .counter {
       font-weight: 400;
       color: #64748b;
 
       &.good {
-        color: #34d399;
+        color: #059669;
       }
       &.warn {
-        color: #facc15;
+        color: #d97706;
       }
       &.bad {
-        color: #f87171;
+        color: #dc2626;
       }
     }
   }
 
   input, textarea {
     width: 100%;
-    background: #0d0f11;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #ffffff;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
     padding: 11px 14px;
     border-radius: 8px;
     font-size: 0.875rem;
     outline: none;
-    transition: border-color 0.2s ease;
+    transition: all 0.2s ease;
+
+    &::placeholder {
+      color: #94a3b8;
+    }
 
     &:focus {
+      background: #ffffff;
       border-color: #ec4d00;
+      box-shadow: 0 0 0 3px rgba(236, 77, 0, 0.15);
     }
   }
 
@@ -130,7 +138,7 @@
     align-items: center;
     gap: 8px;
     font-size: 0.875rem;
-    color: #cbd5e1;
+    color: #334155;
     cursor: pointer;
 
     input[type="checkbox"] {
@@ -157,10 +165,11 @@
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(236, 77, 0, 0.25);
 
   &:hover:not(:disabled) {
-    background: #ff570a;
-    box-shadow: 0 4px 16px rgba(236, 77, 0, 0.4);
+    background: #d84500;
+    box-shadow: 0 4px 14px rgba(236, 77, 0, 0.35);
   }
 
   &:disabled {
@@ -170,18 +179,20 @@
 }
 
 .cancelBtn {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #94a3b8;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
   padding: 12px 24px;
   border-radius: 999px;
   font-size: 0.875rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  transition: all 0.2s ease;
 
   &:hover {
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.3);
+    background: #f8fafc;
+    border-color: #94a3b8;
+    color: #0f172a;
   }
 }

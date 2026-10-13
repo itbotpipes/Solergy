@@ -10,13 +10,15 @@ import { Project } from "@/types/project";
 
 interface ProjectDetailOtherProjectsProps {
   project: Project;
+  otherProjects?: Project[];
 }
 
-export default function ProjectDetailOtherProjects({ project }: ProjectDetailOtherProjectsProps) {
+export default function ProjectDetailOtherProjects({ project, otherProjects: passedOthers }: ProjectDetailOtherProjectsProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const visible = useInView(sectionRef, 0.1);
 
-  const otherProjects = PROJECTS.filter((p) => p.id !== project.id).slice(0, 3);
+  const pool = passedOthers && passedOthers.length > 0 ? passedOthers : PROJECTS;
+  const otherProjects = pool.filter((p) => p.id !== project.id).slice(0, 3);
 
   return (
     <section

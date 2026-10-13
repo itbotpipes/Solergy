@@ -139,7 +139,7 @@ export default function InquiryDetail({ inquiry }: InquiryDetailProps) {
 
               <div className={styles.infoItem}>
                 <div className={styles.label}>Date Received</div>
-                <div className={styles.value}>
+                <div className={styles.value} suppressHydrationWarning>
                   {new Date(inquiry.createdAt).toLocaleString()}
                 </div>
               </div>
@@ -269,7 +269,7 @@ export default function InquiryDetail({ inquiry }: InquiryDetailProps) {
                   <div key={note.id} className={styles.noteCard}>
                     <div className={styles.noteMeta}>
                       <span>{note.author}</span>
-                      <span>{new Date(note.createdAt).toLocaleString()}</span>
+                      <span suppressHydrationWarning>{new Date(note.createdAt).toLocaleString()}</span>
                     </div>
                     <div className={styles.noteContent}>{note.content}</div>
                   </div>

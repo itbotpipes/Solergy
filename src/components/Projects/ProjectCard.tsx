@@ -53,7 +53,11 @@ export default function ProjectCard({
   return (
     <div className={styles.card}>
       <div className={styles.imageWrap}>
-        <Image src={image} alt={title} className={styles.image} />
+        {typeof image === 'string' ? (
+          <img src={image} alt={title} className={styles.image} />
+        ) : (
+          <Image src={image} alt={title} className={styles.image} />
+        )}
         <span className={styles.badge}>
           <HomeIcon />
           {category}

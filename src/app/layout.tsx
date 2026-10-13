@@ -19,7 +19,14 @@ export const metadata: Metadata = {
   description:
     "Solergy designs, installs, and maintains premium rooftop and ground-mounted solar power systems for homes, businesses, and industrial units.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/favicon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.png",
   },
 };
 

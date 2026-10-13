@@ -12,6 +12,8 @@ import {
   ExternalLink,
   LogOut,
 } from "lucide-react";
+import Image from "next/image";
+import logo from "@/assets/solergy-black.png";
 import styles from "./AdminLayout.module.scss";
 
 interface AdminLayoutProps {
@@ -39,18 +41,26 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   const navItems = [
     { label: "Dashboard", href: "/admin", icon: LayoutDashboard, exact: true },
-    { label: "Products", href: "/admin/products", icon: Package },
+    { label: "Projects", href: "/admin/projects", icon: Package },
     { label: "Form Inquiries", href: "/admin/inquiries", icon: Inbox },
     { label: "SEO Management", href: "/admin/seo", icon: Search },
-    { label: "Media Library", href: "/admin/media", icon: ImageIcon },
   ];
 
   return (
     <div className={styles.container}>
       <aside className={styles.sidebar}>
         <div className={styles.brand}>
-          <div className={styles.logo}>S</div>
-          <span className={styles.title}>Solergy Admin</span>
+          <Link href="/admin" className={styles.brandLink}>
+            <Image
+              src={logo}
+              alt="Solergy"
+              width={120}
+              height={28}
+              priority
+              style={{ width: "auto", height: "28px" }}
+              className={styles.brandLogo}
+            />
+          </Link>
           <span className={styles.badge}>CMS</span>
         </div>
 

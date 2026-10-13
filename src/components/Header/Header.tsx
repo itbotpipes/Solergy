@@ -18,7 +18,6 @@ const NAV_LINKS: NavLinkItem[] = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Calculator', to: '/calculator' },
-  { label: 'Products', to: '/products' },
   { label: 'Projects', to: '/projects' },
   { label: 'Contact', to: '/contact' },
 ];

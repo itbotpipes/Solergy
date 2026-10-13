@@ -10,6 +10,10 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import Tagline from "@/components/Tagline/Tagline";
 import Contact from "@/components/Contact/Contact";
 
+import { getAllProjects } from "@/services/projects";
+
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata(): Promise<Metadata> {
   return generateSEOMetadata("home", {
     title: "Solergy | Premium Rooftop Solar Power Solutions",
@@ -18,14 +22,16 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const projects = await getAllProjects();
+
   return (
     <main>
       <Hero />
       <WhySolergy />
       <WhySolar />
       <Services />
-      <Projects />
+      <Projects initialProjects={projects} />
       <FAQ />
       <Testimonials />
       <Tagline />

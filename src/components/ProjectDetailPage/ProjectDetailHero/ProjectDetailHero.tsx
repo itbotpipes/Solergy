@@ -73,12 +73,20 @@ export default function ProjectDetailHero({ project }: ProjectDetailHeroProps) {
           </div>
 
           <div className={styles.imageWrap}>
-            <Image
-              src={project.image}
-              alt={project.title}
-              className={styles.heroImage}
-              priority
-            />
+            {typeof project.image === 'string' ? (
+              <img
+                src={project.image}
+                alt={project.title}
+                className={styles.heroImage}
+              />
+            ) : (
+              <Image
+                src={project.image}
+                alt={project.title}
+                className={styles.heroImage}
+                priority
+              />
+            )}
           </div>
         </div>
       </div>

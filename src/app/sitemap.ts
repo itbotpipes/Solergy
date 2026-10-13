@@ -1,12 +1,13 @@
 import type { MetadataRoute } from 'next';
-import PROJECTS from '@/data/projects';
-import { getPublishedProducts } from '@/services/products';
+import { getAllProjects } from '@/services/projects';
 import { getAllSEOPages } from '@/services/seo';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://solergyindia.com';
-  const seoPages = await getAllSEOPages();
-  const publishedProducts = await getPublishedProducts();
+  const [seoPages, projects] = await Promise.all([
+    getAllSEOPages(),
+    getAllProjects(),
+  ]);
 
   const seoMap = new Map(seoPages.map((p) => [p.pageKey, p]));
 
@@ -15,7 +16,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { key: 'about', path: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
     { key: 'calculator', path: '/calculator', priority: 0.9, changeFrequency: 'monthly' as const },
     { key: 'projects', path: '/projects', priority: 0.9, changeFrequency: 'weekly' as const },
-    { key: 'products', path: '/products', priority: 0.9, changeFrequency: 'weekly' as const },
     { key: 'contact', path: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
   ];
 
@@ -35,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   // Add project pages if indexable
-  for (const project of PROJECTS) {
+  for (const project of projects) {
     const seo = seoMap.get(`project:${project.id}`);
     if (!seo || seo.robotsIndex !== false) {
       entries.push({
@@ -43,19 +43,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: seo ? new Date(seo.updatedAt) : new Date(),
         changeFrequency: 'monthly',
         priority: 0.7,
-      });
-    }
-  }
-
-  // Add published product pages
-  for (const product of publishedProducts) {
-    const seo = seoMap.get(`product:${product.id}`);
-    if (!seo || seo.robotsIndex !== false) {
-      entries.push({
-        url: `${siteUrl}/products/${product.slug}`,
-        lastModified: new Date(product.updatedAt || product.createdAt),
-        changeFrequency: 'weekly',
-        priority: 0.8,
       });
     }
   }

@@ -1,0 +1,95 @@
+[
+  {
+    "id": "inq_1791919168002",
+    "name": "it.botpipes",
+    "email": "it.botpipes@gmail.com",
+    "phone": "6756657878",
+    "company": null,
+    "city": "ss",
+    "subject": null,
+    "message": "sdas dsqwd",
+    "inquiryType": "home",
+    "sourcePage": "/contact",
+    "productId": null,
+    "productName": null,
+    "projectId": null,
+    "projectName": null,
+    "formData": {
+      "inquiryType": "home",
+      "name": "it.botpipes",
+      "phone": "6756657878",
+      "email": "it.botpipes@gmail.com",
+      "city": "ss",
+      "message": "sdas dsqwd"
+    },
+    "calculatorData": null,
+    "status": "new",
+    "createdAt": 1791919168002,
+    "updatedAt": 1791919168002
+  },
+  {
+    "id": "inq_1791919102259",
+    "name": "it.botpipes",
+    "email": null,
+    "phone": "6756657878",
+    "company": null,
+    "city": null,
+    "subject": null,
+    "message": null,
+    "inquiryType": "quick_callback",
+    "sourcePage": "/",
+    "productId": null,
+    "productName": null,
+    "projectId": null,
+    "projectName": null,
+    "formData": {
+      "name": "it.botpipes",
+      "phone": "6756657878"
+    },
+    "calculatorData": null,
+    "status": "new",
+    "createdAt": 1791919102259,
+    "updatedAt": 1791919102259
+  },
+  {
+    "id": "inq_sample_1",
+    "name": "Anand Verma",
+    "email": "anand.verma@example.com",
+    "phone": "+91 98765 43210",
+    "company": "Verma Textiles",
+    "city": "Ludhiana",
+    "subject": "Factory Rooftop Solar Audit",
+    "message": "We want to install a 50kW solar system on our hosiery factory roof. Please call to schedule an energy audit.",
+    "inquiryType": "industry",
+    "sourcePage": "/contact",
+    "formData": {
+      "roofType": "Tin Shed",
+      "monthlyBill": "₹1,20,000"
+    },
+    "status": "new",
+    "createdAt": 1791746302256,
+    "updatedAt": 1791746302256
+  },
+  {
+    "id": "inq_sample_2",
+    "name": "Pooja Patel",
+    "email": "pooja.patel@example.com",
+    "phone": "+91 98250 12345",
+    "city": "Surat",
+    "message": "Interested in a 5kW on-grid rooftop system for 3BHK bungalow.",
+    "inquiryType": "home",
+    "sourcePage": "/",
+    "formData": {
+      "name": "Pooja Patel",
+      "phone": "+91 98250 12345"
+    },
+    "calculatorData": {
+      "capacityKW": 5,
+      "monthlyBill": 6000,
+      "monthlySavingsRs": 5200
+    },
+    "status": "contacted",
+    "createdAt": 1791573502256,
+    "updatedAt": 1791659902256
+  }
+]

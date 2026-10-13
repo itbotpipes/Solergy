@@ -20,10 +20,10 @@ export default async function InquiryDetailPage({
   return (
     <div>
       <div style={{ marginBottom: "24px" }}>
-        <h1 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#ffffff" }}>
+        <h1 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#0f172a" }}>
           Inquiry: {inquiry.name || inquiry.id}
         </h1>
-        <p style={{ fontSize: "0.875rem", color: "#94a3b8" }}>
+        <p style={{ fontSize: "0.875rem", color: "#64748b" }}>
           Manage customer correspondence, view submitted payload, and log internal notes.
         </p>
       </div>
