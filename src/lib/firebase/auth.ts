@@ -15,7 +15,7 @@ export async function verifyAdminSession(): Promise<AdminSession | null> {
   if (sessionToken.startsWith('dev_session_')) {
     return {
       uid: 'dev-admin-uid',
-      email: 'admin@solergyindia.com',
+      email: process.env.ADMIN_EMAIL || 'admin@solergy.com',
       role: 'super_admin',
     };
   }
