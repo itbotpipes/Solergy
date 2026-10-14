@@ -20,44 +20,70 @@ export default function AboutTeam() {
 
   return (
     <section
-      className={`${styles.team} ${reveal.sectionReveal} ${
-        visible ? reveal.sectionVisible : ''
-      }`}
+      className={`${styles.team} ${reveal.sectionReveal} ${visible ? reveal.sectionVisible : ''
+        }`}
       ref={sectionRef}
     >
       <div className={styles.inner}>
-        <h2 className={styles.heading}>
-          The Person
-          <span className={styles.highlight}> Behind the Power.</span>
-        </h2>
-        <p className={styles.subheading}>
-          Good solar systems need good engineering. Good businesses need
-          someone who&apos;s put in the years to understand both the technical
-          side and the people side. Solergy is built and led by one person
-          who&apos;s done exactly that.
-        </p>
+        <div className={styles.gridContainer}>
+          {/* Left Column: Founder Card */}
+          <div className={styles.cardCol}>
+            <div
+              className={`${styles.cardReveal} ${visible ? styles.cardVisible : ''
+                }`}
+            >
+              <div className={`${styles.card} ${styles.founderCard}`}>
+                <div className={styles.photoContainer}>
+                  <img
+                    src={FOUNDER.photo}
+                    alt={FOUNDER.name}
+                    className={styles.photo}
+                  />
+                </div>
+                <h3 className={styles.name}>{FOUNDER.name}</h3>
+                <p className={styles.role}>{FOUNDER.role}</p>
+                <p className={styles.bio}>{FOUNDER.bio}</p>
+                <a
+                  href={FOUNDER.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.linkedinButton}
+                >
+                  Connect on LinkedIn &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
 
-        <div className={styles.founderWrap}>
-          <div
-            className={`${styles.cardReveal} ${visible ? styles.cardVisible : ''}`}
-          >
-            <div className={`${styles.card} ${styles.founderCard}`}>
-              <img
-                src={FOUNDER.photo}
-                alt={FOUNDER.name}
-                className={styles.photo}
-              />
-              <h3 className={styles.name}>{FOUNDER.name}</h3>
-              <p className={styles.role}>{FOUNDER.role}</p>
-              <p className={styles.bio}>{FOUNDER.bio}</p>
-              <a
-                href={FOUNDER.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.linkedinButton}
-              >
-                Connect on LinkedIn →
-              </a>
+          {/* Right Column: Heading, Paragraph & Highlights */}
+          <div className={styles.contentCol}>
+
+            <h2 className={styles.heading}>
+              The Person
+              <span className={styles.highlight}> Behind the Power.</span>
+            </h2>
+            <p className={styles.subheading}>
+              Good solar systems need good engineering. Good businesses need
+              someone who&apos;s put in the years to understand both the technical
+              side and the people side. Solergy is built and led by one person
+              who&apos;s done exactly that.
+            </p>
+
+            <div className={styles.highlights}>
+              <div className={styles.highlightItem}>
+                <span className={styles.highlightDot} />
+                <div>
+                  <strong>Delhi Technological University (DTU)</strong>
+                  <p>Industrial engineering foundation applied to solar design</p>
+                </div>
+              </div>
+              <div className={styles.highlightItem}>
+                <span className={styles.highlightDot} />
+                <div>
+                  <strong>Founded in 2019</strong>
+                  <p>Full-lifecycle EPC rigor from initial site audit to commissioning</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

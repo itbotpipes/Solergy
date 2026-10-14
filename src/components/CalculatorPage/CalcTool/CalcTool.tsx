@@ -12,18 +12,10 @@ import reveal from '../../../styles/reveal.module.scss';
 const PROPERTY_TYPES = ['Residential', 'Commercial / Industrial'] as const;
 type PropertyType = (typeof PROPERTY_TYPES)[number];
 
-const CITIES = [
-  'Surat',
-  'Ahmedabad',
-  'Vadodara',
-  'Rajkot',
-  'Gandhinagar',
-  'Other city in Gujarat',
-];
 const PANEL_TILE_COUNT = 24;
 const BILL_RANGES: Record<PropertyType, { min: number; max: number; step: number }> = {
   Residential: { min: 500, max: 1000000, step: 1000 },
-  'Commercial / Industrial': { min: 500, max: 100000000, step: 100000 },
+  'Commercial / Industrial': { min: 50000, max: 100000000, step: 100000 },
 };
 
 const CALC_PROPERTY_TYPE: Record<PropertyType, string> = {
@@ -37,7 +29,7 @@ export default function CalcTool() {
 
   const [propertyType, setPropertyType] = useState<PropertyType>('Residential');
   const [monthlyBill, setMonthlyBill] = useState<number>(6000);
-  const [city, setCity] = useState<string>('Surat');
+  const [pincode, setPincode] = useState<string>('395007');
 
   const billRange = BILL_RANGES[propertyType];
 
@@ -61,9 +53,8 @@ export default function CalcTool() {
   return (
     <section
       id="calculator-tool"
-      className={`${styles.calculator} ${reveal.sectionReveal} ${
-        visible ? reveal.sectionVisible : ''
-      }`}
+      className={`${styles.calculator} ${reveal.sectionReveal} ${visible ? reveal.sectionVisible : ''
+        }`}
       ref={sectionRef}
     >
       <div className={styles.inner}>
@@ -86,9 +77,8 @@ export default function CalcTool() {
                     key={type}
                     type="button"
                     aria-pressed={propertyType === type}
-                    className={`${styles.segment} ${
-                      propertyType === type ? styles.segmentActive : ''
-                    }`}
+                    className={`${styles.segment} ${propertyType === type ? styles.segmentActive : ''
+                      }`}
                     onClick={() => handlePropertyTypeChange(type)}
                   >
                     {type}
@@ -122,21 +112,20 @@ export default function CalcTool() {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="city" className={styles.groupLabel}>
-                City
+              <label htmlFor="pincode" className={styles.groupLabel}>
+                Pincode
               </label>
-              <select
-                id="city"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                className={styles.select}
-              >
-                {CITIES.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
+              <input
+                id="pincode"
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                maxLength={6}
+                placeholder="Enter 6-digit Pincode (e.g. 395007)"
+                value={pincode}
+                onChange={(e) => setPincode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                className={styles.input}
+              />
             </div>
 
             <p className={styles.smallPrint}>
@@ -150,9 +139,8 @@ export default function CalcTool() {
               {Array.from({ length: PANEL_TILE_COUNT }).map((_, i) => (
                 <div
                   key={i}
-                  className={`${styles.panelTile} ${
-                    i < litTiles ? styles.panelTileLit : ''
-                  }`}
+                  className={`${styles.panelTile} ${i < litTiles ? styles.panelTileLit : ''
+                    }`}
                 />
               ))}
             </div>

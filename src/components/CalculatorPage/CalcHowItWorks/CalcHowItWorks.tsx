@@ -53,7 +53,7 @@ const STEPS = [
   {
     title: 'System Sizing',
     description:
-      'Based on your usage and average sunlight hours in your city, we estimate the solar system size needed to cover most of your bill.',
+      'Based on your usage and average sunlight hours in your location and pincode, we estimate the solar system size needed to cover most of your bill.',
     Icon: SizingIcon,
   },
   {

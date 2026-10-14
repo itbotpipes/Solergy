@@ -19,7 +19,10 @@ const INITIAL_VISIBLE_COUNT = 6;
 
 function ProjectCard({ project, highlighted }: { project: any; highlighted: boolean }) {
   return (
-    <div className={`${styles.card} ${highlighted ? styles.cardHighlight : ''}`}>
+    <Link
+      href={`/project/${project.id}`}
+      className={`${styles.card} ${highlighted ? styles.cardHighlight : ''}`}
+    >
       <div className={styles.thumb}>
         {typeof project.image === 'string' ? (
           <img src={project.image} alt={project.title} className={styles.thumbImage} />
@@ -36,12 +39,12 @@ function ProjectCard({ project, highlighted }: { project: any; highlighted: bool
         <p className={styles.description}>{project.description}</p>
         <div className={styles.bottomRow}>
           <div className={styles.location}>&#128205; {project.city}, {project.state || 'Gujarat'}</div>
-          <Link href={`/project/${project.id}`} className={styles.link}>
+          <span className={styles.link}>
             View Project &rarr;
-          </Link>
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

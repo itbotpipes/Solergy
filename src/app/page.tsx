@@ -34,7 +34,7 @@ export default async function HomePage() {
       <Projects initialProjects={projects} />
       <FAQ />
       <Testimonials />
-      <Tagline />
+      {/* <Tagline /> */}
       <Contact />
     </main>
   );

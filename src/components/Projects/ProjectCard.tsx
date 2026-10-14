@@ -51,7 +51,7 @@ export default function ProjectCard({
   date,
 }: ProjectCardProps) {
   return (
-    <div className={styles.card}>
+    <Link href={`/project/${id}`} className={styles.card}>
       <div className={styles.imageWrap}>
         {typeof image === 'string' ? (
           <img src={image} alt={title} className={styles.image} />
@@ -82,11 +82,11 @@ export default function ProjectCard({
             </span>
           </div>
 
-          <Link href={`/project/${id}`} className={styles.link}>
+          <span className={styles.link}>
             View Project &rarr;
-          </Link>
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
