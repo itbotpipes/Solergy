@@ -5,14 +5,15 @@ import styles from './ProjectsHero.module.scss';
 const STATS = [
   { value: '120+', label: 'Projects Completed' },
   { value: '20+ MW', label: 'Capacity Installed' },
-  { value: '6', label: 'Cities Served' },
+  { value: '6', label: 'States Served' },
 ];
 
 export interface ProjectsHeroProps {
+  onStateClick?: (state: string) => void;
   onCityClick?: (city: string) => void;
 }
 
-export default function ProjectsHero({ onCityClick }: ProjectsHeroProps) {
+export default function ProjectsHero({ onStateClick, onCityClick }: ProjectsHeroProps) {
   return (
     <section className={styles.hero}>
       <div className={styles.inner}>
@@ -34,7 +35,7 @@ export default function ProjectsHero({ onCityClick }: ProjectsHeroProps) {
         </div>
 
         <div className={styles.sceneWrap}>
-          <SolarPanelScene onCityClick={onCityClick} />
+          <SolarPanelScene onCityClick={onCityClick} onStateClick={onStateClick} />
         </div>
       </div>
 

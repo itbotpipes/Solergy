@@ -7,11 +7,7 @@ import reveal from '../../../styles/reveal.module.scss';
 
 const FOUNDER = {
   name: 'Maanveer Singh',
-  role: 'Founder, Solergy India',
-  bio: 'An industrial engineer by training (Delhi Technological University), Maanveer spent his early career in business development before founding Solergy India in 2019 to bring the same rigor to solar EPC — treating every installation as an engineering problem worth solving properly, not just a product to sell.',
-  photo:
-    'https://media.licdn.com/dms/image/v2/D4D03AQGHoz2vVzCR2Q/profile-displayphoto-shrink_400_400/B4DZVm2zH7G8Ak-/0/1741187396924?e=1792022400&v=beta&t=HM7Lk3b00l0pmh55tSNq4kix14B5FiSZi11uPq-55OY',
-  linkedin: 'https://www.linkedin.com/in/maanveer-singh-77b842109/',
+  photo: '/images/founder-placeholder.jpg',
 };
 
 export default function AboutTeam() {
@@ -20,44 +16,32 @@ export default function AboutTeam() {
 
   return (
     <section
-      className={`${styles.team} ${reveal.sectionReveal} ${visible ? reveal.sectionVisible : ''
-        }`}
+      className={`${styles.team} ${reveal.sectionReveal} ${
+        visible ? reveal.sectionVisible : ''
+      }`}
       ref={sectionRef}
     >
       <div className={styles.inner}>
         <div className={styles.gridContainer}>
-          {/* Left Column: Founder Card */}
-          <div className={styles.cardCol}>
+          {/* Left Column: Only Image */}
+          <div className={styles.imageCol}>
             <div
-              className={`${styles.cardReveal} ${visible ? styles.cardVisible : ''
-                }`}
+              className={`${styles.imageReveal} ${
+                visible ? styles.imageVisible : ''
+              }`}
             >
-              <div className={`${styles.card} ${styles.founderCard}`}>
-                <div className={styles.photoContainer}>
-                  <img
-                    src={FOUNDER.photo}
-                    alt={FOUNDER.name}
-                    className={styles.photo}
-                  />
-                </div>
-                <h3 className={styles.name}>{FOUNDER.name}</h3>
-                <p className={styles.role}>{FOUNDER.role}</p>
-                <p className={styles.bio}>{FOUNDER.bio}</p>
-                <a
-                  href={FOUNDER.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.linkedinButton}
-                >
-                  Connect on LinkedIn &rarr;
-                </a>
+              <div className={styles.imageFrame}>
+                <img
+                  src={FOUNDER.photo}
+                  alt={FOUNDER.name}
+                  className={styles.founderImage}
+                />
               </div>
             </div>
           </div>
 
-          {/* Right Column: Heading, Paragraph & Highlights */}
+          {/* Right Column: Heading, Paragraph & Highlights (as before) */}
           <div className={styles.contentCol}>
-
             <h2 className={styles.heading}>
               The Person
               <span className={styles.highlight}> Behind the Power.</span>

@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import styles from './SolarPanelScene.module.scss';
 
-const CITY_DATA = [
-  { city: 'Surat', count: 34 },
-  { city: 'Ahmedabad', count: 28 },
-  { city: 'Vadodara', count: 22 },
-  { city: 'Rajkot', count: 14 },
-  { city: 'Gandhinagar', count: 12 },
-  { city: 'Ankleshwar', count: 10 },
+const STATE_DATA = [
+  { state: 'Punjab', count: 38 },
+  { state: 'Gujarat', count: 32 },
+  { state: 'Haryana', count: 24 },
+  { state: 'Delhi NCR', count: 18 },
+  { state: 'Rajasthan', count: 14 },
+  { state: 'Madhya Pradesh', count: 12 },
 ];
 
 const COLS = 3;
@@ -20,14 +20,23 @@ const GAP = 6;
 const PANEL_PAD = 18;
 
 export interface SolarPanelSceneProps {
+  onStateClick?: (state: string) => void;
   onCityClick?: (city: string) => void;
 }
 
-export default function SolarPanelScene({ onCityClick }: SolarPanelSceneProps) {
+export default function SolarPanelScene({ onStateClick, onCityClick }: SolarPanelSceneProps) {
   const [hovered, setHovered] = useState<number | null>(null);
 
   const panelWidth = COLS * CELL_W + (COLS - 1) * GAP + PANEL_PAD * 2;
   const panelHeight = ROWS * CELL_H + (ROWS - 1) * GAP + PANEL_PAD * 2;
+
+  const handleClick = (state: string) => {
+    if (onStateClick) {
+      onStateClick(state);
+    } else if (onCityClick) {
+      onCityClick(state);
+    }
+  };
 
   return (
     <div className={styles.scene}>
@@ -43,7 +52,7 @@ export default function SolarPanelScene({ onCityClick }: SolarPanelSceneProps) {
           height={panelHeight - 8}
           rx="10"
         />
-        {CITY_DATA.map((entry, index) => {
+        {STATE_DATA.map((entry, index) => {
           const col = index % COLS;
           const row = Math.floor(index / COLS);
           const x = PANEL_PAD + col * (CELL_W + GAP);
@@ -52,11 +61,11 @@ export default function SolarPanelScene({ onCityClick }: SolarPanelSceneProps) {
 
           return (
             <g
-              key={entry.city}
+              key={entry.state}
               className={styles.cellGroup}
               onMouseEnter={() => setHovered(index)}
               onMouseLeave={() => setHovered(null)}
-              onClick={() => onCityClick?.(entry.city)}
+              onClick={() => handleClick(entry.state)}
             >
               <rect
                 className={`${styles.cell} ${isHovered ? styles.cellHovered : ''}`}
@@ -118,9 +127,9 @@ export default function SolarPanelScene({ onCityClick }: SolarPanelSceneProps) {
             }%`,
           }}
         >
-          <span className={styles.tooltipCity}>{CITY_DATA[hovered]!.city}</span>
+          <span className={styles.tooltipCity}>{STATE_DATA[hovered]!.state}</span>
           <span className={styles.tooltipCount}>
-            {CITY_DATA[hovered]!.count} installations
+            {STATE_DATA[hovered]!.count} installations
           </span>
         </div>
       )}
