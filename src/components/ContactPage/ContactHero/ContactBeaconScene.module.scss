@@ -1,155 +1,170 @@
 @use "../../../styles/variables" as *;
 
-.scene {
+.sceneContainer {
   width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
+  max-width: 330px;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 290px;
+  }
 }
 
 .beaconSvg {
   width: 100%;
   height: auto;
+  max-height: 330px;
   overflow: visible;
 }
 
-.groundLine {
-  stroke: $color-border;
-  stroke-width: 1.4;
+// 1. Sun gentle pulse
+.sunPulse {
+  animation: sunGlowAnim 4s ease-in-out infinite alternate;
 }
 
-.pole {
-  stroke: $color-text-dark;
-  stroke-width: 2;
-  stroke-linecap: round;
-}
-
-.poleFoot {
-  fill: none;
-  stroke: $color-text-dark;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.wire {
-  fill: none;
-  stroke: $color-primary;
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-dasharray: 3 4;
-  opacity: 0.7;
-}
-
-.panelFrame {
-  fill: #fdece0;
-  stroke: $color-text-dark;
-  stroke-width: 1.6;
-}
-
-.panelLine {
-  stroke: $color-primary;
-  stroke-width: 1.4;
-}
-
-.ring path {
-  fill: none;
-  stroke: $color-primary;
-  stroke-width: 2.2;
-  stroke-linecap: round;
-}
-
-.ring {
-  opacity: 0;
-  animation: ringBroadcast 2.4s ease-out infinite;
-  transform-origin: center;
-}
-
-@keyframes ringBroadcast {
+@keyframes sunGlowAnim {
   0% {
-    opacity: 0;
-    transform: scale(0.85) translateY(4px);
-  }
-  15% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 0.25;
+    transform: translate(80px, 72px) scale(0.97);
   }
   100% {
-    opacity: 0;
-    transform: scale(1.08) translateY(-4px);
+    transform: translate(80px, 72px) scale(1.03);
   }
+}
+
+// 2. Beacon glowing core
+.beaconGlow {
+  animation: beaconPulse 2s ease-in-out infinite alternate;
 }
 
 .beaconCore {
-  fill: $color-primary;
+  animation: beaconCoreFlash 2.2s ease-in-out infinite alternate;
 }
 
-.sunRay {
-  stroke: $color-primary;
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  opacity: 0.6;
+@keyframes beaconPulse {
+  0% {
+    opacity: 0.15;
+    r: 12px;
+  }
+  100% {
+    opacity: 0.5;
+    r: 18px;
+  }
 }
 
-.sunCore {
+@keyframes beaconCoreFlash {
+  0% {
+    filter: drop-shadow(0 0 1px rgba(236, 77, 0, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 0 6px rgba(236, 77, 0, 0.85));
+  }
+}
+
+// 3. Emitting signal waves broadcasting outward
+.signalRing {
+  opacity: 0.85;
+  transform-origin: 0 0;
+}
+
+.signalRing path {
   fill: none;
   stroke: $color-primary;
-  stroke-width: 1.6;
-  opacity: 0.75;
+  stroke-width: 1.8px;
+  stroke-linecap: round;
+  transition: opacity 0.25s ease, stroke-width 0.25s ease;
 }
 
-.bubbleGroup {
-  animation: bubbleBob 3.2s ease-in-out infinite;
-  transform-origin: center;
+.ring1 {
+  animation: ringTransmit 2.2s cubic-bezier(0.25, 0.8, 0.4, 1) infinite;
+  animation-delay: 0s;
 }
 
-@keyframes bubbleBob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-.bubbleShape {
-  fill: $color-white;
-  stroke: $color-text-dark;
-  stroke-width: 1.8;
-  stroke-linejoin: round;
-}
-
-.bubbleDot {
-  fill: $color-primary;
-  animation: dotBlink 1.6s ease-in-out infinite;
-}
-
-.bubbleDot:nth-child(2) {
-  animation-delay: 0.15s;
-}
-.bubbleDot:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.bubbleDot:nth-child(4) {
+.ring2 {
+  animation: ringTransmit 2.2s cubic-bezier(0.25, 0.8, 0.4, 1) infinite;
   animation-delay: 0.45s;
 }
 
-@keyframes dotBlink {
-  0%,
+.ring3 {
+  animation: ringTransmit 2.2s cubic-bezier(0.25, 0.8, 0.4, 1) infinite;
+  animation-delay: 0.9s;
+}
+
+@keyframes ringTransmit {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.9) translateY(1px);
+  }
+  35% {
+    opacity: 1;
+    stroke-width: 2.2px;
+  }
+  70% {
+    opacity: 0.6;
+  }
   100% {
-    opacity: 0.35;
+    opacity: 0.25;
+    transform: scale(1.12) translateY(-4px);
+  }
+}
+
+// 4. Floating speech bubble
+.chatBubbleGroup {
+  animation: floatBubble 3.5s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translate(262px, 114px) translateY(0);
+  }
+  100% {
+    transform: translate(262px, 114px) translateY(-7px);
+  }
+}
+
+// 5. Typing dots animation
+.chatDot {
+  animation: chatDotBlink 1.5s ease-in-out infinite;
+}
+
+.dot1 {
+  animation-delay: 0s;
+}
+
+.dot2 {
+  animation-delay: 0.25s;
+}
+
+.dot3 {
+  animation-delay: 0.5s;
+}
+
+@keyframes chatDotBlink {
+  0%, 100% {
+    opacity: 0.25;
+    transform: translateY(0);
   }
   50% {
     opacity: 1;
+    transform: translateY(-2.5px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ring,
-  .bubbleGroup,
-  .bubbleDot {
+  .sunPulse,
+  .beaconGlow,
+  .beaconCore,
+  .ring1,
+  .ring2,
+  .ring3,
+  .ring4,
+  .chatBubbleGroup,
+  .chatDot {
     animation: none;
     opacity: 1;
   }

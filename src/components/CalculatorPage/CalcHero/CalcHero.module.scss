@@ -7,15 +7,16 @@
 }
 
 .inner {
-  max-width: $container-max-width;
+  max-width: 1250px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.95fr 1.15fr;
-  gap: 24px;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 32px;
   align-items: center;
 
   @media (max-width: $breakpoint-tablet) {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
 
@@ -66,6 +67,7 @@
 
 .imageWrap {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  width: 100%;
 }
