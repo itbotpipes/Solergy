@@ -29,33 +29,6 @@ const PROPERTY_CONFIG: Record<
   },
 };
 
-function SolarPanelIcon({
-  size = 20,
-  color = '#ec4d00',
-}: {
-  size?: number;
-  color?: string;
-}) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect x="3" y="4" width="18" height="13" rx="1.5" stroke={color} fill="none" strokeWidth="2" />
-      <line x1="3" y1="10.5" x2="21" y2="10.5" stroke={color} strokeWidth="1.5" />
-      <line x1="9" y1="4" x2="9" y2="17" stroke={color} strokeWidth="1.5" />
-      <line x1="15" y1="4" x2="15" y2="17" stroke={color} strokeWidth="1.5" />
-      <line x1="12" y1="17" x2="12" y2="20.5" stroke={color} strokeWidth="2" />
-      <line x1="8" y1="20.5" x2="16" y2="20.5" stroke={color} strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
 
 function RoofAreaIcon({
   size = 20,
@@ -170,7 +143,7 @@ export default function CalcHeroTeaser() {
         </div>
       </div>
 
-      {/* 3. Middle Section: House Illustration & 3 Metrics */}
+      {/* 3. Middle Section: House Illustration & 2 Metrics */}
       <div className={styles.middleGrid}>
         <div className={styles.illustrationWrap}>
           <SolarHouseIllustration
@@ -179,20 +152,7 @@ export default function CalcHeroTeaser() {
         </div>
 
         <div className={styles.metricsStack}>
-          {/* Row 1: Recommended System */}
-          <div className={styles.metricItem}>
-            <div className={styles.iconCircle}>
-              <SolarPanelIcon size={20} color="#ec4d00" />
-            </div>
-            <div className={styles.metricText}>
-              <span className={styles.metricLabel}>Recommended System</span>
-              <span className={styles.metricValue}>{estimate.capacityKW} kW</span>
-            </div>
-          </div>
-
-          <div className={styles.divider} />
-
-          {/* Row 2: Estimated Generation */}
+          {/* Row 1: Estimated Generation */}
           <div className={styles.metricItem}>
             <div className={styles.iconCircle}>
               <Zap size={20} color="#ec4d00" fill="#ec4d00" />
@@ -207,7 +167,7 @@ export default function CalcHeroTeaser() {
 
           <div className={styles.divider} />
 
-          {/* Row 3: Roof Area Needed */}
+          {/* Row 2: Roof Area Needed */}
           <div className={styles.metricItem}>
             <div className={styles.iconCircle}>
               <RoofAreaIcon size={20} color="#ec4d00" />
@@ -220,36 +180,6 @@ export default function CalcHeroTeaser() {
         </div>
       </div>
 
-      {/* 4. Bottom Dark Stats Banner */}
-      <div className={styles.darkBanner}>
-        <div className={styles.bannerStat}>
-          <span className={styles.bannerLabel}>Monthly Savings</span>
-          <span className={`${styles.bannerValue} ${styles.valOrange}`}>
-            {formatINR(estimate.monthlySavingsRs)}
-          </span>
-        </div>
-
-        <div className={styles.bannerStat}>
-          <span className={styles.bannerLabel}>Payback Period</span>
-          <span className={`${styles.bannerValue} ${styles.valWhite}`}>
-            {estimate.paybackYears} years
-          </span>
-        </div>
-
-        <div className={styles.bannerStat}>
-          <span className={styles.bannerLabel}>CO₂ Offset</span>
-          <span className={`${styles.bannerValue} ${styles.valWhite}`}>
-            {estimate.co2Tons} t/yr
-          </span>
-        </div>
-
-        <div className={styles.highlightBadge}>
-          <span className={styles.highlightBadgeLabel}>25-Year Savings</span>
-          <span className={styles.highlightBadgeValue}>
-            {estimate.formatted25YrSavings}
-          </span>
-        </div>
-      </div>
 
       {/* 5. CTA Button */}
       <div className={styles.ctaWrap}>

@@ -2,24 +2,24 @@
 
 .sceneContainer {
   width: 100%;
-  max-width: 330px;
+  max-width: 440px;
   margin-left: auto;
+  margin-right: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 
   @media (max-width: $breakpoint-tablet) {
-    margin: 0 auto;
-    justify-content: center;
-    max-width: 290px;
+    max-width: 320px;
   }
 }
 
 .beaconSvg {
   width: 100%;
   height: auto;
-  max-height: 330px;
+  max-height: 440px;
   overflow: visible;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.04));
 }
 
 // 1. Sun gentle pulse
@@ -112,59 +112,13 @@
   }
 }
 
-// 4. Floating speech bubble
-.chatBubbleGroup {
-  animation: floatBubble 3.5s ease-in-out infinite alternate;
-  transform-origin: center;
-}
-
-@keyframes floatBubble {
-  0% {
-    transform: translate(262px, 114px) translateY(0);
-  }
-  100% {
-    transform: translate(262px, 114px) translateY(-7px);
-  }
-}
-
-// 5. Typing dots animation
-.chatDot {
-  animation: chatDotBlink 1.5s ease-in-out infinite;
-}
-
-.dot1 {
-  animation-delay: 0s;
-}
-
-.dot2 {
-  animation-delay: 0.25s;
-}
-
-.dot3 {
-  animation-delay: 0.5s;
-}
-
-@keyframes chatDotBlink {
-  0%, 100% {
-    opacity: 0.25;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-2.5px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .sunPulse,
   .beaconGlow,
   .beaconCore,
   .ring1,
   .ring2,
-  .ring3,
-  .ring4,
-  .chatBubbleGroup,
-  .chatDot {
+  .ring3 {
     animation: none;
     opacity: 1;
   }

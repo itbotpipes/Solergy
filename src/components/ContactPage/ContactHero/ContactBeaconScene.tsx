@@ -8,7 +8,7 @@ export default function ContactBeaconScene() {
     <div className={styles.sceneContainer}>
       <svg
         className={styles.beaconSvg}
-        viewBox="0 0 360 400"
+        viewBox="45 40 250 335"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="xMidYMid meet"
@@ -153,24 +153,6 @@ export default function ContactBeaconScene() {
           <circle cx="0" cy="0" r="12" fill="#ec4d00" fillOpacity="0.22" className={styles.beaconGlow} />
           <circle cx="0" cy="0" r="6.5" fill="#ec4d00" className={styles.beaconCore} />
           <circle cx="0" cy="0" r="2.8" fill="#ffffff" />
-        </g>
-
-        {/* 6. Active Chat / Support Speech Bubble (Top Right) */}
-        <g id="chat-bubble" className={styles.chatBubbleGroup} transform="translate(262, 114)">
-          {/* Drop shadow */}
-          <rect x="-42" y="-22" width="90" height="46" rx="14" fill="#cbd5e1" fillOpacity="0.4" />
-          {/* Main Bubble */}
-          <path
-            d="M -44 -25 H 44 C 51.5 -25 58 -18.5 58 -11 V 11 C 58 18.5 51.5 25 44 25 H -14 L -28 36 V 25 H -44 C -51.5 25 -58 18.5 -58 11 V -11 C -58 -18.5 -51.5 -25 -44 -25 Z"
-            fill="#ffffff"
-            stroke="#1e293b"
-            strokeWidth="2.2"
-            strokeLinejoin="round"
-          />
-          {/* Animated Typing Dots */}
-          <circle className={`${styles.chatDot} ${styles.dot1}`} cx="-18" cy="1" r="4.2" fill="#ec4d00" />
-          <circle className={`${styles.chatDot} ${styles.dot2}`} cx="0" cy="1" r="4.2" fill="#ec4d00" />
-          <circle className={`${styles.chatDot} ${styles.dot3}`} cx="18" cy="1" r="4.2" fill="#ec4d00" />
         </g>
       </svg>
     </div>
