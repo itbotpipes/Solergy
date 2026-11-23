@@ -83,8 +83,7 @@ export default function ProjectDetailSolution({ project }: ProjectDetailSolution
 
             <span className={styles.pill}>
               <span className={styles.pillDot} />
-              {project.systemType} &middot; {project.size} &middot;{" "}
-              {installation}
+              {project.badge || `${project.systemType} · ${project.size} · ${installation}`}
             </span>
           </div>
 

@@ -17,6 +17,8 @@ export default function Projects({ initialProjects }: ProjectsProps) {
     allProjects.find((project: any) => project.id === id)
   ).filter(Boolean) as any[];
 
+  const displayProjects = featuredProjects.length > 0 ? featuredProjects : allProjects.slice(0, 3);
+
   const gridRef = useRef<HTMLDivElement>(null);
   const visible = useInView(gridRef);
   const sectionRef = useRef<HTMLElement>(null);
@@ -36,7 +38,7 @@ export default function Projects({ initialProjects }: ProjectsProps) {
         </h2>
 
         <div className={styles.grid} ref={gridRef}>
-          {featuredProjects.map((project, index) => (
+          {displayProjects.map((project, index) => (
             <div
               key={project.id}
               className={`${styles.cardReveal} ${visible ? styles.cardVisible : ''}`}
@@ -47,7 +49,7 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                 image={project.image}
                 category={project.category}
                 title={project.title}
-                location={`${project.city}, Gujarat`}
+                location={`${project.city}${project.state ? `, ${project.state}` : ''}`}
                 power={`${project.size} Solar`}
                 date={project.date}
               />

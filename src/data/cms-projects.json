@@ -1,65 +1,978 @@
 [
   {
-    "id": "res-janpath-ludhiana",
-    "title": "Janpath Rooftop System",
-    "category": "Residential",
-    "city": "Ludhiana",
-    "state": "Punjab",
-    "size": "60 kW",
+    "id": "ci-indore-ralson-tyres",
+    "title": "Ralson Solar Plant",
+    "category": "Industrial",
+    "city": "Indore",
+    "state": "Madhya Pradesh",
+    "size": "4.2 MW",
     "date": "February 2025",
     "systemType": "On-Grid Solar",
-    "image": "/images/projects/why-solergy-house.jpg",
+    "badge": "On-Grid Solar · 4.2 MW · Rooftop",
+    "image": "/images/projects/service1.jpg",
     "gallery": [
-      "/images/projects/why-solergy-house.jpg",
       "/images/projects/service1.jpg",
-      "/images/projects/hero-house.png",
       "/images/projects/service2.jpg",
-      "/images/projects/service3.jpg"
+      "/images/projects/service3.jpg",
+      "/images/projects/why-solergy-house.jpg",
+      "/images/projects/hero-house.png",
+      "/images/projects/hero-house-new.webp"
     ],
-    "description": "A large on-grid rooftop system covering a sizeable share of this Janpath household's daytime electricity needs.",
+    "galleryAlts": [
+      "Aerial view of the 4.2 MW solar plant installed for Ralson in Indore",
+      "Rows of solar panels at the Ralson facility, Indore",
+      "String inverters at the Ralson solar plant",
+      "Solergy team installing mounting structures and panels",
+      "Close-up of Mono PERC solar panels, Ralson plant",
+      "Completed 4.2 MW solar installation, Indore"
+    ],
+    "description": "A 4.2 MW on-grid solar system built to cut one of an industrial facility’s biggest recurring costs, electricity, and turn available space into long-term clean power.",
+    "seo": {
+      "title": "Ralson 4.2 MW Solar Plant, Indore | Solergy India",
+      "description": "See how Solergy India designed and installed a 4.2 MW solar plant for Ralson in Indore, built to cut industrial electricity costs and generate clean energy."
+    },
+    "overview": {
+      "heading": "4.2 Megawatts Built to Carry a Big Load.",
+      "paragraphs": [
+        "Ralson’s Indore facility runs a heavy daytime electricity load, which is exactly when solar produces the most. The opportunity to offset it at scale was clear.",
+        "Solergy studied the facility’s consumption pattern and the area available for panels before sizing a system to match the actual load, not just the available space.",
+        "The result was a 4.2 MW on-grid solar system built to carry a large share of the facility’s daytime demand."
+      ]
+    },
+    "challenge": {
+      "heading": "A Heavy Load Needed a Heavy-Duty Plan.",
+      "intro": [
+        "At this scale, a modest system wouldn’t move the needle. The facility needed solar sized to match real industrial consumption.",
+        "The installation also had to be planned so that work on site didn’t get in the way of work on the floor."
+      ],
+      "points": [
+        {
+          "title": "High Daytime Load",
+          "description": "A heavy daytime draw meant the system had to be large enough to offset a meaningful share of it."
+        },
+        {
+          "title": "Rising Energy Costs",
+          "description": "Grid tariffs keep climbing, making long-term cost planning harder for a power-hungry facility."
+        },
+        {
+          "title": "Work That Couldn’t Stop",
+          "description": "Installation across a large area had to be sequenced so day-to-day operations kept running."
+        }
+      ]
+    },
+    "solution": {
+      "heading": "4.2 MW. Sized for the Real Load.",
+      "intro": [
+        "Solergy designed a 4.2 MW on-grid solar system matched to the facility’s actual daytime consumption.",
+        "Our team handled layout, procurement, installation, electrical integration, testing, and grid-connection approvals end to end."
+      ],
+      "points": [
+        {
+          "title": "Daytime Generation",
+          "description": "Designed to offset a large share of the facility’s daytime electricity consumption."
+        },
+        {
+          "title": "Efficient Plant Layout",
+          "description": "Panels were laid out to make the most of the available area and sun exposure."
+        },
+        {
+          "title": "Long-Term Performance",
+          "description": "Components selected for reliable, low-maintenance operation over the long term."
+        }
+      ]
+    },
+    "glance": [
+      {
+        "label": "System Capacity",
+        "value": "4.2 MW"
+      },
+      {
+        "label": "System Type",
+        "value": "On-Grid"
+      },
+      {
+        "label": "Installation",
+        "value": "Rooftop"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~63,00,000 kWh"
+      },
+      {
+        "label": "Annual Savings",
+        "value": "~₹4.41 Crore"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~3.8 Years"
+      },
+      {
+        "label": "System Life",
+        "value": "25+ Years"
+      }
+    ],
     "story": [
-      "This household in Janpath, Ludhiana had a spacious rooftop and a steadily rising electricity bill driven by a large daytime load. They wanted a system substantial enough to make a real dent in that bill, without an overly complex installation.",
-      "We designed a 60 kW on-grid array across the available roof area, sequencing the installation to keep disruption to a minimum.",
-      "The system now covers a significant share of the household's daytime consumption, with savings visible from the very first billing cycle."
+      "Ralson’s Indore facility had a heavy daytime load and an electricity bill that kept climbing with it. They wanted a system big enough to make a real dent in that bill, delivered without slowing down operations.",
+      "We designed a 4.2 MW on-grid plant across the available area, sequencing the installation to keep disruption to a minimum.",
+      "The system now covers a significant share of the facility’s daytime consumption, with savings visible from the very first billing cycle."
     ],
     "specs": [
       {
         "label": "System Size",
-        "value": "60 kW"
+        "value": "4.2 MW"
       },
       {
         "label": "Panels Installed",
-        "value": "135 x 445W Mono PERC"
+        "value": "~7,640 × 550 Wp Mono PERC"
       },
       {
         "label": "Inverter",
-        "value": "60 kW Three-Phase String Inverter"
+        "value": "42 × 100 kW String Inverters"
       },
       {
         "label": "Annual Generation",
-        "value": "~90,000 units"
+        "value": "~63,00,000 units"
       },
       {
         "label": "Monthly Bill Savings",
-        "value": "Up to ₹63,750"
+        "value": "Up to ₹36.75 Lakhs"
       },
       {
         "label": "Estimated Payback",
-        "value": "~4.3 years"
+        "value": "~3.8 years"
       }
     ],
-    "overview": {
-      "heading": "A Rooftop Built to Carry a Big Load.",
+    "impact": {
       "paragraphs": [
-        "This Janpath household had a large rooftop and an equally large daytime electricity load. The opportunity to offset it meaningfully was clear.",
-        "Solergy studied the household's usage pattern and available roof area before sizing a system to match the actual load — not just the available space.",
-        "The result was a 60 kW rooftop solar system built to carry a large share of the home's daytime demand."
+        "The completed system now generates approximately 63,00,000 kWh of clean electricity every year, helping Ralson reduce its dependence on conventional grid power.",
+        "With an estimated annual saving of around ₹4.41 Crore, the installation is expected to recover its initial investment in approximately 3.8 years.",
+        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping electricity costs under control."
+      ],
+      "cumulativeSavings": "~₹93 Cr+ over 25 years",
+      "paybackYear": 3.8,
+      "stats": [
+        {
+          "label": "Estimated clean energy generated every year",
+          "value": "~63,00,000 kWh"
+        },
+        {
+          "label": "Estimated annual electricity savings",
+          "value": "~₹4.41 Crore"
+        },
+        {
+          "label": "Estimated investment payback period",
+          "value": "~3.8 Years"
+        },
+        {
+          "label": "Expected useful system life",
+          "value": "25+ Years"
+        }
+      ]
+    },
+    "chartValues": {
+      "annualSavings": 441,
+      "systemCost": 1680
+    },
+    "testimonialIndex": 0,
+    "testimonial": {
+      "quote": "Solergy sized the system around our actual load, not just the space we had. The installation was well planned, work on the floor carried on as usual, and the savings showed up from the first bill.",
+      "name": "Management Team, Ralson",
+      "role": "Indore, Madhya Pradesh"
+    },
+    "otherProjectIds": [
+      "ci-ludhiana-garg-acrylics",
+      "ci-sonipat-bonn-nutrients",
+      "ci-bhopal-deepak-fasteners"
+    ]
+  },
+  {
+    "id": "ci-dharwad-shakunt-enterprises",
+    "title": "Shakunt Enterprises Solar Plant",
+    "category": "Industrial",
+    "city": "Dharwad",
+    "state": "Karnataka",
+    "size": "1.4 MW",
+    "date": "January 2025",
+    "systemType": "On-Grid Solar",
+    "badge": "On-Grid Solar · 1.4 MW · Rooftop",
+    "image": "/images/projects/service2.jpg",
+    "gallery": [
+      "/images/projects/service2.jpg",
+      "/images/projects/service1.jpg",
+      "/images/projects/service3.jpg",
+      "/images/projects/why-solergy-house.jpg",
+      "/images/projects/hero-house.png",
+      "/images/projects/hero-house-new.webp"
+    ],
+    "galleryAlts": [
+      "Aerial view of the 1.4 MW solar plant installed for Shakunt Enterprises in Dharwad",
+      "Rows of solar panels at the Shakunt Enterprises facility, Dharwad",
+      "String inverters at the Shakunt Enterprises solar plant",
+      "Solergy team installing mounting structures and panels",
+      "Close-up of Mono PERC solar panels, Shakunt Enterprises plant",
+      "Completed 1.4 MW solar installation, Dharwad"
+    ],
+    "description": "A 1.4 MW on-grid solar system built to bring down daytime power costs and put the facility’s available space to work generating clean energy.",
+    "seo": {
+      "title": "Shakunt Enterprises 1.4 MW Solar Plant | Solergy India",
+      "description": "See how Solergy India designed and installed a 1.4 MW solar plant for Shakunt Enterprises, built to cut industrial electricity costs and generate clean energy."
+    },
+    "overview": {
+      "heading": "1.4 Megawatts of Daytime Power, Right Where It’s Used.",
+      "paragraphs": [
+        "Shakunt Enterprises runs a steady daytime electricity load, and with it a power bill that rises every time tariffs do. Solar was a natural fit.",
+        "Solergy studied the facility’s usage and available area before designing a system around what the business actually consumes.",
+        "The result is a 1.4 MW on-grid solar system built to cover a meaningful share of the facility’s daytime demand."
       ]
     },
     "challenge": {
-      "heading": "A Big Bill Needed a Big Enough System.",
+      "heading": "A Rising Power Bill Needed a Practical Answer.",
       "intro": [
-        "A large daytime load meant a modest system wouldn't move the needle — the household needed a system sized to match real consumption.",
+        "For a facility running through the day, electricity is a cost that never switches off, and tariffs only move in one direction.",
+        "The fix had to be sized to the real load and installed without getting in the way of production."
+      ],
+      "points": [
+        {
+          "title": "Steady Daytime Consumption",
+          "description": "Power use through the day lines up well with solar generation hours, if the system is sized right."
+        },
+        {
+          "title": "Rising Tariffs",
+          "description": "Increasing grid costs made long-term budgeting harder."
+        },
+        {
+          "title": "Installation Around Operations",
+          "description": "Work had to be planned so production carried on as normal."
+        }
+      ]
+    },
+    "solution": {
+      "heading": "1.4 MW. Designed Around the Facility.",
+      "intro": [
+        "Solergy designed a 1.4 MW on-grid solar system based on the facility’s actual consumption and site conditions.",
+        "Our team handled layout, procurement, installation, electrical integration, testing, and grid-connection approvals, one team from first calculation to final connection."
+      ],
+      "points": [
+        {
+          "title": "Daytime Generation",
+          "description": "Sized to offset a significant share of daytime electricity use."
+        },
+        {
+          "title": "Efficient Use of Space",
+          "description": "The available area was planned carefully to fit as much generation as it sensibly could."
+        },
+        {
+          "title": "Long-Term Performance",
+          "description": "Reliable, low-maintenance components chosen for decades of operation."
+        }
+      ]
+    },
+    "glance": [
+      {
+        "label": "System Capacity",
+        "value": "1.4 MW"
+      },
+      {
+        "label": "System Type",
+        "value": "On-Grid"
+      },
+      {
+        "label": "Installation",
+        "value": "Rooftop"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~21,00,000 kWh"
+      },
+      {
+        "label": "Annual Savings",
+        "value": "~₹1.47 Crore"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~3.8 Years"
+      },
+      {
+        "label": "System Life",
+        "value": "25+ Years"
+      }
+    ],
+    "story": [
+      "Shakunt Enterprises wanted to take a real bite out of a steadily rising power bill without disturbing day-to-day work.",
+      "We designed a 1.4 MW on-grid system around the facility’s consumption pattern and the area available, and sequenced the installation to keep disruption to a minimum.",
+      "The system now covers a meaningful share of daytime consumption, with savings visible from the first billing cycle."
+    ],
+    "specs": [
+      {
+        "label": "System Size",
+        "value": "1.4 MW"
+      },
+      {
+        "label": "Panels Installed",
+        "value": "~2,545 × 550 Wp Mono PERC"
+      },
+      {
+        "label": "Inverter",
+        "value": "14 × 100 kW String Inverters"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~21,00,000 units"
+      },
+      {
+        "label": "Monthly Bill Savings",
+        "value": "Up to ₹12.25 Lakhs"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~3.8 years"
+      }
+    ],
+    "impact": {
+      "paragraphs": [
+        "The completed system now generates approximately 21,00,000 kWh of clean electricity every year, helping Shakunt Enterprises reduce its dependence on conventional grid power.",
+        "With an estimated annual saving of around ₹1.47 Crore, the installation is expected to recover its initial investment in approximately 3.8 years.",
+        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping electricity costs under control."
+      ],
+      "cumulativeSavings": "~₹31 Cr+ over 25 years",
+      "paybackYear": 3.8,
+      "stats": [
+        {
+          "label": "Estimated clean energy generated every year",
+          "value": "~21,00,000 kWh"
+        },
+        {
+          "label": "Estimated annual electricity savings",
+          "value": "~₹1.47 Crore"
+        },
+        {
+          "label": "Estimated investment payback period",
+          "value": "~3.8 Years"
+        },
+        {
+          "label": "Expected useful system life",
+          "value": "25+ Years"
+        }
+      ]
+    },
+    "chartValues": {
+      "annualSavings": 147,
+      "systemCost": 560
+    },
+    "testimonialIndex": 0,
+    "testimonial": {
+      "quote": "The team sized the system around how we actually use power, and the installation didn’t disrupt production. We’ve seen the difference in our bills from the start.",
+      "name": "Management Team, Shakunt Enterprises",
+      "role": "Dharwad, Karnataka"
+    },
+    "otherProjectIds": [
+      "ci-indore-ralson-tyres",
+      "ci-ludhiana-garg-acrylics",
+      "ci-sonipat-bonn-nutrients"
+    ]
+  },
+  {
+    "id": "ci-ludhiana-garg-acrylics",
+    "title": "Garg Acrylics Solar Plant",
+    "category": "Industrial",
+    "city": "Ludhiana",
+    "state": "Punjab",
+    "size": "8.5 MW",
+    "date": "March 2025",
+    "systemType": "On-Grid Solar",
+    "badge": "On-Grid Solar · 8.5 MW",
+    "image": "/images/projects/service3.jpg",
+    "gallery": [
+      "/images/projects/service3.jpg",
+      "/images/projects/service1.jpg",
+      "/images/projects/service2.jpg",
+      "/images/projects/why-solergy-house.jpg",
+      "/images/projects/hero-house.png",
+      "/images/projects/hero-house-new.webp"
+    ],
+    "galleryAlts": [
+      "Aerial view of the 8.5 MW solar plant installed for Garg Acrylics in Punjab",
+      "Rows of solar panels at the Garg Acrylics facility, Punjab",
+      "String inverters at the Garg Acrylics solar plant",
+      "Solergy team installing mounting structures and panels",
+      "Close-up of Mono PERC solar panels, Garg Acrylics plant",
+      "Completed 8.5 MW solar installation, Punjab"
+    ],
+    "description": "An 8.5 MW on-grid solar plant built at a scale that makes a real difference to industrial power costs.",
+    "seo": {
+      "title": "Garg Acrylics 8.5 MW Solar Plant, Punjab | Solergy India",
+      "description": "See how Solergy India designed and installed an 8.5 MW solar plant for Garg Acrylics in Punjab, built to cut industrial electricity costs at scale."
+    },
+    "overview": {
+      "heading": "8.5 Megawatts. One Serious Solar Plant.",
+      "paragraphs": [
+        "Garg Acrylics’ Punjab facility has an industrial-scale appetite for electricity, and a solar opportunity to match.",
+        "Solergy studied the facility’s consumption and the space available before designing a plant sized to the real load, not just the area on offer.",
+        "The result is an 8.5 MW on-grid solar plant built to carry a large share of the facility’s daytime demand."
+      ]
+    },
+    "challenge": {
+      "heading": "Big Power Needs Don’t Come in Small Systems.",
+      "intro": [
+        "At 8.5 MW, every decision carried real weight: layout, sequencing, electrical design.",
+        "The plant had to deliver meaningful savings at scale while the facility kept running."
+      ],
+      "points": [
+        {
+          "title": "Industrial-Scale Demand",
+          "description": "A heavy daytime load called for a plant large enough to make a genuine dent in power costs."
+        },
+        {
+          "title": "Large-Scale Execution",
+          "description": "Coordinating procurement, installation, and electrical work on a project this size took careful planning."
+        },
+        {
+          "title": "Keeping Operations Running",
+          "description": "Installation had to be sequenced around day-to-day operations."
+        }
+      ]
+    },
+    "solution": {
+      "heading": "8.5 MW. Engineered at Scale.",
+      "intro": [
+        "Solergy designed an 8.5 MW on-grid solar plant matched to the facility’s actual daytime consumption.",
+        "Our team handled layout, procurement, installation, electrical integration, testing, and grid-connection approvals end to end."
+      ],
+      "points": [
+        {
+          "title": "Daytime Generation",
+          "description": "Sized to offset a large share of the facility’s daytime consumption."
+        },
+        {
+          "title": "Scalable Engineering",
+          "description": "Layout and electrical design planned to perform reliably at this scale."
+        },
+        {
+          "title": "Long-Term Performance",
+          "description": "Components selected for reliable, low-maintenance operation over the long term."
+        }
+      ]
+    },
+    "glance": [
+      {
+        "label": "System Capacity",
+        "value": "8.5 MW"
+      },
+      {
+        "label": "System Type",
+        "value": "On-Grid"
+      },
+      {
+        "label": "Installation",
+        "value": "Rooftop / Ground"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~1,27,50,000 kWh"
+      },
+      {
+        "label": "Annual Savings",
+        "value": "~₹8.93 Crore"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~3.8 Years"
+      },
+      {
+        "label": "System Life",
+        "value": "25+ Years"
+      }
+    ],
+    "story": [
+      "Garg Acrylics wanted solar at a scale that would genuinely move its power bill, not a token installation.",
+      "We designed an 8.5 MW on-grid plant around the facility’s consumption and available area, sequencing the build to keep disruption to a minimum.",
+      "The plant now covers a large share of daytime consumption, with savings visible from the first billing cycle."
+    ],
+    "specs": [
+      {
+        "label": "System Size",
+        "value": "8.5 MW"
+      },
+      {
+        "label": "Panels Installed",
+        "value": "~15,455 × 550 Wp Mono PERC"
+      },
+      {
+        "label": "Inverter",
+        "value": "85 × 100 kW String Inverters"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~1,27,50,000 units"
+      },
+      {
+        "label": "Monthly Bill Savings",
+        "value": "Up to ₹74.4 Lakhs"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~3.8 years"
+      }
+    ],
+    "impact": {
+      "paragraphs": [
+        "The completed plant now generates approximately 1,27,50,000 kWh of clean electricity every year, helping Garg Acrylics reduce its dependence on conventional grid power.",
+        "With an estimated annual saving of around ₹8.93 Crore, the installation is expected to recover its initial investment in approximately 3.8 years.",
+        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping electricity costs under control."
+      ],
+      "cumulativeSavings": "~₹189 Cr+ over 25 years",
+      "paybackYear": 3.8,
+      "stats": [
+        {
+          "label": "Estimated clean energy generated every year",
+          "value": "~1,27,50,000 kWh"
+        },
+        {
+          "label": "Estimated annual electricity savings",
+          "value": "~₹8.93 Crore"
+        },
+        {
+          "label": "Estimated investment payback period",
+          "value": "~3.8 Years"
+        },
+        {
+          "label": "Expected useful system life",
+          "value": "25+ Years"
+        }
+      ]
+    },
+    "chartValues": {
+      "annualSavings": 892.5,
+      "systemCost": 3400
+    },
+    "testimonialIndex": 0,
+    "testimonial": {
+      "quote": "Delivering a project this size without disturbing operations took serious planning. Solergy managed it well from design to commissioning, and the savings are showing.",
+      "name": "Management Team, Garg Acrylics",
+      "role": "Ludhiana, Punjab"
+    },
+    "otherProjectIds": [
+      "ci-indore-ralson-tyres",
+      "ci-sonipat-bonn-nutrients",
+      "ci-bhopal-deepak-fasteners"
+    ]
+  },
+  {
+    "id": "ci-sonipat-bonn-nutrients",
+    "title": "Bonn Industries Solar Plant",
+    "category": "Industrial",
+    "city": "Sonipat",
+    "state": "Punjab / Haryana",
+    "size": "3 MW",
+    "date": "January 2025",
+    "systemType": "On-Grid Solar",
+    "badge": "On-Grid Solar · 3 MW · Rooftop",
+    "image": "/images/projects/why-solergy-house.jpg",
+    "gallery": [
+      "/images/projects/why-solergy-house.jpg",
+      "/images/projects/service1.jpg",
+      "/images/projects/service2.jpg",
+      "/images/projects/service3.jpg",
+      "/images/projects/hero-house.png",
+      "/images/projects/hero-house-new.webp"
+    ],
+    "galleryAlts": [
+      "Aerial view of the 3 MW solar plant installed for Bonn Industries in Punjab / Haryana",
+      "Rows of solar panels at the Bonn Industries facility, Punjab / Haryana",
+      "String inverters at the Bonn Industries solar plant",
+      "Solergy team installing mounting structures and panels",
+      "Close-up of Mono PERC solar panels, Bonn Industries plant",
+      "Completed 3 MW solar installation, Punjab / Haryana"
+    ],
+    "description": "A 3 MW on-grid solar plant built to bring down daytime power costs and put available space to work generating clean energy.",
+    "seo": {
+      "title": "Bonn Industries 3 MW Solar Plant | Solergy India",
+      "description": "See how Solergy India designed and installed a 3 MW solar plant for Bonn Industries in Punjab and Haryana, built to cut industrial electricity costs."
+    },
+    "overview": {
+      "heading": "3 Megawatts to Power a Busy Operation.",
+      "paragraphs": [
+        "Bonn Industries’ facility draws heavily on electricity through the working day, which is exactly when solar generates the most.",
+        "Solergy studied the usage pattern and the space available before sizing a system to the real load.",
+        "The result is a 3 MW on-grid solar plant built to carry a large share of daytime demand."
+      ]
+    },
+    "challenge": {
+      "heading": "Rising Tariffs Don’t Wait. Neither Did We.",
+      "intro": [
+        "Grid electricity gets more expensive every year, and a facility with a heavy daytime load feels it first.",
+        "The answer had to be big enough to matter, and installed without slowing the business down."
+      ],
+      "points": [
+        {
+          "title": "Heavy Daytime Load",
+          "description": "Large daytime consumption meant a modest system wouldn’t make a real difference."
+        },
+        {
+          "title": "Climbing Grid Costs",
+          "description": "Rising tariffs made power one of the hardest costs to plan around."
+        },
+        {
+          "title": "Minimal Downtime",
+          "description": "The installation had to be sequenced so operations kept running."
+        }
+      ]
+    },
+    "solution": {
+      "heading": "3 MW. Built Around the Daytime Load.",
+      "intro": [
+        "Solergy designed a 3 MW on-grid solar plant based on the facility’s actual consumption and site conditions.",
+        "From layout and procurement to installation, electrical integration, testing, and grid-connection approvals, one team handled it all."
+      ],
+      "points": [
+        {
+          "title": "Daytime Generation",
+          "description": "Sized to offset a large share of the facility’s daytime electricity use."
+        },
+        {
+          "title": "Smart Space Planning",
+          "description": "The available area was laid out to get the most from sun exposure."
+        },
+        {
+          "title": "Long-Term Performance",
+          "description": "Reliable, low-maintenance components chosen for the long haul."
+        }
+      ]
+    },
+    "glance": [
+      {
+        "label": "System Capacity",
+        "value": "3 MW"
+      },
+      {
+        "label": "System Type",
+        "value": "On-Grid"
+      },
+      {
+        "label": "Installation",
+        "value": "Rooftop"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~45,00,000 kWh"
+      },
+      {
+        "label": "Annual Savings",
+        "value": "~₹3.15 Crore"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~3.8 Years"
+      },
+      {
+        "label": "System Life",
+        "value": "25+ Years"
+      }
+    ],
+    "story": [
+      "Bonn Industries wanted a solar plant that would meaningfully cut a rising power bill without getting in the way of production.",
+      "We designed a 3 MW on-grid plant around the facility’s consumption pattern and available area, sequencing the installation to keep disruption to a minimum.",
+      "The plant now covers a large share of daytime consumption, with savings visible from the first billing cycle."
+    ],
+    "specs": [
+      {
+        "label": "System Size",
+        "value": "3 MW"
+      },
+      {
+        "label": "Panels Installed",
+        "value": "~5,455 × 550 Wp Mono PERC"
+      },
+      {
+        "label": "Inverter",
+        "value": "30 × 100 kW String Inverters"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~45,00,000 units"
+      },
+      {
+        "label": "Monthly Bill Savings",
+        "value": "Up to ₹26.25 Lakhs"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~3.8 years"
+      }
+    ],
+    "impact": {
+      "paragraphs": [
+        "The completed plant now generates approximately 45,00,000 kWh of clean electricity every year, helping Bonn Industries reduce its dependence on conventional grid power.",
+        "With an estimated annual saving of around ₹3.15 Crore, the installation is expected to recover its initial investment in approximately 3.8 years.",
+        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping electricity costs under control."
+      ],
+      "cumulativeSavings": "~₹66 Cr+ over 25 years",
+      "paybackYear": 3.8,
+      "stats": [
+        {
+          "label": "Estimated clean energy generated every year",
+          "value": "~45,00,000 kWh"
+        },
+        {
+          "label": "Estimated annual electricity savings",
+          "value": "~₹3.15 Crore"
+        },
+        {
+          "label": "Estimated investment payback period",
+          "value": "~3.8 Years"
+        },
+        {
+          "label": "Expected useful system life",
+          "value": "25+ Years"
+        }
+      ]
+    },
+    "chartValues": {
+      "annualSavings": 315,
+      "systemCost": 1200
+    },
+    "testimonialIndex": 0,
+    "testimonial": {
+      "quote": "Clear communication, a well-planned installation, and a system that’s performing as promised. Solergy took the guesswork out of going solar for us.",
+      "name": "Management Team, Bonn Industries",
+      "role": "Sonipat, Punjab / Haryana"
+    },
+    "otherProjectIds": [
+      "ci-indore-ralson-tyres",
+      "ci-ludhiana-garg-acrylics",
+      "ci-bhopal-deepak-fasteners"
+    ]
+  },
+  {
+    "id": "ci-bhopal-deepak-fasteners",
+    "title": "Deepak Fasteners Solar Plant",
+    "category": "Industrial",
+    "city": "Bhopal",
+    "state": "Madhya Pradesh",
+    "size": "2 MW",
+    "date": "December 2024",
+    "systemType": "On-Grid Solar",
+    "badge": "On-Grid Solar · 2 MW · Rooftop",
+    "image": "/images/projects/hero-house.png",
+    "gallery": [
+      "/images/projects/hero-house.png",
+      "/images/projects/service1.jpg",
+      "/images/projects/service2.jpg",
+      "/images/projects/service3.jpg",
+      "/images/projects/why-solergy-house.jpg",
+      "/images/projects/hero-house-new.webp"
+    ],
+    "galleryAlts": [
+      "Aerial view of the 2 MW solar plant installed for Deepak Fasteners in Bhopal",
+      "Rows of solar panels at the Deepak Fasteners facility, Bhopal",
+      "String inverters at the Deepak Fasteners solar plant",
+      "Solergy team installing mounting structures and panels",
+      "Close-up of Mono PERC solar panels, Deepak Fasteners plant",
+      "Completed 2 MW solar installation, Bhopal"
+    ],
+    "description": "A 2 MW on-grid solar system built to cut the facility’s daily running costs and turn available space into long-term clean power.",
+    "seo": {
+      "title": "Deepak Fasteners 2 MW Solar Plant, Bhopal | Solergy India",
+      "description": "See how Solergy India designed and installed a 2 MW solar plant for Deepak Fasteners in Bhopal, built to cut industrial electricity costs and generate clean energy."
+    },
+    "overview": {
+      "heading": "2 Megawatts. Taking a Bite Out of the Power Bill.",
+      "paragraphs": [
+        "Deepak Fasteners’ Bhopal facility runs on a steady daytime electricity load, and a solar plant could meet a good share of it.",
+        "Solergy studied the facility’s usage and the space available before designing a system around what the business actually consumes.",
+        "The result is a 2 MW on-grid solar system built to cover a meaningful share of daytime demand."
+      ]
+    },
+    "challenge": {
+      "heading": "A Steady Load, a Climbing Bill.",
+      "intro": [
+        "A facility that runs through the day uses power through the day, and every tariff increase shows up on the bill.",
+        "The system had to be sized to the real load and installed without pausing production."
+      ],
+      "points": [
+        {
+          "title": "Steady Daytime Demand",
+          "description": "Consistent daytime consumption called for a system large enough to offset a meaningful share of it."
+        },
+        {
+          "title": "Tariff Pressure",
+          "description": "Rising grid costs made power a harder expense to plan around."
+        },
+        {
+          "title": "Work That Couldn’t Pause",
+          "description": "Installation had to be sequenced so the facility kept running."
+        }
+      ]
+    },
+    "solution": {
+      "heading": "2 MW. Matched to How the Facility Runs.",
+      "intro": [
+        "Solergy designed a 2 MW on-grid solar system based on the facility’s actual consumption and site conditions.",
+        "Our team handled layout, procurement, installation, electrical integration, testing, and grid-connection approvals end to end."
+      ],
+      "points": [
+        {
+          "title": "Daytime Generation",
+          "description": "Designed to offset a good share of the facility’s daytime electricity use."
+        },
+        {
+          "title": "Efficient Layout",
+          "description": "Panels were laid out to make the most of the available area and sun exposure."
+        },
+        {
+          "title": "Long-Term Performance",
+          "description": "Components chosen for reliable, low-maintenance operation over the long term."
+        }
+      ]
+    },
+    "glance": [
+      {
+        "label": "System Capacity",
+        "value": "2 MW"
+      },
+      {
+        "label": "System Type",
+        "value": "On-Grid"
+      },
+      {
+        "label": "Installation",
+        "value": "Rooftop"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~30,00,000 kWh"
+      },
+      {
+        "label": "Annual Savings",
+        "value": "~₹2.1 Crore"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~3.8 Years"
+      },
+      {
+        "label": "System Life",
+        "value": "25+ Years"
+      }
+    ],
+    "story": [
+      "Deepak Fasteners wanted a solar system that would make a visible difference to a rising power bill, without disturbing the way the facility works.",
+      "We designed a 2 MW on-grid plant around the facility’s consumption pattern and available area, sequencing the installation to keep disruption to a minimum.",
+      "The system now covers a meaningful share of daytime consumption, with savings visible from the first billing cycle."
+    ],
+    "specs": [
+      {
+        "label": "System Size",
+        "value": "2 MW"
+      },
+      {
+        "label": "Panels Installed",
+        "value": "~3,635 × 550 Wp Mono PERC"
+      },
+      {
+        "label": "Inverter",
+        "value": "20 × 100 kW String Inverters"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~30,00,000 units"
+      },
+      {
+        "label": "Monthly Bill Savings",
+        "value": "Up to ₹17.5 Lakhs"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~3.8 years"
+      }
+    ],
+    "impact": {
+      "paragraphs": [
+        "The completed system now generates approximately 30,00,000 kWh of clean electricity every year, helping Deepak Fasteners reduce its dependence on conventional grid power.",
+        "With an estimated annual saving of around ₹2.1 Crore, the installation is expected to recover its initial investment in approximately 3.8 years.",
+        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping electricity costs under control."
+      ],
+      "cumulativeSavings": "~₹44 Cr+ over 25 years",
+      "paybackYear": 3.8,
+      "stats": [
+        {
+          "label": "Estimated clean energy generated every year",
+          "value": "~30,00,000 kWh"
+        },
+        {
+          "label": "Estimated annual electricity savings",
+          "value": "~₹2.1 Crore"
+        },
+        {
+          "label": "Estimated investment payback period",
+          "value": "~3.8 Years"
+        },
+        {
+          "label": "Expected useful system life",
+          "value": "25+ Years"
+        }
+      ]
+    },
+    "chartValues": {
+      "annualSavings": 210,
+      "systemCost": 800
+    },
+    "testimonialIndex": 0,
+    "testimonial": {
+      "quote": "From the first site visit to commissioning, the team was organised and straightforward. The system is doing what they said it would.",
+      "name": "Management Team, Deepak Fasteners",
+      "role": "Bhopal, Madhya Pradesh"
+    },
+    "otherProjectIds": [
+      "ci-dharwad-shakunt-enterprises",
+      "ci-sonipat-bonn-nutrients",
+      "ci-ludhiana-garg-acrylics"
+    ]
+  },
+  {
+    "id": "res-pushpanjali-delhi",
+    "title": "Pushpanjali 90 kW Rooftop System",
+    "category": "Residential",
+    "city": "Delhi",
+    "state": "Delhi",
+    "size": "90 kW",
+    "date": "January 2025",
+    "systemType": "On-Grid Solar",
+    "badge": "On-Grid Solar · 90 kW · Rooftop",
+    "image": "/images/projects/hero-house-new.webp",
+    "gallery": [
+      "/images/projects/hero-house-new.webp",
+      "/images/projects/why-solergy-house.jpg",
+      "/images/projects/service1.jpg",
+      "/images/projects/service2.jpg",
+      "/images/projects/service3.jpg",
+      "/images/projects/hero-house.png"
+    ],
+    "galleryAlts": [
+      "90 kW rooftop solar system on a home in Pushpanjali, Delhi",
+      "Solar panels laid out across the rooftop, Pushpanjali",
+      "Three-phase string inverter installed for a 90 kW home solar system",
+      "Solergy team installing rooftop solar panels in Delhi",
+      "Close-up of Mono PERC solar panels on a residential rooftop",
+      "Completed 90 kW on-grid rooftop solar installation, Delhi"
+    ],
+    "description": "A large on-grid rooftop system built to cover a big share of a high-consumption home’s daytime electricity use.",
+    "seo": {
+      "title": "90 kW Rooftop Solar, Pushpanjali, Delhi | Solergy India",
+      "description": "See how Solergy India designed and installed a 90 kW rooftop solar system in Pushpanjali, Delhi, helping a large home cut its electricity bill."
+    },
+    "overview": {
+      "heading": "90 kW on the Roof. Lower Bills Below.",
+      "paragraphs": [
+        "This Pushpanjali home had a generous rooftop and an equally generous daytime electricity load. Putting one to work against the other made obvious sense.",
+        "Solergy studied the household’s usage pattern and available roof area before sizing a system to match the actual load, not just the available space.",
+        "The result was a 90 kW rooftop solar system built to carry a large share of the home’s daytime demand."
+      ]
+    },
+    "challenge": {
+      "heading": "A Big Home Needs a Big Enough System.",
+      "intro": [
+        "A large daytime load meant a modest system wouldn’t move the needle. The household needed a system sized to match real consumption.",
         "The installation also had to be sequenced carefully across a large rooftop without disrupting daily routines."
       ],
       "points": [
@@ -78,15 +991,15 @@
       ]
     },
     "solution": {
-      "heading": "60 kW. Sized for the Real Load.",
+      "heading": "90 kW. Sized for How the Home Really Runs.",
       "intro": [
-        "Solergy designed a 60 kW on-grid rooftop system matched to the household's actual daytime consumption.",
+        "Solergy designed a 90 kW on-grid rooftop system matched to the household’s actual daytime consumption.",
         "Our team handled layout, procurement, installation, electrical integration, testing, and net metering approval end to end."
       ],
       "points": [
         {
           "title": "Daytime Generation",
-          "description": "Designed to offset a large share of the household's daytime electricity consumption."
+          "description": "Designed to offset a large share of the household’s daytime electricity consumption."
         },
         {
           "title": "Efficient Rooftop Layout",
@@ -95,492 +1008,6 @@
         {
           "title": "Long-Term Performance",
           "description": "Components selected for reliable, low-maintenance operation over the long term."
-        }
-      ]
-    },
-    "glance": [
-      {
-        "label": "System Capacity",
-        "value": "60 kW"
-      },
-      {
-        "label": "System Type",
-        "value": "On-Grid"
-      },
-      {
-        "label": "Installation",
-        "value": "Rooftop"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~90,000 kWh"
-      },
-      {
-        "label": "Annual Savings",
-        "value": "~₹7.65 Lakhs"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 Years"
-      },
-      {
-        "label": "System Life",
-        "value": "25+ Years"
-      }
-    ],
-    "impact": {
-      "paragraphs": [
-        "The completed system now generates approximately 90,000 kWh of clean electricity every year, helping this Janpath household reduce its dependence on conventional grid power.",
-        "With an estimated annual saving of around ₹7.65 Lakhs, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping the household's electricity costs under control."
-      ],
-      "cumulativeSavings": "~₹1.58 Cr+ over 25 years",
-      "paybackYear": 4.3,
-      "stats": [
-        {
-          "label": "Estimated clean energy generated every year.",
-          "value": "~90,000 kWh"
-        },
-        {
-          "label": "Estimated annual electricity savings.",
-          "value": "~₹7.65 Lakhs"
-        },
-        {
-          "label": "Estimated investment payback period.",
-          "value": "~4.3 Years"
-        },
-        {
-          "label": "Expected useful system life.",
-          "value": "25+ Years"
-        }
-      ]
-    },
-    "testimonialIndex": 0,
-    "seo": {
-      "title": "Janpath Rooftop System, Ludhiana | 60 kW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed a 60 kW on-grid rooftop solar system for a home in Janpath, Ludhiana."
-    }
-  },
-  {
-    "id": "res-sunview-ludhiana",
-    "title": "Sunview Rooftop System",
-    "category": "Residential",
-    "city": "Ludhiana",
-    "state": "Punjab",
-    "size": "15 kW",
-    "date": "March 2025",
-    "systemType": "On-Grid Solar",
-    "image": "/images/projects/service1.jpg",
-    "gallery": [
-      "/images/projects/service1.jpg",
-      "/images/projects/why-solergy-house.jpg",
-      "/images/projects/service2.jpg",
-      "/images/projects/service3.jpg",
-      "/images/projects/hero-house.png"
-    ],
-    "description": "A mid-sized on-grid rooftop system designed to comfortably cover a growing household's daytime usage.",
-    "story": [
-      "A household in Sunview, Ludhiana had a steadily growing electricity bill and a rooftop that was sitting unused. They wanted a system that could comfortably absorb their daytime load without overbuilding.",
-      "We designed a 15 kW on-grid system, laid out efficiently across the available roof space, with the full installation completed within a few days.",
-      "The family now sees a noticeable drop in their monthly bill, with surplus daytime generation banked through net metering."
-    ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "15 kW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "34 x 445W Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "15 kW Three-Phase String Inverter"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~22,500 units"
-      },
-      {
-        "label": "Monthly Bill Savings",
-        "value": "Up to ₹15,900"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 years"
-      }
-    ],
-    "overview": {
-      "heading": "A Rooftop Ready to Pay Its Way.",
-      "paragraphs": [
-        "This Sunview household had a steadily growing electricity bill and an unused rooftop with good sun exposure.",
-        "Solergy studied the household's daytime usage pattern before sizing a system that comfortably covers it, without excess capacity.",
-        "The result was a 15 kW rooftop solar system built to quietly take on a meaningful share of the home's daily power needs."
-      ]
-    },
-    "challenge": {
-      "heading": "A Growing Bill, With No Room for Guesswork.",
-      "intro": [
-        "Rising daytime consumption meant the household's electricity bill kept climbing year over year.",
-        "The family wanted a system sized correctly the first time, without over- or under-building."
-      ],
-      "points": [
-        {
-          "title": "Rising Daytime Usage",
-          "description": "A steady increase in daytime consumption was driving the household's electricity costs higher."
-        },
-        {
-          "title": "Right-Sizing the System",
-          "description": "The system needed to be sized accurately to the household's actual usage pattern."
-        },
-        {
-          "title": "A Fast, Clean Installation",
-          "description": "The family wanted the switch to solar completed quickly and without mess."
-        }
-      ]
-    },
-    "solution": {
-      "heading": "15 kW. Matched to the Household.",
-      "intro": [
-        "Solergy designed a 15 kW on-grid rooftop system sized to the household's actual daytime consumption pattern.",
-        "Our team completed layout, procurement, installation, electrical integration, testing, and net metering approval within a few days."
-      ],
-      "points": [
-        {
-          "title": "Daytime Generation",
-          "description": "Designed to comfortably cover a large share of the household's daytime electricity use."
-        },
-        {
-          "title": "Efficient Roof Use",
-          "description": "Panels were laid out to make the most of the available roof space."
-        },
-        {
-          "title": "Net-Metered Surplus",
-          "description": "Excess daytime generation is banked through net metering for later use."
-        }
-      ]
-    },
-    "glance": [
-      {
-        "label": "System Capacity",
-        "value": "15 kW"
-      },
-      {
-        "label": "System Type",
-        "value": "On-Grid"
-      },
-      {
-        "label": "Installation",
-        "value": "Rooftop"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~22,500 kWh"
-      },
-      {
-        "label": "Annual Savings",
-        "value": "~₹1.91 Lakhs"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 Years"
-      },
-      {
-        "label": "System Life",
-        "value": "25+ Years"
-      }
-    ],
-    "impact": {
-      "paragraphs": [
-        "The completed system now generates approximately 22,500 kWh of clean electricity every year, helping this Sunview household reduce its dependence on conventional grid power.",
-        "With an estimated annual saving of around ₹1.91 Lakhs, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping the household's electricity costs under control."
-      ],
-      "cumulativeSavings": "~₹39.6 Lakhs+ over 25 years",
-      "paybackYear": 4.3,
-      "stats": [
-        {
-          "label": "Estimated clean energy generated every year.",
-          "value": "~22,500 kWh"
-        },
-        {
-          "label": "Estimated annual electricity savings.",
-          "value": "~₹1.91 Lakhs"
-        },
-        {
-          "label": "Estimated investment payback period.",
-          "value": "~4.3 Years"
-        },
-        {
-          "label": "Expected useful system life.",
-          "value": "25+ Years"
-        }
-      ]
-    },
-    "testimonialIndex": 1,
-    "seo": {
-      "title": "Sunview Rooftop System, Ludhiana | 15 kW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed a 15 kW on-grid rooftop solar system for a home in Sunview, Ludhiana."
-    }
-  },
-  {
-    "id": "res-ferozepur-road-ludhiana",
-    "title": "Ferozepur Road Rooftop System",
-    "category": "Residential",
-    "city": "Ludhiana",
-    "state": "Punjab",
-    "size": "80 kW",
-    "date": "April 2025",
-    "systemType": "On-Grid Solar",
-    "image": "/images/projects/service2.jpg",
-    "gallery": [
-      "/images/projects/service2.jpg",
-      "/images/projects/hero-house-new.webp",
-      "/images/projects/service3.jpg",
-      "/images/projects/why-solergy-house.jpg",
-      "/images/projects/service1.jpg"
-    ],
-    "description": "A large on-grid rooftop system built to significantly reduce a high-consumption household's electricity costs.",
-    "story": [
-      "A household on Ferozepur Road, Ludhiana had a wide rooftop and a consistently high electricity bill. They wanted a system substantial enough to make a real difference, installed without disrupting the household's day-to-day routine.",
-      "We designed an 80 kW on-grid array, carefully laid out across the available roof area to maximise generation.",
-      "The system now offsets a large share of the household's daytime consumption, with the family already seeing the difference in their monthly bills."
-    ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "80 kW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "180 x 445W Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "80 kW Three-Phase String Inverter"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~1,20,000 units"
-      },
-      {
-        "label": "Monthly Bill Savings",
-        "value": "Up to ₹85,000"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 years"
-      }
-    ],
-    "overview": {
-      "heading": "A High Bill Met With an Equally Serious System.",
-      "paragraphs": [
-        "This Ferozepur Road household had a wide rooftop and an electricity bill that had been climbing for years.",
-        "Solergy studied the household's usage and roof area before sizing a system built to make a real, measurable difference.",
-        "The result was an 80 kW rooftop solar system designed to offset a large share of the home's daytime demand."
-      ]
-    },
-    "challenge": {
-      "heading": "A Bill That Needed a Serious Response.",
-      "intro": [
-        "A consistently high daytime load meant the household's electricity costs had become a significant recurring expense.",
-        "The large rooftop also needed careful planning to maximise usable panel area."
-      ],
-      "points": [
-        {
-          "title": "Consistently High Load",
-          "description": "The household's daytime electricity consumption had been climbing steadily year over year."
-        },
-        {
-          "title": "Maximising a Large Rooftop",
-          "description": "A wide roof area needed careful layout planning to make the most of available sun exposure."
-        },
-        {
-          "title": "A Smooth Installation",
-          "description": "The family wanted the system up and running with minimal disruption to the household."
-        }
-      ]
-    },
-    "solution": {
-      "heading": "80 kW. Built to Make a Real Difference.",
-      "intro": [
-        "Solergy designed an 80 kW on-grid rooftop system sized to meaningfully offset the household's high daytime consumption.",
-        "Our team handled layout, procurement, installation, electrical integration, testing, and net metering approval end to end."
-      ],
-      "points": [
-        {
-          "title": "Daytime Generation",
-          "description": "Designed to offset a large share of the household's daytime electricity consumption."
-        },
-        {
-          "title": "Maximised Roof Layout",
-          "description": "Panels were arranged to make full use of the available roof area and sun exposure."
-        },
-        {
-          "title": "Long-Term Performance",
-          "description": "Components selected for reliable, long-term operation with minimal upkeep."
-        }
-      ]
-    },
-    "glance": [
-      {
-        "label": "System Capacity",
-        "value": "80 kW"
-      },
-      {
-        "label": "System Type",
-        "value": "On-Grid"
-      },
-      {
-        "label": "Installation",
-        "value": "Rooftop"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~1,20,000 kWh"
-      },
-      {
-        "label": "Annual Savings",
-        "value": "~₹10.2 Lakhs"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 Years"
-      },
-      {
-        "label": "System Life",
-        "value": "25+ Years"
-      }
-    ],
-    "impact": {
-      "paragraphs": [
-        "The completed system now generates approximately 1,20,000 kWh of clean electricity every year, helping this Ferozepur Road household reduce its dependence on conventional grid power.",
-        "With an estimated annual saving of around ₹10.2 Lakhs, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping the household's electricity costs under control."
-      ],
-      "cumulativeSavings": "~₹2.11 Cr+ over 25 years",
-      "paybackYear": 4.3,
-      "stats": [
-        {
-          "label": "Estimated clean energy generated every year.",
-          "value": "~1,20,000 kWh"
-        },
-        {
-          "label": "Estimated annual electricity savings.",
-          "value": "~₹10.2 Lakhs"
-        },
-        {
-          "label": "Estimated investment payback period.",
-          "value": "~4.3 Years"
-        },
-        {
-          "label": "Expected useful system life.",
-          "value": "25+ Years"
-        }
-      ]
-    },
-    "testimonialIndex": 2,
-    "seo": {
-      "title": "Ferozepur Road Rooftop System, Ludhiana | 80 kW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed an 80 kW on-grid rooftop solar system for a home on Ferozepur Road, Ludhiana."
-    }
-  },
-  {
-    "id": "res-pushpanjali-delhi",
-    "title": "Pushpanjali Rooftop System",
-    "category": "Residential",
-    "city": "Delhi",
-    "state": "Delhi",
-    "size": "90 kW",
-    "date": "May 2025",
-    "systemType": "On-Grid Solar",
-    "image": "/images/projects/service3.jpg",
-    "gallery": [
-      "/images/projects/service3.jpg",
-      "/images/projects/service1.jpg",
-      "/images/projects/why-solergy-house.jpg",
-      "/images/projects/hero-house.png",
-      "/images/projects/service2.jpg"
-    ],
-    "description": "One of our largest residential installations, built to substantially cut a Pushpanjali household's electricity costs.",
-    "story": [
-      "A household in Pushpanjali, Delhi had a large rooftop and an electricity bill to match. They wanted a system ambitious enough to make a serious dent in their costs.",
-      "We designed a 90 kW on-grid system, among our largest residential installations to date, laid out across the full available roof area.",
-      "The system now generates a substantial share of the household's daytime power needs, with the family tracking generation closely from day one."
-    ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "90 kW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "202 x 445W Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "90 kW Three-Phase String Inverter"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~1,35,000 units"
-      },
-      {
-        "label": "Monthly Bill Savings",
-        "value": "Up to ₹95,625"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 years"
-      }
-    ],
-    "overview": {
-      "heading": "One of Our Largest Homes Yet.",
-      "paragraphs": [
-        "This Pushpanjali household had a large rooftop and an electricity bill that called for an equally serious system.",
-        "Solergy studied the household's usage pattern and full roof area before designing one of our largest residential systems to date.",
-        "The result was a 90 kW rooftop solar system built to substantially offset the home's daytime power needs."
-      ]
-    },
-    "challenge": {
-      "heading": "A Large Home, A Larger Opportunity.",
-      "intro": [
-        "A high daytime load meant the household stood to gain significantly from a larger-than-usual residential system.",
-        "Coordinating a system of this scale on a residential rooftop required careful planning."
-      ],
-      "points": [
-        {
-          "title": "High Daytime Load",
-          "description": "A substantial daytime electricity draw meant a larger system would deliver meaningfully larger savings."
-        },
-        {
-          "title": "Large-Scale Residential Layout",
-          "description": "Fitting a 90 kW system on a residential roof required precise layout planning."
-        },
-        {
-          "title": "Reliable, Long-Term Operation",
-          "description": "A system of this size needed components built for sustained, dependable performance."
-        }
-      ]
-    },
-    "solution": {
-      "heading": "90 kW. One of Our Biggest Homes.",
-      "intro": [
-        "Solergy designed a 90 kW on-grid rooftop system, one of our largest residential installations, matched to the household's full daytime load.",
-        "Our team handled layout, procurement, installation, electrical integration, testing, and net metering approval end to end."
-      ],
-      "points": [
-        {
-          "title": "Daytime Generation",
-          "description": "Designed to offset a substantial share of the household's daytime electricity consumption."
-        },
-        {
-          "title": "Full Rooftop Utilisation",
-          "description": "Panels were laid out across the full available roof area to maximise generation."
-        },
-        {
-          "title": "Long-Term Performance",
-          "description": "Premium components selected for reliable operation at this scale."
         }
       ]
     },
@@ -614,304 +1041,166 @@
         "value": "25+ Years"
       }
     ],
+    "story": [
+      "This household in Pushpanjali, Delhi had a spacious rooftop and a steadily rising electricity bill driven by a large daytime load. They wanted a system substantial enough to make a real dent in that bill, without an overly complex installation.",
+      "We designed a 90 kW on-grid array across the available roof area, sequencing the installation to keep disruption to a minimum.",
+      "The system now covers a significant share of the household’s daytime consumption, with savings visible from the very first billing cycle."
+    ],
+    "specs": [
+      {
+        "label": "System Size",
+        "value": "90 kW"
+      },
+      {
+        "label": "Panels Installed",
+        "value": "~202 × 445W Mono PERC"
+      },
+      {
+        "label": "Inverter",
+        "value": "90 kW Three-Phase String Inverter"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~1,35,000 units"
+      },
+      {
+        "label": "Monthly Bill Savings",
+        "value": "Up to ₹95,625"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~4.3 years"
+      }
+    ],
     "impact": {
       "paragraphs": [
         "The completed system now generates approximately 1,35,000 kWh of clean electricity every year, helping this Pushpanjali household reduce its dependence on conventional grid power.",
         "With an estimated annual saving of around ₹11.48 Lakhs, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping the household's electricity costs under control."
+        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping the household’s electricity costs under control."
       ],
       "cumulativeSavings": "~₹2.37 Cr+ over 25 years",
       "paybackYear": 4.3,
       "stats": [
         {
-          "label": "Estimated clean energy generated every year.",
+          "label": "Estimated clean energy generated every year",
           "value": "~1,35,000 kWh"
         },
         {
-          "label": "Estimated annual electricity savings.",
+          "label": "Estimated annual electricity savings",
           "value": "~₹11.48 Lakhs"
         },
         {
-          "label": "Estimated investment payback period.",
+          "label": "Estimated investment payback period",
           "value": "~4.3 Years"
         },
         {
-          "label": "Expected useful system life.",
+          "label": "Expected useful system life",
           "value": "25+ Years"
         }
       ]
     },
-    "testimonialIndex": 3,
-    "seo": {
-      "title": "Pushpanjali Rooftop System, Delhi | 90 kW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed a 90 kW on-grid rooftop solar system for a home in Pushpanjali, Delhi."
-    }
+    "chartValues": {
+      "annualSavings": 11.475,
+      "systemCost": 49.5
+    },
+    "testimonialIndex": 0,
+    "testimonial": {
+      "quote": "Our bills were climbing every year, so we wanted something substantial. Solergy sized it properly, kept the installation tidy, and we saw the difference from the first bill.",
+      "name": "Homeowner, Pushpanjali",
+      "role": "Pushpanjali, Delhi"
+    },
+    "otherProjectIds": [
+      "res-pushpanjali-140kw-delhi",
+      "res-janpath-ludhiana",
+      "res-paschim-vihar-delhi"
+    ]
   },
   {
     "id": "res-paschim-vihar-delhi",
-    "title": "Paschim Vihar Rooftop System",
+    "title": "Delhi Rooftop System",
     "category": "Residential",
     "city": "Delhi",
     "state": "Delhi",
-    "size": "10 kW",
-    "date": "June 2025",
+    "size": "20 kW",
+    "date": "February 2025",
     "systemType": "On-Grid Solar",
-    "image": "/images/projects/hero-house.png",
-    "gallery": [
-      "/images/projects/hero-house.png",
-      "/images/projects/service2.jpg",
-      "/images/projects/service3.jpg",
-      "/images/projects/service1.jpg",
-      "/images/projects/why-solergy-house.jpg"
-    ],
-    "description": "A right-sized on-grid rooftop system for a Paschim Vihar household looking to cut its daytime electricity costs.",
-    "story": [
-      "A household in Paschim Vihar, Delhi wanted a straightforward system to bring down a steady electricity bill, without a large or complex rooftop project.",
-      "We designed a 10 kW on-grid system, sized to the household's actual daytime usage, with installation completed in a couple of days.",
-      "The family now covers a healthy share of its daytime consumption from the rooftop, with the rest banked through net metering."
-    ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "10 kW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "22 x 445W Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "10 kW String Inverter"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~15,000 units"
-      },
-      {
-        "label": "Monthly Bill Savings",
-        "value": "Up to ₹10,625"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 years"
-      }
-    ],
-    "overview": {
-      "heading": "A Straightforward System for a Steady Bill.",
-      "paragraphs": [
-        "This Paschim Vihar household had a steady electricity bill and wanted a simple, right-sized solar system.",
-        "Solergy studied the household's daytime usage before sizing a 10 kW system matched to actual consumption.",
-        "The result was a compact rooftop solar system built to comfortably cover the home's daytime electricity needs."
-      ]
-    },
-    "challenge": {
-      "heading": "A Steady Bill, A Simple Ask.",
-      "intro": [
-        "The household's electricity usage was steady, and the family wanted a system sized correctly without excess capacity.",
-        "The installation also needed to be quick and low-disruption."
-      ],
-      "points": [
-        {
-          "title": "Steady Daytime Usage",
-          "description": "A consistent daily consumption pattern meant the system needed to be sized accurately."
-        },
-        {
-          "title": "A Simple, Fast Installation",
-          "description": "The family wanted the switch to solar completed quickly and without hassle."
-        },
-        {
-          "title": "Reliable Long-Term Operation",
-          "description": "The system needed to run reliably with minimal ongoing maintenance."
-        }
-      ]
-    },
-    "solution": {
-      "heading": "10 kW. Right-Sized and Reliable.",
-      "intro": [
-        "Solergy designed a 10 kW on-grid rooftop system sized to the household's actual daytime consumption.",
-        "Our team completed layout, procurement, installation, electrical integration, testing, and net metering approval within a couple of days."
-      ],
-      "points": [
-        {
-          "title": "Daytime Generation",
-          "description": "Designed to comfortably cover the household's daytime electricity needs."
-        },
-        {
-          "title": "Net-Metered Surplus",
-          "description": "Excess generation is banked through net metering for later use."
-        },
-        {
-          "title": "Long-Term Performance",
-          "description": "Reliable components chosen for years of low-maintenance operation."
-        }
-      ]
-    },
-    "glance": [
-      {
-        "label": "System Capacity",
-        "value": "10 kW"
-      },
-      {
-        "label": "System Type",
-        "value": "On-Grid"
-      },
-      {
-        "label": "Installation",
-        "value": "Rooftop"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~15,000 kWh"
-      },
-      {
-        "label": "Annual Savings",
-        "value": "~₹1.28 Lakhs"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 Years"
-      },
-      {
-        "label": "System Life",
-        "value": "25+ Years"
-      }
-    ],
-    "impact": {
-      "paragraphs": [
-        "The completed system now generates approximately 15,000 kWh of clean electricity every year, helping this Paschim Vihar household reduce its dependence on conventional grid power.",
-        "With an estimated annual saving of around ₹1.28 Lakhs, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping the household's electricity costs under control."
-      ],
-      "cumulativeSavings": "~₹26.4 Lakhs+ over 25 years",
-      "paybackYear": 4.3,
-      "stats": [
-        {
-          "label": "Estimated clean energy generated every year.",
-          "value": "~15,000 kWh"
-        },
-        {
-          "label": "Estimated annual electricity savings.",
-          "value": "~₹1.28 Lakhs"
-        },
-        {
-          "label": "Estimated investment payback period.",
-          "value": "~4.3 Years"
-        },
-        {
-          "label": "Expected useful system life.",
-          "value": "25+ Years"
-        }
-      ]
-    },
-    "testimonialIndex": 4,
-    "seo": {
-      "title": "Paschim Vihar Rooftop System, Delhi | 10 kW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed a 10 kW on-grid rooftop solar system for a home in Paschim Vihar, Delhi."
-    }
-  },
-  {
-    "id": "res-south-city-gurgaon",
-    "title": "South City 1 Rooftop System",
-    "category": "Residential",
-    "city": "Gurgaon",
-    "state": "Haryana",
-    "size": "10 kW",
-    "date": "July 2025",
-    "systemType": "On-Grid Solar",
+    "badge": "On-Grid Solar · 20 kW · Rooftop",
     "image": "/images/projects/why-solergy-house.jpg",
     "gallery": [
       "/images/projects/why-solergy-house.jpg",
-      "/images/projects/service3.jpg",
-      "/images/projects/hero-house-new.webp",
+      "/images/projects/service1.jpg",
       "/images/projects/service2.jpg",
-      "/images/projects/service1.jpg"
+      "/images/projects/service3.jpg",
+      "/images/projects/hero-house.png",
+      "/images/projects/hero-house-new.webp"
     ],
-    "description": "A compact on-grid rooftop system for a South City 1 household looking to reduce monthly electricity costs.",
-    "story": [
-      "A household in South City 1, Gurgaon wanted a reliable, right-sized solar system to lower a steady monthly electricity bill.",
-      "We designed a 10 kW on-grid system laid out across the available roof area, with installation wrapped up in a couple of days.",
-      "The household now generates a meaningful share of its daytime power needs on-site, with surplus banked through net metering."
+    "galleryAlts": [
+      "20 kW rooftop solar system on a home in Delhi",
+      "Solar panels laid out across the rooftop, Delhi",
+      "Three-phase string inverter installed for a 20 kW home solar system",
+      "Solergy team installing rooftop solar panels in Delhi",
+      "Close-up of Mono PERC solar panels on a residential rooftop",
+      "Completed 20 kW on-grid rooftop solar installation, Delhi"
     ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "10 kW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "22 x 445W Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "10 kW String Inverter"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~15,000 units"
-      },
-      {
-        "label": "Monthly Bill Savings",
-        "value": "Up to ₹10,625"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 years"
-      }
-    ],
+    "description": "A right-sized 20 kW on-grid rooftop system built to cut a Delhi home’s electricity bill.",
+    "seo": {
+      "title": "20 kW Rooftop Solar System, Delhi | Solergy India",
+      "description": "See how Solergy India designed and installed a 20 kW rooftop solar system for a home in Delhi, sized to cut the household’s electricity bill."
+    },
     "overview": {
-      "heading": "A Reliable System for a Growing Suburb Home.",
+      "heading": "A Delhi Rooftop, Right-Sized for the Home.",
       "paragraphs": [
-        "This South City 1 household wanted a dependable solar system to bring its monthly electricity costs under control.",
-        "Solergy studied the household's daytime usage and roof area before sizing a 10 kW system matched to actual consumption.",
-        "The result was a compact rooftop solar system built to reliably cover a meaningful share of the home's power needs."
+        "This Delhi home had a rooftop with room to spare and an electricity bill that kept creeping up.",
+        "Solergy studied the household’s usage and roof space before sizing a system that fits both: not more than the home needs, and not less.",
+        "The result is a 20 kW rooftop solar system built to cover a solid share of the home’s daytime demand."
       ]
     },
     "challenge": {
-      "heading": "A Steady Bill, A Reliable Fix.",
+      "heading": "Rising Bills, a Real Roof, and One Right Answer.",
       "intro": [
-        "The household's electricity usage was steady, and the family wanted a dependable, correctly sized system.",
-        "The installation also needed to be completed quickly, without disrupting the household."
+        "With a bill that rose every year, the household wanted a system that would show up in the numbers, sized properly and not just installed.",
+        "And all of it needed to happen without turning the house upside down."
       ],
       "points": [
         {
-          "title": "Steady Daytime Usage",
-          "description": "Consistent daily consumption meant the system needed to be sized accurately for real savings."
+          "title": "Climbing Electricity Bills",
+          "description": "Year-on-year tariff increases kept pushing the household’s bill up."
         },
         {
-          "title": "A Quick, Clean Installation",
-          "description": "The family wanted the system up and running with minimal disruption."
+          "title": "Getting the Size Right",
+          "description": "A system too small wouldn’t help and one too large wouldn’t pay back, so the sizing had to be spot on."
         },
         {
-          "title": "Long-Term Reliability",
-          "description": "The system needed to run dependably with minimal ongoing upkeep."
+          "title": "A Tidy Installation",
+          "description": "The household wanted a clean, quick installation with as little mess and disruption as possible."
         }
       ]
     },
     "solution": {
-      "heading": "10 kW. Dependable From Day One.",
+      "heading": "20 kW. Sized to Fit.",
       "intro": [
-        "Solergy designed a 10 kW on-grid rooftop system sized to the household's actual daytime consumption.",
-        "Our team handled layout, procurement, installation, electrical integration, testing, and net metering approval within a couple of days."
+        "Solergy designed a 20 kW on-grid rooftop system matched to the household’s actual consumption.",
+        "Our team handled layout, procurement, installation, electrical integration, testing, and net metering approval end to end."
       ],
       "points": [
         {
           "title": "Daytime Generation",
-          "description": "Designed to reliably cover a meaningful share of the household's daytime electricity needs."
+          "description": "Designed to offset a good share of the home’s daytime electricity use."
         },
         {
-          "title": "Net-Metered Surplus",
-          "description": "Excess generation is banked through net metering for later use."
+          "title": "Neat Rooftop Layout",
+          "description": "Panels were placed to maximise sun exposure while keeping the installation tidy."
         },
         {
           "title": "Long-Term Performance",
-          "description": "Reliable components chosen for years of low-maintenance operation."
+          "description": "Components selected for reliable, low-maintenance operation over the long term."
         }
       ]
     },
     "glance": [
       {
         "label": "System Capacity",
-        "value": "10 kW"
+        "value": "20 kW"
       },
       {
         "label": "System Type",
@@ -923,11 +1212,11 @@
       },
       {
         "label": "Annual Generation",
-        "value": "~15,000 kWh"
+        "value": "~30,000 kWh"
       },
       {
         "label": "Annual Savings",
-        "value": "~₹1.28 Lakhs"
+        "value": "~₹2.55 Lakhs"
       },
       {
         "label": "Estimated Payback",
@@ -938,952 +1227,538 @@
         "value": "25+ Years"
       }
     ],
-    "impact": {
-      "paragraphs": [
-        "The completed system now generates approximately 15,000 kWh of clean electricity every year, helping this South City 1 household reduce its dependence on conventional grid power.",
-        "With an estimated annual saving of around ₹1.28 Lakhs, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping the household's electricity costs under control."
-      ],
-      "cumulativeSavings": "~₹26.4 Lakhs+ over 25 years",
-      "paybackYear": 4.3,
-      "stats": [
-        {
-          "label": "Estimated clean energy generated every year.",
-          "value": "~15,000 kWh"
-        },
-        {
-          "label": "Estimated annual electricity savings.",
-          "value": "~₹1.28 Lakhs"
-        },
-        {
-          "label": "Estimated investment payback period.",
-          "value": "~4.3 Years"
-        },
-        {
-          "label": "Expected useful system life.",
-          "value": "25+ Years"
-        }
-      ]
-    },
-    "testimonialIndex": 0,
-    "seo": {
-      "title": "South City 1 Rooftop System, Gurgaon | 10 kW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed a 10 kW on-grid rooftop solar system for a home in South City 1, Gurgaon."
-    }
-  },
-  {
-    "id": "ci-dharwad-shakunt-enterprises",
-    "title": "Shakunt Enterprises Rooftop Plant",
-    "category": "Commercial/Industrial",
-    "city": "Dharwad",
-    "state": "Karnataka",
-    "size": "900 kW",
-    "date": "January 2025",
-    "systemType": "On-Grid Solar",
-    "image": "/images/projects/service1.jpg",
-    "gallery": [
-      "/images/projects/service1.jpg",
-      "/images/projects/hero-house-new.webp",
-      "/images/projects/service2.jpg",
-      "/images/projects/service3.jpg",
-      "/images/projects/why-solergy-house.jpg"
-    ],
-    "description": "A large-scale rooftop plant cutting daytime power costs for Shakunt Enterprises' Dharwad facility.",
     "story": [
-      "Shakunt Enterprises' Dharwad facility was facing steadily rising industrial power costs, driven by heavy daytime equipment load.",
-      "We deployed a 900 kW rooftop plant across the facility's main shed, sequencing the installation to avoid disrupting production.",
-      "Since commissioning, the plant has become a key part of the facility's effort to control operating costs and meet sustainability goals."
+      "This Delhi household had a roof with space and an electricity bill that kept rising. They wanted a system sized properly and installed cleanly.",
+      "We designed a 20 kW on-grid array across the available roof, with an installation sequence that kept disruption to a minimum.",
+      "The system now covers a solid share of the household’s daytime consumption, with savings visible from the first billing cycle."
     ],
     "specs": [
       {
         "label": "System Size",
-        "value": "900 kW"
+        "value": "20 kW"
       },
       {
         "label": "Panels Installed",
-        "value": "2,023 x 445W Mono PERC"
+        "value": "~45 × 445W Mono PERC"
       },
       {
         "label": "Inverter",
-        "value": "900 kW Central Inverter"
+        "value": "20 kW Three-Phase String Inverter"
       },
       {
         "label": "Annual Generation",
-        "value": "~13,50,000 units"
+        "value": "~30,000 units"
       },
       {
-        "label": "Monthly Savings",
-        "value": "Up to ₹9.56 lakh"
+        "label": "Monthly Bill Savings",
+        "value": "Up to ₹21,250"
       },
       {
         "label": "Estimated Payback",
         "value": "~4.3 years"
       }
     ],
-    "overview": {
-      "heading": "A Facility Built to Run on Its Own Power.",
+    "impact": {
       "paragraphs": [
-        "Shakunt Enterprises' Dharwad facility had heavy daytime equipment load and rising industrial power tariffs.",
-        "Solergy studied the facility's process load, shed layout, and operating hours before designing a system around the plant — not simply around the available roof.",
-        "The result was a 900 kW rooftop solar plant built to meaningfully offset the facility's daytime power draw."
+        "The completed system now generates approximately 30,000 kWh of clean electricity every year, helping this Delhi household reduce its dependence on conventional grid power.",
+        "With an estimated annual saving of around ₹2.55 Lakhs, the installation is expected to recover its initial investment in approximately 4.3 years.",
+        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping the household’s electricity costs under control."
+      ],
+      "cumulativeSavings": "~₹52 Lakhs+ over 25 years",
+      "paybackYear": 4.3,
+      "stats": [
+        {
+          "label": "Estimated clean energy generated every year",
+          "value": "~30,000 kWh"
+        },
+        {
+          "label": "Estimated annual electricity savings",
+          "value": "~₹2.55 Lakhs"
+        },
+        {
+          "label": "Estimated investment payback period",
+          "value": "~4.3 Years"
+        },
+        {
+          "label": "Expected useful system life",
+          "value": "25+ Years"
+        }
+      ]
+    },
+    "chartValues": {
+      "annualSavings": 2.55,
+      "systemCost": 11
+    },
+    "testimonialIndex": 0,
+    "testimonial": {
+      "quote": "Neat installation, clear explanations, and a bill that’s noticeably lower. Exactly what we hoped for.",
+      "name": "Homeowner",
+      "role": "Delhi"
+    },
+    "otherProjectIds": [
+      "res-south-city-gurgaon",
+      "res-pushpanjali-delhi",
+      "res-janpath-ludhiana"
+    ]
+  },
+  {
+    "id": "res-south-city-gurgaon",
+    "title": "South City Rooftop System",
+    "category": "Residential",
+    "city": "Gurgaon",
+    "state": "Haryana",
+    "size": "15 kW",
+    "date": "January 2025",
+    "systemType": "On-Grid Solar",
+    "badge": "On-Grid Solar · 15 kW · Rooftop",
+    "image": "/images/projects/service1.jpg",
+    "gallery": [
+      "/images/projects/service1.jpg",
+      "/images/projects/service2.jpg",
+      "/images/projects/service3.jpg",
+      "/images/projects/why-solergy-house.jpg",
+      "/images/projects/hero-house.png",
+      "/images/projects/hero-house-new.webp"
+    ],
+    "galleryAlts": [
+      "15 kW rooftop solar system on a home in South City Phase 1, Gurgaon",
+      "Solar panels laid out across the rooftop, South City Phase 1",
+      "Three-phase string inverter installed for a 15 kW home solar system",
+      "Solergy team installing rooftop solar panels in Gurgaon",
+      "Close-up of Mono PERC solar panels on a residential rooftop",
+      "Completed 15 kW on-grid rooftop solar installation, Gurgaon"
+    ],
+    "description": "A 15 kW on-grid rooftop system built to tame a Gurgaon home’s cooling-heavy electricity bill.",
+    "seo": {
+      "title": "15 kW Rooftop Solar, South City, Gurgaon | Solergy India",
+      "description": "See how Solergy India designed and installed a 15 kW rooftop solar system in South City Phase 1, Gurgaon, built to cut a home’s electricity bill."
+    },
+    "overview": {
+      "heading": "A Gurgaon Home Gets Its Own Power Plant.",
+      "paragraphs": [
+        "This South City home had a sunny rooftop and an electricity bill shaped by long hours of daytime use.",
+        "Solergy studied the household’s usage and roof space before sizing a system to the real load.",
+        "The result is a 15 kW rooftop solar system built to cover a meaningful share of the home’s daytime demand."
       ]
     },
     "challenge": {
-      "heading": "Rising Tariffs, Round-the-Clock Operations.",
+      "heading": "Cooling Costs Needed an Answer.",
       "intro": [
-        "Heavy daytime equipment load meant electricity was a significant and growing operating cost.",
-        "The installation also had to be sequenced carefully to avoid disrupting ongoing production."
+        "In a city where air conditioning does a lot of work, daytime electricity use, and the bill that follows, adds up fast.",
+        "The goal was a system sized to the real load and installed without upending the household."
+      ],
+      "points": [
+        {
+          "title": "Cooling-Heavy Consumption",
+          "description": "Heavy daytime use meant the system needed to be sized to the actual load."
+        },
+        {
+          "title": "Rooftop Space",
+          "description": "The layout had to get the most out of the available roof and sun exposure."
+        },
+        {
+          "title": "Hassle-Free Installation",
+          "description": "The household wanted a quick, tidy installation with minimal disruption."
+        }
+      ]
+    },
+    "solution": {
+      "heading": "15 kW. Right-Sized for the Home.",
+      "intro": [
+        "Solergy designed a 15 kW on-grid rooftop system matched to the household’s actual daytime consumption.",
+        "Our team handled layout, procurement, installation, electrical integration, testing, and net metering approval end to end."
+      ],
+      "points": [
+        {
+          "title": "Daytime Generation",
+          "description": "Designed to offset a meaningful share of the home’s daytime electricity use."
+        },
+        {
+          "title": "Efficient Rooftop Layout",
+          "description": "Panels were laid out to make the most of the available roof area and sun exposure."
+        },
+        {
+          "title": "Long-Term Performance",
+          "description": "Components selected for reliable, low-maintenance operation over the long term."
+        }
+      ]
+    },
+    "glance": [
+      {
+        "label": "System Capacity",
+        "value": "15 kW"
+      },
+      {
+        "label": "System Type",
+        "value": "On-Grid"
+      },
+      {
+        "label": "Installation",
+        "value": "Rooftop"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~22,500 kWh"
+      },
+      {
+        "label": "Annual Savings",
+        "value": "~₹1.91 Lakhs"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~4.3 Years"
+      },
+      {
+        "label": "System Life",
+        "value": "25+ Years"
+      }
+    ],
+    "story": [
+      "This household in South City Phase 1, Gurgaon wanted to bring down a bill driven by heavy daytime use, with an installation that was quick and tidy.",
+      "We designed a 15 kW on-grid array across the available roof area, sequencing the work to keep disruption to a minimum.",
+      "The system now covers a meaningful share of the household’s daytime consumption, with savings visible from the first billing cycle."
+    ],
+    "specs": [
+      {
+        "label": "System Size",
+        "value": "15 kW"
+      },
+      {
+        "label": "Panels Installed",
+        "value": "~34 × 445W Mono PERC"
+      },
+      {
+        "label": "Inverter",
+        "value": "15 kW Three-Phase String Inverter"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~22,500 units"
+      },
+      {
+        "label": "Monthly Bill Savings",
+        "value": "Up to ₹15,938"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~4.3 years"
+      }
+    ],
+    "impact": {
+      "paragraphs": [
+        "The completed system now generates approximately 22,500 kWh of clean electricity every year, helping this Gurgaon household reduce its dependence on conventional grid power.",
+        "With an estimated annual saving of around ₹1.91 Lakhs, the installation is expected to recover its initial investment in approximately 4.3 years.",
+        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping the household’s electricity costs under control."
+      ],
+      "cumulativeSavings": "~₹39 Lakhs+ over 25 years",
+      "paybackYear": 4.3,
+      "stats": [
+        {
+          "label": "Estimated clean energy generated every year",
+          "value": "~22,500 kWh"
+        },
+        {
+          "label": "Estimated annual electricity savings",
+          "value": "~₹1.91 Lakhs"
+        },
+        {
+          "label": "Estimated investment payback period",
+          "value": "~4.3 Years"
+        },
+        {
+          "label": "Expected useful system life",
+          "value": "25+ Years"
+        }
+      ]
+    },
+    "chartValues": {
+      "annualSavings": 1.9125,
+      "systemCost": 8.25
+    },
+    "testimonialIndex": 0,
+    "testimonial": {
+      "quote": "From survey to switch-on, everything was smooth. We’re using far less from the grid, and the team was easy to work with.",
+      "name": "Homeowner",
+      "role": "South City Phase 1, Gurgaon"
+    },
+    "otherProjectIds": [
+      "res-paschim-vihar-delhi",
+      "res-janpath-ludhiana",
+      "res-pushpanjali-delhi"
+    ]
+  },
+  {
+    "id": "res-pushpanjali-140kw-delhi",
+    "title": "Pushpanjali 140 kW Rooftop System",
+    "category": "Residential",
+    "city": "Delhi",
+    "state": "Delhi",
+    "size": "140 kW",
+    "date": "February 2025",
+    "systemType": "On-Grid Solar",
+    "badge": "On-Grid Solar · 140 kW · Rooftop",
+    "image": "/images/projects/service2.jpg",
+    "gallery": [
+      "/images/projects/service2.jpg",
+      "/images/projects/why-solergy-house.jpg",
+      "/images/projects/service1.jpg",
+      "/images/projects/service3.jpg",
+      "/images/projects/hero-house.png",
+      "/images/projects/hero-house-new.webp"
+    ],
+    "galleryAlts": [
+      "140 kW rooftop solar system on a home in Pushpanjali, Delhi",
+      "Solar panels laid out across the rooftop, Pushpanjali",
+      "Three-phase string inverter installed for a 140 kW home solar system",
+      "Solergy team installing rooftop solar panels in Delhi",
+      "Close-up of Mono PERC solar panels on a residential rooftop",
+      "Completed 140 kW on-grid rooftop solar installation, Delhi"
+    ],
+    "description": "A power-plant-scale rooftop system built to carry a very large home’s daytime electricity load.",
+    "seo": {
+      "title": "140 kW Rooftop Solar, Pushpanjali, Delhi | Solergy India",
+      "description": "See how Solergy India designed and installed a 140 kW rooftop solar system in Pushpanjali, Delhi, built to carry a very large home’s daytime load."
+    },
+    "overview": {
+      "heading": "A Home Rooftop at Power-Plant Scale.",
+      "paragraphs": [
+        "With a very large rooftop and an equally large daytime load, this Pushpanjali property was a rare fit for solar at serious scale.",
+        "Solergy studied the usage pattern and available roof area before sizing a system to match the actual load, not just the available space.",
+        "The result is a 140 kW rooftop solar system built to carry a large share of the property’s daytime demand."
+      ]
+    },
+    "challenge": {
+      "heading": "A Load This Big Demands Careful Planning.",
+      "intro": [
+        "At 140 kW, there was little room for rough estimates. The system had to be sized to the real load and laid out to use the roof well.",
+        "All of it had to happen without disrupting life at the property."
+      ],
+      "points": [
+        {
+          "title": "Very High Daytime Load",
+          "description": "A heavy daytime draw called for a system large enough to offset it meaningfully."
+        },
+        {
+          "title": "Complex Rooftop Layout",
+          "description": "A big roof meant careful planning to maximise panel placement and sun exposure."
+        },
+        {
+          "title": "Smooth Execution",
+          "description": "Installing a system this size needed tight sequencing to keep disruption low."
+        }
+      ]
+    },
+    "solution": {
+      "heading": "140 kW. Planned Down to the Last Panel.",
+      "intro": [
+        "Solergy designed a 140 kW on-grid rooftop system matched to the property’s actual daytime consumption.",
+        "Our team handled layout, procurement, installation, electrical integration, testing, and net metering approval end to end."
+      ],
+      "points": [
+        {
+          "title": "Daytime Generation",
+          "description": "Designed to offset a large share of the property’s daytime electricity consumption."
+        },
+        {
+          "title": "Precise Rooftop Layout",
+          "description": "Every part of the roof was planned to get the most from the available area and sun exposure."
+        },
+        {
+          "title": "Long-Term Performance",
+          "description": "Components selected for reliable, low-maintenance operation over the long term."
+        }
+      ]
+    },
+    "glance": [
+      {
+        "label": "System Capacity",
+        "value": "140 kW"
+      },
+      {
+        "label": "System Type",
+        "value": "On-Grid"
+      },
+      {
+        "label": "Installation",
+        "value": "Rooftop"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~2,10,000 kWh"
+      },
+      {
+        "label": "Annual Savings",
+        "value": "~₹17.85 Lakhs"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~4.3 Years"
+      },
+      {
+        "label": "System Life",
+        "value": "25+ Years"
+      }
+    ],
+    "story": [
+      "This property in Pushpanjali, Delhi had a very large rooftop and a steadily rising electricity bill driven by a heavy daytime load. They wanted a system substantial enough to make a real dent in that bill.",
+      "We designed a 140 kW on-grid array across the available roof area, sequencing the installation carefully to keep disruption to a minimum.",
+      "The system now covers a significant share of the daytime consumption, with savings visible from the very first billing cycle."
+    ],
+    "specs": [
+      {
+        "label": "System Size",
+        "value": "140 kW"
+      },
+      {
+        "label": "Panels Installed",
+        "value": "~315 × 445W Mono PERC"
+      },
+      {
+        "label": "Inverter",
+        "value": "140 kW Three-Phase String Inverter"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~2,10,000 units"
+      },
+      {
+        "label": "Monthly Bill Savings",
+        "value": "Up to ₹1,48,750"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~4.3 years"
+      }
+    ],
+    "impact": {
+      "paragraphs": [
+        "The completed system now generates approximately 2,10,000 kWh of clean electricity every year, helping this Pushpanjali household reduce its dependence on conventional grid power.",
+        "With an estimated annual saving of around ₹17.85 Lakhs, the installation is expected to recover its initial investment in approximately 4.3 years.",
+        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping the household’s electricity costs under control."
+      ],
+      "cumulativeSavings": "~₹3.69 Cr+ over 25 years",
+      "paybackYear": 4.3,
+      "stats": [
+        {
+          "label": "Estimated clean energy generated every year",
+          "value": "~2,10,000 kWh"
+        },
+        {
+          "label": "Estimated annual electricity savings",
+          "value": "~₹17.85 Lakhs"
+        },
+        {
+          "label": "Estimated investment payback period",
+          "value": "~4.3 Years"
+        },
+        {
+          "label": "Expected useful system life",
+          "value": "25+ Years"
+        }
+      ]
+    },
+    "chartValues": {
+      "annualSavings": 17.85,
+      "systemCost": 77
+    },
+    "testimonialIndex": 0,
+    "testimonial": {
+      "quote": "A system this size needs real planning, and Solergy delivered. It went in cleanly, and the difference in our bill is hard to miss.",
+      "name": "Homeowner",
+      "role": "Pushpanjali, Delhi"
+    },
+    "otherProjectIds": [
+      "res-pushpanjali-delhi",
+      "res-janpath-ludhiana",
+      "res-paschim-vihar-delhi"
+    ]
+  },
+  {
+    "id": "res-janpath-ludhiana",
+    "title": "Janpath Rooftop System",
+    "category": "Residential",
+    "city": "Ludhiana",
+    "state": "Punjab",
+    "size": "80 kW",
+    "date": "February 2025",
+    "systemType": "On-Grid Solar",
+    "badge": "On-Grid Solar · 80 kW · Rooftop",
+    "image": "/images/projects/why-solergy-house.jpg",
+    "gallery": [
+      "/images/projects/why-solergy-house.jpg",
+      "/images/projects/service1.jpg",
+      "/images/projects/service2.jpg",
+      "/images/projects/service3.jpg",
+      "/images/projects/hero-house.png",
+      "/images/projects/hero-house-new.webp"
+    ],
+    "galleryAlts": [
+      "80 kW rooftop solar system on a home in Janpath, Ludhiana",
+      "Solar panels laid out across the rooftop, Janpath",
+      "Three-phase string inverter installed for an 80 kW home solar system",
+      "Solergy team installing rooftop solar panels in Ludhiana",
+      "Close-up of Mono PERC solar panels on a residential rooftop",
+      "Completed 80 kW on-grid rooftop solar installation, Ludhiana"
+    ],
+    "description": "A large on-grid rooftop system covering a sizeable share of this Janpath household’s daytime electricity needs.",
+    "seo": {
+      "title": "80 kW Rooftop Solar, Janpath, Ludhiana | Solergy India",
+      "description": "See how Solergy India designed and installed an 80 kW rooftop solar system in Janpath, Ludhiana, covering a sizeable share of a household’s daytime needs."
+    },
+    "overview": {
+      "heading": "A Rooftop Built to Carry a Big Load.",
+      "paragraphs": [
+        "This Janpath household had a large rooftop and an equally large daytime electricity load. The opportunity to offset it meaningfully was clear.",
+        "Solergy studied the household’s usage pattern and available roof area before sizing a system to match the actual load, not just the available space.",
+        "The result was an 80 kW rooftop solar system built to carry a large share of the home’s daytime demand."
+      ]
+    },
+    "challenge": {
+      "heading": "A Big Bill Needed a Big Enough System.",
+      "intro": [
+        "A large daytime load meant a modest system wouldn’t move the needle. The household needed a system sized to match real consumption.",
+        "The installation also had to be sequenced carefully across a large rooftop without disrupting daily routines."
       ],
       "points": [
         {
           "title": "High Daytime Load",
-          "description": "Continuous equipment operation kept the facility's daytime power demand consistently high."
+          "description": "A sizeable daytime electricity draw required a system large enough to offset it meaningfully."
         },
         {
-          "title": "Rising Industrial Tariffs",
-          "description": "Increasing commercial power costs were adding pressure to operating margins."
+          "title": "Large Rooftop Coordination",
+          "description": "A bigger roof area meant more careful planning to maximise panel layout and sun exposure."
         },
         {
-          "title": "Zero-Disruption Installation",
-          "description": "The rollout had to be phased to avoid interrupting day-to-day production."
+          "title": "Minimal Disruption",
+          "description": "The household wanted the switch to solar completed with as little day-to-day disruption as possible."
         }
       ]
     },
     "solution": {
-      "heading": "900 kW. Engineered for the Plant.",
+      "heading": "80 kW. Sized for the Real Load.",
       "intro": [
-        "Solergy designed a 900 kW on-grid rooftop plant across the facility's main shed, engineered for continuous industrial load.",
-        "Our team handled procurement, installation, electrical integration, testing, and commissioning end to end."
+        "Solergy designed an 80 kW on-grid rooftop system matched to the household’s actual daytime consumption.",
+        "Our team handled layout, procurement, installation, electrical integration, testing, and net metering approval end to end."
       ],
       "points": [
         {
           "title": "Daytime Generation",
-          "description": "Designed to offset a large share of the facility's continuous daytime power draw."
-        },
-        {
-          "title": "Phased, Safe Installation",
-          "description": "The rollout was sequenced to keep production running throughout."
-        },
-        {
-          "title": "Long-Term Performance",
-          "description": "Industrial-grade components selected for reliable operation at full plant scale."
-        }
-      ]
-    },
-    "glance": [
-      {
-        "label": "System Capacity",
-        "value": "900 kW"
-      },
-      {
-        "label": "System Type",
-        "value": "On-Grid"
-      },
-      {
-        "label": "Installation",
-        "value": "Rooftop"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~13,50,000 kWh"
-      },
-      {
-        "label": "Annual Savings",
-        "value": "~₹1.15 Cr"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 Years"
-      },
-      {
-        "label": "System Life",
-        "value": "25+ Years"
-      }
-    ],
-    "impact": {
-      "paragraphs": [
-        "The completed plant now generates approximately 13,50,000 kWh of clean electricity every year, helping Shakunt Enterprises reduce its dependence on conventional grid power.",
-        "With an estimated annual saving of around ₹1.15 Cr, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the plant can continue generating clean energy and supporting the facility's sustainability targets."
-      ],
-      "cumulativeSavings": "~₹23.74 Cr+ over 25 years",
-      "paybackYear": 4.3,
-      "stats": [
-        {
-          "label": "Estimated clean energy generated every year.",
-          "value": "~13,50,000 kWh"
-        },
-        {
-          "label": "Estimated annual electricity savings.",
-          "value": "~₹1.15 Cr"
-        },
-        {
-          "label": "Estimated investment payback period.",
-          "value": "~4.3 Years"
-        },
-        {
-          "label": "Expected useful system life.",
-          "value": "25+ Years"
-        }
-      ]
-    },
-    "testimonialIndex": 1,
-    "seo": {
-      "title": "Shakunt Enterprises Rooftop Plant, Dharwad | 900 kW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed a 900 kW on-grid rooftop solar plant for Shakunt Enterprises in Dharwad, Karnataka."
-    }
-  },
-  {
-    "id": "ci-bhopal-deepak-fasteners",
-    "title": "Deepak Fasteners Solar Plant",
-    "category": "Commercial/Industrial",
-    "city": "Bhopal",
-    "state": "Madhya Pradesh",
-    "size": "3 MW",
-    "date": "August 2024",
-    "systemType": "On-Grid Solar",
-    "image": "/images/projects/service2.jpg",
-    "gallery": [
-      "/images/projects/service2.jpg",
-      "/images/projects/service1.jpg",
-      "/images/projects/hero-house.png",
-      "/images/projects/service3.jpg",
-      "/images/projects/why-solergy-house.jpg"
-    ],
-    "description": "A 3 MW rooftop and shed-mounted solar plant built to significantly lower Deepak Fasteners' manufacturing power costs.",
-    "story": [
-      "Deepak Fasteners' Bhopal manufacturing unit ran continuous process equipment through the day, driving some of the highest power costs on their books.",
-      "We deployed a 3 MW solar plant across the facility's production sheds, coordinating closely with the plant's engineering team to keep operations running throughout the build.",
-      "The plant is now one of our largest commissioned systems, offsetting a substantial share of the facility's daytime power draw."
-    ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "3 MW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "6,742 x 445W Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "3 MW Central Inverter"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~45,00,000 units"
-      },
-      {
-        "label": "Monthly Savings",
-        "value": "Up to ₹31.88 lakh"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 years"
-      }
-    ],
-    "overview": {
-      "heading": "A Manufacturing Unit Scaled Up to Match.",
-      "paragraphs": [
-        "Deepak Fasteners' Bhopal unit ran continuous process equipment, with power costs climbing to match.",
-        "Solergy studied the facility's load profile and shed layout before designing a plant at a scale that matched real consumption.",
-        "The result was a 3 MW solar plant built to substantially offset the facility's daytime power draw."
-      ]
-    },
-    "challenge": {
-      "heading": "Continuous Production, Continuous Costs.",
-      "intro": [
-        "Round-the-clock process equipment kept power demand — and costs — consistently high.",
-        "A plant at this scale needed careful phasing to avoid any disruption to manufacturing."
-      ],
-      "points": [
-        {
-          "title": "High Continuous Load",
-          "description": "Continuous process equipment kept the facility's daytime power demand consistently high."
-        },
-        {
-          "title": "Significant Operating Costs",
-          "description": "Rising industrial tariffs were adding real pressure to manufacturing margins."
-        },
-        {
-          "title": "Large-Scale Phased Rollout",
-          "description": "A 3 MW installation required careful sequencing to keep production uninterrupted."
-        }
-      ]
-    },
-    "solution": {
-      "heading": "3 MW. Built for Continuous Production.",
-      "intro": [
-        "Solergy designed a 3 MW on-grid solar plant across the facility's production sheds, engineered for continuous industrial loads.",
-        "Our team coordinated procurement, installation, electrical integration, testing, and commissioning with the plant's engineering team throughout."
-      ],
-      "points": [
-        {
-          "title": "Daytime Generation",
-          "description": "Designed to offset a substantial share of the facility's continuous daytime power draw."
-        },
-        {
-          "title": "Coordinated, Phased Build",
-          "description": "The rollout was sequenced closely with the plant's engineering team to avoid disruption."
-        },
-        {
-          "title": "Long-Term Performance",
-          "description": "Industrial-grade components selected for reliable operation at full plant scale."
-        }
-      ]
-    },
-    "glance": [
-      {
-        "label": "System Capacity",
-        "value": "3 MW"
-      },
-      {
-        "label": "System Type",
-        "value": "On-Grid"
-      },
-      {
-        "label": "Installation",
-        "value": "Rooftop & Shed-Mounted"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~45,00,000 kWh"
-      },
-      {
-        "label": "Annual Savings",
-        "value": "~₹3.83 Cr"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 Years"
-      },
-      {
-        "label": "System Life",
-        "value": "25+ Years"
-      }
-    ],
-    "impact": {
-      "paragraphs": [
-        "The completed plant now generates approximately 45,00,000 kWh of clean electricity every year, helping Deepak Fasteners reduce its dependence on conventional grid power.",
-        "With an estimated annual saving of around ₹3.83 Cr, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the plant can continue generating clean energy and supporting the facility's sustainability targets."
-      ],
-      "cumulativeSavings": "~₹79.13 Cr+ over 25 years",
-      "paybackYear": 4.3,
-      "stats": [
-        {
-          "label": "Estimated clean energy generated every year.",
-          "value": "~45,00,000 kWh"
-        },
-        {
-          "label": "Estimated annual electricity savings.",
-          "value": "~₹3.83 Cr"
-        },
-        {
-          "label": "Estimated investment payback period.",
-          "value": "~4.3 Years"
-        },
-        {
-          "label": "Expected useful system life.",
-          "value": "25+ Years"
-        }
-      ]
-    },
-    "testimonialIndex": 2,
-    "seo": {
-      "title": "Deepak Fasteners Solar Plant, Bhopal | 3 MW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed a 3 MW on-grid solar plant for Deepak Fasteners in Bhopal, Madhya Pradesh."
-    }
-  },
-  {
-    "id": "ci-indore-ralson-tyres",
-    "title": "Ralson Tyres Solar Plant",
-    "category": "Commercial/Industrial",
-    "city": "Indore",
-    "state": "Madhya Pradesh",
-    "size": "4.5 MW",
-    "date": "October 2024",
-    "systemType": "On-Grid Solar",
-    "image": "/images/projects/service3.jpg",
-    "gallery": [
-      "/images/projects/service3.jpg",
-      "/images/projects/hero-house-new.webp",
-      "/images/projects/service1.jpg",
-      "/images/projects/service2.jpg",
-      "/images/projects/why-solergy-house.jpg"
-    ],
-    "description": "One of our largest industrial installations — a 4.5 MW plant cutting production costs for Ralson Tyres' Indore facility.",
-    "story": [
-      "Ralson Tyres' Indore manufacturing facility ran heavy, continuous machinery, putting it among the highest power consumers in our client base.",
-      "We deployed a 4.5 MW solar plant across the facility's rooftops and shed structures — one of our largest installations — engineered specifically for heavy industrial load.",
-      "The plant now offsets a major share of the facility's daytime power draw, significantly easing the pressure of industrial tariffs on production costs."
-    ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "4.5 MW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "10,112 x 445W Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "4.5 MW Central Inverter"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~67,50,000 units"
-      },
-      {
-        "label": "Monthly Savings",
-        "value": "Up to ₹47.81 lakh"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 years"
-      }
-    ],
-    "overview": {
-      "heading": "Heavy Industry, Matched by a Heavy-Duty Plant.",
-      "paragraphs": [
-        "Ralson Tyres' Indore facility ran heavy, continuous manufacturing machinery, with power costs to match.",
-        "Solergy studied the facility's load profile, rooftop and shed structures before engineering a plant built specifically for heavy industrial load.",
-        "The result was a 4.5 MW solar plant — one of our largest installations — built to offset a major share of the facility's daytime power draw."
-      ]
-    },
-    "challenge": {
-      "heading": "A Heavy Load Demanded a Heavy-Duty Response.",
-      "intro": [
-        "Continuous, heavy manufacturing machinery kept power demand among the highest in our client base.",
-        "A plant at this scale required careful engineering across multiple rooftop and shed structures."
-      ],
-      "points": [
-        {
-          "title": "Very High Continuous Load",
-          "description": "Heavy manufacturing machinery kept daytime power demand consistently high around the clock."
-        },
-        {
-          "title": "Significant Tariff Pressure",
-          "description": "Industrial power tariffs were placing real pressure on production costs."
-        },
-        {
-          "title": "Multi-Structure Engineering",
-          "description": "The installation spanned multiple rooftop and shed structures requiring careful integration."
-        }
-      ]
-    },
-    "solution": {
-      "heading": "4.5 MW. Engineered for Heavy Industry.",
-      "intro": [
-        "Solergy designed a 4.5 MW on-grid solar plant across the facility's rooftop and shed structures, engineered specifically for heavy industrial load.",
-        "Our team managed procurement, installation, electrical integration, testing, and commissioning across the full site."
-      ],
-      "points": [
-        {
-          "title": "Daytime Generation",
-          "description": "Designed to offset a major share of the facility's continuous daytime power draw."
-        },
-        {
-          "title": "Multi-Structure Integration",
-          "description": "The plant was engineered across multiple rooftop and shed structures for maximum output."
-        },
-        {
-          "title": "Long-Term Performance",
-          "description": "Heavy-duty, industrial-grade components selected for reliable operation at full plant scale."
-        }
-      ]
-    },
-    "glance": [
-      {
-        "label": "System Capacity",
-        "value": "4.5 MW"
-      },
-      {
-        "label": "System Type",
-        "value": "On-Grid"
-      },
-      {
-        "label": "Installation",
-        "value": "Rooftop & Shed-Mounted"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~67,50,000 kWh"
-      },
-      {
-        "label": "Annual Savings",
-        "value": "~₹5.74 Cr"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 Years"
-      },
-      {
-        "label": "System Life",
-        "value": "25+ Years"
-      }
-    ],
-    "impact": {
-      "paragraphs": [
-        "The completed plant now generates approximately 67,50,000 kWh of clean electricity every year, helping Ralson Tyres reduce its dependence on conventional grid power.",
-        "With an estimated annual saving of around ₹5.74 Cr, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the plant can continue generating clean energy and supporting the facility's sustainability targets."
-      ],
-      "cumulativeSavings": "~₹118.69 Cr+ over 25 years",
-      "paybackYear": 4.3,
-      "stats": [
-        {
-          "label": "Estimated clean energy generated every year.",
-          "value": "~67,50,000 kWh"
-        },
-        {
-          "label": "Estimated annual electricity savings.",
-          "value": "~₹5.74 Cr"
-        },
-        {
-          "label": "Estimated investment payback period.",
-          "value": "~4.3 Years"
-        },
-        {
-          "label": "Expected useful system life.",
-          "value": "25+ Years"
-        }
-      ]
-    },
-    "testimonialIndex": 3,
-    "seo": {
-      "title": "Ralson Tyres Solar Plant, Indore | 4.5 MW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed a 4.5 MW on-grid solar plant for Ralson Tyres in Indore, Madhya Pradesh."
-    }
-  },
-  {
-    "id": "ci-sonipat-bonn-nutrients",
-    "title": "Bonn Nutrients Rooftop Plant",
-    "category": "Commercial/Industrial",
-    "city": "Sonipat",
-    "state": "Haryana",
-    "size": "800 kW",
-    "date": "December 2024",
-    "systemType": "On-Grid Solar",
-    "image": "/images/projects/hero-house.png",
-    "gallery": [
-      "/images/projects/hero-house.png",
-      "/images/projects/service3.jpg",
-      "/images/projects/service2.jpg",
-      "/images/projects/why-solergy-house.jpg",
-      "/images/projects/service1.jpg"
-    ],
-    "description": "An 800 kW rooftop plant reducing daytime power costs for Bonn Nutrients' Sonipat production facility.",
-    "story": [
-      "Bonn Nutrients' Sonipat facility ran continuous production equipment, with industrial power tariffs becoming a growing line item on their books.",
-      "We deployed an 800 kW rooftop plant across the facility's shed roofs, phasing the installation to keep production running without interruption.",
-      "The plant now offsets a significant share of the facility's daytime load, and has become part of the company's broader sustainability push."
-    ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "800 kW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "1,798 x 445W Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "800 kW Central Inverter"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~12,00,000 units"
-      },
-      {
-        "label": "Monthly Savings",
-        "value": "Up to ₹8.5 lakh"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 years"
-      }
-    ],
-    "overview": {
-      "heading": "A Production Line Built to Offset Its Own Costs.",
-      "paragraphs": [
-        "Bonn Nutrients' Sonipat facility ran continuous production equipment, with industrial tariffs growing year over year.",
-        "Solergy studied the facility's load profile and shed roof layout before designing a plant sized to the facility's real daytime draw.",
-        "The result was an 800 kW rooftop solar plant built to significantly offset the facility's power costs."
-      ]
-    },
-    "challenge": {
-      "heading": "Growing Tariffs on a Steady Production Line.",
-      "intro": [
-        "Continuous production equipment kept daytime power demand consistently high.",
-        "The installation needed to be phased carefully to keep production uninterrupted."
-      ],
-      "points": [
-        {
-          "title": "Continuous Production Load",
-          "description": "Round-the-clock production equipment kept power demand consistently high."
-        },
-        {
-          "title": "Growing Tariff Pressure",
-          "description": "Rising industrial power costs were becoming a larger line item for the business."
-        },
-        {
-          "title": "Phased, Safe Installation",
-          "description": "The rollout had to be sequenced to avoid disrupting ongoing production."
-        }
-      ]
-    },
-    "solution": {
-      "heading": "800 kW. Phased Around Production.",
-      "intro": [
-        "Solergy designed an 800 kW on-grid rooftop plant across the facility's shed roofs, phased to keep production running throughout.",
-        "Our team handled procurement, installation, electrical integration, testing, and commissioning end to end."
-      ],
-      "points": [
-        {
-          "title": "Daytime Generation",
-          "description": "Designed to offset a significant share of the facility's continuous daytime power draw."
-        },
-        {
-          "title": "Zero-Disruption Rollout",
-          "description": "The installation was phased carefully to keep the production line running throughout."
-        },
-        {
-          "title": "Long-Term Performance",
-          "description": "Industrial-grade components selected for reliable operation at full plant scale."
-        }
-      ]
-    },
-    "glance": [
-      {
-        "label": "System Capacity",
-        "value": "800 kW"
-      },
-      {
-        "label": "System Type",
-        "value": "On-Grid"
-      },
-      {
-        "label": "Installation",
-        "value": "Rooftop"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~12,00,000 kWh"
-      },
-      {
-        "label": "Annual Savings",
-        "value": "~₹1.02 Cr"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 Years"
-      },
-      {
-        "label": "System Life",
-        "value": "25+ Years"
-      }
-    ],
-    "impact": {
-      "paragraphs": [
-        "The completed plant now generates approximately 12,00,000 kWh of clean electricity every year, helping Bonn Nutrients reduce its dependence on conventional grid power.",
-        "With an estimated annual saving of around ₹1.02 Cr, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the plant can continue generating clean energy and supporting the facility's sustainability targets."
-      ],
-      "cumulativeSavings": "~₹21.1 Cr+ over 25 years",
-      "paybackYear": 4.3,
-      "stats": [
-        {
-          "label": "Estimated clean energy generated every year.",
-          "value": "~12,00,000 kWh"
-        },
-        {
-          "label": "Estimated annual electricity savings.",
-          "value": "~₹1.02 Cr"
-        },
-        {
-          "label": "Estimated investment payback period.",
-          "value": "~4.3 Years"
-        },
-        {
-          "label": "Expected useful system life.",
-          "value": "25+ Years"
-        }
-      ]
-    },
-    "testimonialIndex": 4,
-    "seo": {
-      "title": "Bonn Nutrients Rooftop Plant, Sonipat | 800 kW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed an 800 kW on-grid rooftop solar plant for Bonn Nutrients in Sonipat, Haryana."
-    }
-  },
-  {
-    "id": "ci-ludhiana-garg-acrylics",
-    "title": "Garg Acrylics Solar Plant",
-    "category": "Commercial/Industrial",
-    "city": "Ludhiana",
-    "state": "Punjab",
-    "size": "8 MW",
-    "date": "September 2024",
-    "systemType": "On-Grid Solar",
-    "image": "/images/projects/hero-house-new.webp",
-    "gallery": [
-      "/images/projects/hero-house-new.webp",
-      "/images/projects/service1.jpg",
-      "/images/projects/service3.jpg",
-      "/images/projects/service2.jpg",
-      "/images/projects/why-solergy-house.jpg"
-    ],
-    "description": "Our largest installation to date — an 8 MW solar plant engineered for Garg Acrylics' heavy industrial power demand in Ludhiana.",
-    "story": [
-      "Garg Acrylics' Ludhiana manufacturing operation ran some of the heaviest continuous industrial load across our client base, with power costs to match.",
-      "We engineered an 8 MW solar plant across the facility's extensive shed and rooftop structures — our largest project to date — built specifically to handle sustained heavy industrial draw.",
-      "The plant is now a cornerstone of the facility's cost structure, offsetting a major share of its daytime power consumption."
-    ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "8 MW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "17,978 x 445W Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "8 MW Central Inverter"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~1,20,00,000 units"
-      },
-      {
-        "label": "Monthly Savings",
-        "value": "Up to ₹85 lakh"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 years"
-      }
-    ],
-    "overview": {
-      "heading": "Our Largest Plant, Built for Our Heaviest Load.",
-      "paragraphs": [
-        "Garg Acrylics' Ludhiana facility ran some of the heaviest continuous industrial load in our client base.",
-        "Solergy studied the facility's extensive shed and rooftop structures before engineering our largest solar plant to date, purpose-built for sustained heavy industrial draw.",
-        "The result was an 8 MW solar plant built to offset a major share of the facility's daytime power consumption."
-      ]
-    },
-    "challenge": {
-      "heading": "A Scale That Demanded Our Largest Response.",
-      "intro": [
-        "Sustained, heavy industrial load meant power costs were among the highest in our client base.",
-        "A plant at 8 MW scale required engineering across extensive shed and rooftop structures."
-      ],
-      "points": [
-        {
-          "title": "Heaviest Continuous Load",
-          "description": "Sustained heavy manufacturing load kept daytime power demand consistently at its highest."
-        },
-        {
-          "title": "Major Tariff Exposure",
-          "description": "Industrial power costs at this scale represented a major recurring operating expense."
-        },
-        {
-          "title": "Large-Scale, Multi-Structure Build",
-          "description": "The installation spanned extensive shed and rooftop structures requiring careful engineering."
-        }
-      ]
-    },
-    "solution": {
-      "heading": "8 MW. Our Largest Plant to Date.",
-      "intro": [
-        "Solergy engineered an 8 MW on-grid solar plant across the facility's shed and rooftop structures, purpose-built for sustained heavy industrial load.",
-        "Our team managed procurement, installation, electrical integration, testing, and commissioning across the full site."
-      ],
-      "points": [
-        {
-          "title": "Daytime Generation",
-          "description": "Designed to offset a major share of the facility's continuous daytime power draw."
-        },
-        {
-          "title": "Large-Scale Integration",
-          "description": "The plant was engineered across extensive shed and rooftop structures for maximum output."
-        },
-        {
-          "title": "Long-Term Performance",
-          "description": "Heavy-duty, industrial-grade components selected for reliable operation at full plant scale."
-        }
-      ]
-    },
-    "glance": [
-      {
-        "label": "System Capacity",
-        "value": "8 MW"
-      },
-      {
-        "label": "System Type",
-        "value": "On-Grid"
-      },
-      {
-        "label": "Installation",
-        "value": "Rooftop & Shed-Mounted"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~1,20,00,000 kWh"
-      },
-      {
-        "label": "Annual Savings",
-        "value": "~₹10.2 Cr"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 Years"
-      },
-      {
-        "label": "System Life",
-        "value": "25+ Years"
-      }
-    ],
-    "impact": {
-      "paragraphs": [
-        "The completed plant now generates approximately 1,20,00,000 kWh of clean electricity every year, helping Garg Acrylics reduce its dependence on conventional grid power.",
-        "With an estimated annual saving of around ₹10.2 Cr, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the plant can continue generating clean energy and supporting the facility's sustainability targets."
-      ],
-      "cumulativeSavings": "~₹211 Cr+ over 25 years",
-      "paybackYear": 4.3,
-      "stats": [
-        {
-          "label": "Estimated clean energy generated every year.",
-          "value": "~1,20,00,000 kWh"
-        },
-        {
-          "label": "Estimated annual electricity savings.",
-          "value": "~₹10.2 Cr"
-        },
-        {
-          "label": "Estimated investment payback period.",
-          "value": "~4.3 Years"
-        },
-        {
-          "label": "Expected useful system life.",
-          "value": "25+ Years"
-        }
-      ]
-    },
-    "testimonialIndex": 0,
-    "seo": {
-      "title": "Garg Acrylics Solar Plant, Ludhiana | 8 MW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed an 8 MW on-grid solar plant for Garg Acrylics in Ludhiana, Punjab."
-    }
-  },
-  {
-    "id": "ci-vadodara-shakunt-enterprises",
-    "title": "Shakunt Enterprises Rooftop System",
-    "category": "Commercial/Industrial",
-    "city": "Vadodara",
-    "state": "Gujarat",
-    "size": "250 kW",
-    "date": "November 2024",
-    "systemType": "On-Grid Solar",
-    "image": "/images/projects/service1.jpg",
-    "gallery": [
-      "/images/projects/service1.jpg",
-      "/images/projects/why-solergy-house.jpg",
-      "/images/projects/service3.jpg",
-      "/images/projects/hero-house.png",
-      "/images/projects/service2.jpg"
-    ],
-    "description": "A 250 kW rooftop system cutting daytime power costs for Shakunt Enterprises' Vadodara facility.",
-    "story": [
-      "Shakunt Enterprises' Vadodara facility wanted to replicate the success of their Dharwad installation, looking to bring down daytime power costs at this site too.",
-      "We deployed a 250 kW rooftop system across the facility's available shed roof, completing the installation efficiently with minimal disruption.",
-      "The system now offsets a meaningful share of the facility's daytime load, adding to the company's growing solar footprint."
-    ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "250 kW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "562 x 445W Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "250 kW Central Inverter"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~3,75,000 units"
-      },
-      {
-        "label": "Monthly Savings",
-        "value": "Up to ₹2.66 lakh"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 years"
-      }
-    ],
-    "overview": {
-      "heading": "A Second Site, A Growing Solar Footprint.",
-      "paragraphs": [
-        "Shakunt Enterprises wanted to extend their solar investment to their Vadodara facility, following success at another site.",
-        "Solergy studied the facility's load profile and shed roof layout before sizing a 250 kW system matched to actual daytime draw.",
-        "The result was a rooftop solar system built to meaningfully offset the facility's daytime power costs."
-      ]
-    },
-    "challenge": {
-      "heading": "Replicating Results at a New Site.",
-      "intro": [
-        "The facility's daytime equipment load meant a correctly sized system could deliver real, measurable savings.",
-        "The installation needed to be completed efficiently, without disrupting ongoing operations."
-      ],
-      "points": [
-        {
-          "title": "Steady Daytime Load",
-          "description": "A consistent daytime equipment load meant a right-sized system would deliver meaningful savings."
-        },
-        {
-          "title": "Efficient Rooftop Use",
-          "description": "The available shed roof needed to be used efficiently to maximise system output."
-        },
-        {
-          "title": "Minimal-Disruption Installation",
-          "description": "The rollout needed to be completed without interrupting day-to-day operations."
-        }
-      ]
-    },
-    "solution": {
-      "heading": "250 kW. Efficient and Effective.",
-      "intro": [
-        "Solergy designed a 250 kW on-grid rooftop system sized to the facility's actual daytime power draw.",
-        "Our team handled procurement, installation, electrical integration, testing, and commissioning end to end."
-      ],
-      "points": [
-        {
-          "title": "Daytime Generation",
-          "description": "Designed to offset a meaningful share of the facility's daytime electricity consumption."
+          "description": "Designed to offset a large share of the household’s daytime electricity consumption."
         },
         {
           "title": "Efficient Rooftop Layout",
-          "description": "Panels were laid out to make the most of the available shed roof area."
+          "description": "Panels were laid out to make the most of the available roof area and sun exposure."
         },
         {
           "title": "Long-Term Performance",
-          "description": "Components selected for reliable, long-term operation with minimal upkeep."
+          "description": "Components selected for reliable, low-maintenance operation over the long term."
         }
       ]
     },
     "glance": [
       {
         "label": "System Capacity",
-        "value": "250 kW"
+        "value": "80 kW"
       },
       {
         "label": "System Type",
@@ -1895,11 +1770,11 @@
       },
       {
         "label": "Annual Generation",
-        "value": "~3,75,000 kWh"
+        "value": "~1,20,000 kWh"
       },
       {
         "label": "Annual Savings",
-        "value": "~₹31.88 Lakhs"
+        "value": "~₹10.2 Lakhs"
       },
       {
         "label": "Estimated Payback",
@@ -1910,37 +1785,78 @@
         "value": "25+ Years"
       }
     ],
+    "story": [
+      "This household in Janpath, Ludhiana had a spacious rooftop and a steadily rising electricity bill driven by a large daytime load. They wanted a system substantial enough to make a real dent in that bill, without an overly complex installation.",
+      "We designed an 80 kW on-grid array across the available roof area, sequencing the installation to keep disruption to a minimum.",
+      "The system now covers a significant share of the household’s daytime consumption, with savings visible from the very first billing cycle."
+    ],
+    "specs": [
+      {
+        "label": "System Size",
+        "value": "80 kW"
+      },
+      {
+        "label": "Panels Installed",
+        "value": "~180 × 445W Mono PERC"
+      },
+      {
+        "label": "Inverter",
+        "value": "80 kW Three-Phase String Inverter"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~1,20,000 units"
+      },
+      {
+        "label": "Monthly Bill Savings",
+        "value": "Up to ₹85,000"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~4.3 years"
+      }
+    ],
     "impact": {
       "paragraphs": [
-        "The completed system now generates approximately 3,75,000 kWh of clean electricity every year, helping Shakunt Enterprises reduce its dependence on conventional grid power at this site.",
-        "With an estimated annual saving of around ₹31.88 Lakhs, the installation is expected to recover its initial investment in approximately 4.3 years.",
-        "Over its expected 25+ year operating life, the system can continue generating clean energy and supporting the facility's sustainability targets."
+        "The completed system now generates approximately 1,20,000 kWh of clean electricity every year, helping this Janpath household reduce its dependence on conventional grid power.",
+        "With an estimated annual saving of around ₹10.2 Lakhs, the installation is expected to recover its initial investment in approximately 4.3 years.",
+        "Over its expected 25+ year operating life, the system can continue generating clean energy and keeping the household’s electricity costs under control."
       ],
-      "cumulativeSavings": "~₹6.59 Cr+ over 25 years",
+      "cumulativeSavings": "~₹2.11 Cr+ over 25 years",
       "paybackYear": 4.3,
       "stats": [
         {
-          "label": "Estimated clean energy generated every year.",
-          "value": "~3,75,000 kWh"
+          "label": "Estimated clean energy generated every year",
+          "value": "~1,20,000 kWh"
         },
         {
-          "label": "Estimated annual electricity savings.",
-          "value": "~₹31.88 Lakhs"
+          "label": "Estimated annual electricity savings",
+          "value": "~₹10.2 Lakhs"
         },
         {
-          "label": "Estimated investment payback period.",
+          "label": "Estimated investment payback period",
           "value": "~4.3 Years"
         },
         {
-          "label": "Expected useful system life.",
+          "label": "Expected useful system life",
           "value": "25+ Years"
         }
       ]
     },
-    "testimonialIndex": 1,
-    "seo": {
-      "title": "Shakunt Enterprises Rooftop System, Vadodara | 250 kW Solar Project | Solergy India",
-      "description": "See how Solergy India designed and installed a 250 kW on-grid rooftop solar system for Shakunt Enterprises in Vadodara, Gujarat."
-    }
+    "chartValues": {
+      "annualSavings": 10.2,
+      "systemCost": 44
+    },
+    "testimonialIndex": 0,
+    "testimonial": {
+      "quote": "We wanted a system big enough to matter, and that’s exactly what we got. The installation was smooth and the savings showed up quickly.",
+      "name": "Homeowner",
+      "role": "Janpath, Ludhiana"
+    },
+    "otherProjectIds": [
+      "res-pushpanjali-140kw-delhi",
+      "res-pushpanjali-delhi",
+      "res-south-city-gurgaon"
+    ]
   }
 ]

@@ -93,17 +93,28 @@ export default function ProjectDetailProcess({ project }: ProjectDetailProcessPr
   const sectionRef = useRef<HTMLElement>(null);
   const visible = useInView(sectionRef, 0.1);
 
+  const isResidential = project.category === "Residential";
+  const clientName = (project as any).client || project.title.replace(/\s+Solar\s+Plant|\s+Rooftop\s+System/gi, "");
+
   const STEPS = [
     {
       step: "01",
       title: "Understand",
-      description: `We studied ${project.title}'s electricity consumption, operating hours, rooftop area, and project requirements.`,
+      description:
+        (project as any).processSteps?.[0] ||
+        (isResidential
+          ? "We studied the household’s energy bills, peak usage times, and roof space."
+          : `We studied ${clientName}’s electricity consumption, operating hours, available area, and project requirements.`),
       icon: <SearchIcon />,
     },
     {
       step: "02",
       title: "Design",
-      description: `Our engineering team designed a ${project.size} system around the facility's energy profile and available space.`,
+      description:
+        (project as any).processSteps?.[1] ||
+        (isResidential
+          ? `Our team designed a ${project.size} system built around high daytime and evening consumption.`
+          : `Our engineering team designed a ${project.size} system around the facility’s energy profile and available space.`),
       icon: <DesignIcon />,
     },
     {

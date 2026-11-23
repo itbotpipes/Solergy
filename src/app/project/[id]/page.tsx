@@ -37,8 +37,10 @@ export async function generateMetadata({
   const ogImg = typeof project.image === "string" ? project.image : (project.image as any)?.src;
 
   return generateSEOMetadata(pageKey, {
-    title: `${project.title} — ${project.size} Solar Installation | Solergy`,
-    description: `Case study on how Solergy engineered and delivered a ${project.size} solar system for ${project.title} in ${project.city}, ${project.state || "Gujarat"}.`,
+    title: project.seo?.title || `${project.title} — ${project.size} Solar Installation | Solergy`,
+    description:
+      project.seo?.description ||
+      `Case study on how Solergy engineered and delivered a ${project.size} solar system for ${project.title} in ${project.city}, ${project.state || "Punjab"}.`,
     openGraphImage: ogImg,
   });
 }

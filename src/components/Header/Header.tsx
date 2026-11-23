@@ -57,7 +57,7 @@ export default function Header() {
     }
     setMenuOpen(false);
   };
-
+  
   const isActive = (link: NavLinkItem) => {
     if (!link.to) return false;
     if (link.to === '/') return pathname === '/';

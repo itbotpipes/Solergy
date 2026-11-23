@@ -59,20 +59,24 @@ export default function ProjectDetailGallery({ project }: ProjectDetailGalleryPr
       }`}
     >
       <div className={styles.inner}>
+        <h2 className={styles.heading}>A Look at the Installation.</h2>
         <div className={styles.grid}>
           {images.map((image, index) => {
             const src = typeof image === "string" ? image : image?.src;
+            const altText =
+              project.galleryAlts?.[index] ||
+              `${project.title} installation photo ${index + 1}`;
             return (
               <button
                 key={index}
                 type="button"
                 className={styles.item}
                 onClick={() => setActiveIndex(index)}
-                aria-label={`View ${project.title} image ${index + 1}`}
+                aria-label={altText}
               >
                 <img
                   src={src}
-                  alt={`${project.title} ${index + 1}`}
+                  alt={altText}
                   className={styles.image}
                 />
               </button>

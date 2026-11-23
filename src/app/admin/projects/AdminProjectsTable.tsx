@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Plus, Edit2, Trash2, ExternalLink, MapPin } from "lucide-react";
 import { Project } from "@/types/project";
@@ -16,13 +16,17 @@ export default function AdminProjectsTable({
   const [projects, setProjects] = useState<Project[]>(initialProjects);
   const [search, setSearch] = useState("");
 
+  useEffect(() => {
+    setProjects(initialProjects);
+  }, [initialProjects]);
+
   const handleDelete = async (id: string, title: string) => {
     if (!window.confirm(`Are you sure you want to delete project "${title}"?`)) {
       return;
     }
 
     try {
-      const res = await fetch(`/api/admin/projects/${id}`, {
+      const res = await fetch(`/api/admin/projects/${encodeURIComponent(id)}`, {
         method: "DELETE",
       });
       if (res.ok) {

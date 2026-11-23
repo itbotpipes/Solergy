@@ -38,7 +38,7 @@ function ProjectCard({ project, highlighted }: { project: any; highlighted: bool
         <h3 className={styles.title}>{project.title}</h3>
         <p className={styles.description}>{project.description}</p>
         <div className={styles.bottomRow}>
-          <div className={styles.location}>&#128205; {project.city}, {project.state || 'Gujarat'}</div>
+          <div className={styles.location}>&#128205; {project.city}{project.state ? `, ${project.state}` : ''}</div>
           <span className={styles.link}>
             View Project &rarr;
           </span>

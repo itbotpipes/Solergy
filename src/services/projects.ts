@@ -34,16 +34,32 @@ export function saveLocalProjects(projects: Project[]): void {
   }
 }
 
+export async function syncAllProjectsToFirestore(db?: FirebaseFirestore.Firestore | null) {
+  const firestore = db || getAdminFirestore();
+  if (!firestore) return { count: 0, success: false };
+  try {
+    const projects = getLocalProjects();
+    const batch = firestore.batch();
+    for (const project of projects) {
+      const { id, ...data } = project;
+      const ref = firestore.collection('projects').doc(id);
+      batch.set(ref, data, { merge: true });
+    }
+    await batch.commit();
+    console.log(`Synced ${projects.length} projects to Firestore`);
+    return { count: projects.length, success: true };
+  } catch (err) {
+    console.warn('Could not sync local projects to Firestore:', err);
+    return { count: 0, success: false };
+  }
+}
+
 async function seedFirestoreIfEmpty(db: FirebaseFirestore.Firestore) {
   try {
     const check = await db.collection('projects').limit(1).get();
     if (check.empty) {
       console.log('Seeding initial projects into Cloud Firestore...');
-      const projects = getLocalProjects();
-      for (const project of projects) {
-        const { id, ...data } = project;
-        await db.collection('projects').doc(id).set(data);
-      }
+      await syncAllProjectsToFirestore(db);
       console.log('Successfully seeded projects into Firestore.');
     }
   } catch (err) {
@@ -51,10 +67,59 @@ async function seedFirestoreIfEmpty(db: FirebaseFirestore.Firestore) {
   }
 }
 
+export function sanitizeProject(data: Partial<Project> & { id: string }): Project {
+  return {
+    id: data.id,
+    title: data.title || 'Untitled Project',
+    category: data.category || 'Residential',
+    city: data.city || 'Ludhiana',
+    state: data.state || 'Punjab',
+    size: data.size || '10 kW',
+    date: data.date || '',
+    systemType: data.systemType || 'On-Grid Solar',
+    image: data.image || '/images/projects/why-solergy-house.jpg',
+    gallery:
+      Array.isArray(data.gallery) && data.gallery.length > 0
+        ? data.gallery
+        : [data.image || '/images/projects/why-solergy-house.jpg'],
+    description: data.description || '',
+    story: Array.isArray(data.story) ? data.story : [],
+    specs: Array.isArray(data.specs) ? data.specs : [],
+    overview: {
+      heading: data.overview?.heading || data.title || '',
+      paragraphs: Array.isArray(data.overview?.paragraphs) ? data.overview.paragraphs : [],
+    },
+    challenge: {
+      heading: data.challenge?.heading || 'The Challenge',
+      intro: Array.isArray(data.challenge?.intro) ? data.challenge.intro : [],
+      points: Array.isArray(data.challenge?.points) ? data.challenge.points : [],
+    },
+    solution: {
+      heading: data.solution?.heading || 'The Solution',
+      intro: Array.isArray(data.solution?.intro) ? data.solution.intro : [],
+      points: Array.isArray(data.solution?.points) ? data.solution.points : [],
+    },
+    glance: Array.isArray(data.glance) ? data.glance : [],
+    impact: {
+      paragraphs: Array.isArray(data.impact?.paragraphs) ? data.impact.paragraphs : [],
+      cumulativeSavings: data.impact?.cumulativeSavings || '',
+      paybackYear: typeof data.impact?.paybackYear === 'number' ? data.impact.paybackYear : 4,
+      stats: Array.isArray(data.impact?.stats) ? data.impact.stats : [],
+    },
+    testimonialIndex: typeof data.testimonialIndex === 'number' ? data.testimonialIndex : 0,
+    testimonial: data.testimonial,
+    seo: data.seo,
+    badge: data.badge,
+    chartValues: data.chartValues,
+    otherProjectIds: Array.isArray(data.otherProjectIds) ? data.otherProjectIds : [],
+    galleryAlts: Array.isArray(data.galleryAlts) ? data.galleryAlts : [],
+  };
+}
+
 export async function getAllProjects(): Promise<Project[]> {
   const db = getAdminFirestore();
   if (!db) {
-    return getLocalProjects();
+    return getLocalProjects().map(sanitizeProject);
   }
 
   try {
@@ -62,41 +127,53 @@ export async function getAllProjects(): Promise<Project[]> {
 
     const snapshot = await db.collection('projects').get();
     if (snapshot.empty) {
-      return getLocalProjects();
+      return getLocalProjects().map(sanitizeProject);
     }
 
-    const projects: Project[] = snapshot.docs.map((doc: QueryDocumentSnapshot) => ({
-      id: doc.id,
-      ...(doc.data() as Omit<Project, 'id'>),
-    }));
+    const projects: Project[] = snapshot.docs.map((doc: QueryDocumentSnapshot) =>
+      sanitizeProject({
+        id: doc.id,
+        ...(doc.data() as Omit<Project, 'id'>),
+      })
+    );
 
     return projects;
   } catch (err) {
     console.error('Error fetching projects from Firestore:', err);
-    return getLocalProjects();
+    return getLocalProjects().map(sanitizeProject);
   }
 }
 
 export async function getProjectById(id: string): Promise<Project | null> {
   const db = getAdminFirestore();
-  if (!db) {
-    const projects = getLocalProjects();
-    return projects.find((p) => p.id === id) || null;
+  const decodedId = decodeURIComponent(id);
+
+  let rawProject: Project | null = null;
+
+  if (db) {
+    try {
+      let doc = await db.collection('projects').doc(id).get();
+      if (!doc.exists && id !== decodedId) {
+        doc = await db.collection('projects').doc(decodedId).get();
+      }
+      if (doc.exists) {
+        rawProject = { id: doc.id, ...(doc.data() as Omit<Project, 'id'>) };
+      }
+    } catch (err) {
+      console.error(`Error fetching project ${id} from Firestore:`, err);
+    }
   }
 
-  try {
-    const doc = await db.collection('projects').doc(id).get();
-    if (doc.exists) {
-      return { id: doc.id, ...(doc.data() as Omit<Project, 'id'>) };
-    }
-    // Fallback to local
+  if (!rawProject) {
     const projects = getLocalProjects();
-    return projects.find((p) => p.id === id) || null;
-  } catch (err) {
-    console.error(`Error fetching project ${id} from Firestore:`, err);
-    const projects = getLocalProjects();
-    return projects.find((p) => p.id === id) || null;
+    rawProject = projects.find((p) => p.id === id || p.id === decodedId) || null;
   }
+
+  if (!rawProject) {
+    return null;
+  }
+
+  return sanitizeProject(rawProject);
 }
 
 export async function createProject(data: Partial<Project>): Promise<Project> {
@@ -163,25 +240,83 @@ export async function createProject(data: Partial<Project>): Promise<Project> {
 }
 
 export async function updateProject(id: string, data: Partial<Project>): Promise<Project | null> {
+  const db = getAdminFirestore();
+  const decodedId = decodeURIComponent(id);
   const current = getLocalProjects();
-  const existingIdx = current.findIndex((p) => p.id === id);
 
-  if (existingIdx === -1) {
+  let existingIdx = current.findIndex((p) => p.id === id || p.id === decodedId);
+  let existing: Project | null = existingIdx !== -1 ? current[existingIdx] : null;
+
+  // If not found in local JSON, check Firestore
+  if (!existing && db) {
+    try {
+      let doc = await db.collection('projects').doc(id).get();
+      if (!doc.exists && id !== decodedId) {
+        doc = await db.collection('projects').doc(decodedId).get();
+      }
+      if (doc.exists) {
+        existing = { id: doc.id, ...(doc.data() as Omit<Project, 'id'>) };
+      }
+    } catch (err) {
+      console.warn(`Could not fetch project ${id} from Firestore:`, err);
+    }
+  }
+
+  if (!existing) {
     return null;
   }
 
-  const updated: Project = {
-    ...current[existingIdx],
-    ...data,
-    id, // Keep ID intact
-  };
+  const baseProject = sanitizeProject(existing);
+  const targetId = baseProject.id;
 
-  // 1. Update local
-  current[existingIdx] = updated;
+  const updated: Project = sanitizeProject({
+    ...baseProject,
+    ...data,
+    id: targetId, // Keep verified ID intact
+    overview: {
+      heading: data.overview?.heading ?? baseProject.overview.heading,
+      paragraphs: data.overview?.paragraphs ?? baseProject.overview.paragraphs,
+    },
+    challenge: {
+      heading: data.challenge?.heading ?? baseProject.challenge.heading,
+      intro: data.challenge?.intro ?? baseProject.challenge.intro,
+      points: data.challenge?.points ?? baseProject.challenge.points,
+    },
+    solution: {
+      heading: data.solution?.heading ?? baseProject.solution.heading,
+      intro: data.solution?.intro ?? baseProject.solution.intro,
+      points: data.solution?.points ?? baseProject.solution.points,
+    },
+    impact: {
+      paragraphs: data.impact?.paragraphs ?? baseProject.impact.paragraphs,
+      cumulativeSavings: data.impact?.cumulativeSavings ?? baseProject.impact.cumulativeSavings,
+      paybackYear: data.impact?.paybackYear ?? baseProject.impact.paybackYear,
+      stats: data.impact?.stats ?? baseProject.impact.stats,
+    },
+    specs: data.specs ?? baseProject.specs,
+    glance: data.glance ?? baseProject.glance,
+    story: data.story ?? baseProject.story,
+    gallery:
+      data.gallery && data.gallery.length > 0
+        ? data.gallery
+        : baseProject.gallery.length > 0
+        ? baseProject.gallery
+        : [updatedCover(data.image ?? baseProject.image)],
+  });
+
+  function updatedCover(img: any) {
+    return typeof img === 'string' ? img : img?.src || '/images/projects/why-solergy-house.jpg';
+  }
+
+  // 1. Update or append in local file
+  if (existingIdx !== -1) {
+    current[existingIdx] = updated;
+  } else {
+    current.unshift(updated);
+  }
   saveLocalProjects(current);
 
-  // 2. Sync Firestore
-  const db = getAdminFirestore();
+  // 2. Sync to Firestore
   if (db) {
     try {
       const { id: docId, ...payload } = updated;
@@ -195,8 +330,9 @@ export async function updateProject(id: string, data: Partial<Project>): Promise
   try {
     revalidatePath('/');
     revalidatePath('/projects');
-    revalidatePath(`/project/${id}`);
+    revalidatePath(`/project/${targetId}`);
     revalidatePath('/admin/projects');
+    revalidatePath(`/admin/projects/${targetId}/edit`);
   } catch (err) {
     console.warn('Could not revalidate paths:', err);
   }
@@ -205,27 +341,44 @@ export async function updateProject(id: string, data: Partial<Project>): Promise
 }
 
 export async function deleteProject(id: string): Promise<boolean> {
+  const db = getAdminFirestore();
+  const decodedId = decodeURIComponent(id);
   const current = getLocalProjects();
-  const filtered = current.filter((p) => p.id !== id);
-  if (filtered.length === current.length) {
-    return false;
+
+  const filtered = current.filter((p) => p.id !== id && p.id !== decodedId);
+  let found = filtered.length !== current.length;
+
+  if (found) {
+    saveLocalProjects(filtered);
   }
 
-  saveLocalProjects(filtered);
-
-  const db = getAdminFirestore();
   if (db) {
     try {
-      await db.collection('projects').doc(id).delete();
+      const doc = await db.collection('projects').doc(id).get();
+      if (doc.exists) {
+        await db.collection('projects').doc(id).delete();
+        found = true;
+      } else if (id !== decodedId) {
+        const docDecoded = await db.collection('projects').doc(decodedId).get();
+        if (docDecoded.exists) {
+          await db.collection('projects').doc(decodedId).delete();
+          found = true;
+        }
+      }
     } catch (err) {
       console.warn(`Could not delete project ${id} from Firestore:`, err);
     }
+  }
+
+  if (!found) {
+    return false;
   }
 
   try {
     revalidatePath('/');
     revalidatePath('/projects');
     revalidatePath(`/project/${id}`);
+    revalidatePath(`/project/${decodedId}`);
     revalidatePath('/admin/projects');
   } catch (err) {
     console.warn('Could not revalidate paths:', err);

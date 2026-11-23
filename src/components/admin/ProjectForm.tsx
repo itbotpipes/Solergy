@@ -128,15 +128,27 @@ export default function ProjectForm({
   const [paybackYear, setPaybackYear] = useState<number>(
     initialProject?.impact?.paybackYear ?? 4
   );
+  const [impactStats, setImpactStats] = useState<Array<{ label: string; value: string }>>(
+    initialProject?.impact?.stats && initialProject.impact.stats.length > 0
+      ? initialProject.impact.stats
+      : [
+          { label: "Estimated clean energy generated every year.", value: "~15,000 kWh" },
+          { label: "Estimated annual electricity savings.", value: "~₹1.4 Lakhs" },
+          { label: "Estimated investment payback period.", value: "~4.2 Years" },
+          { label: "Expected useful system life.", value: "25+ Years" },
+        ]
+  );
 
   // 10. Linked Client Testimonial
   const [testimonialIndex, setTestimonialIndex] = useState<number>(
     initialProject?.testimonialIndex ?? 0
   );
 
+  const [newGalleryUrl, setNewGalleryUrl] = useState("");
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
 
   const handleTitleChange = (val: string) => {
     setTitle(val);
@@ -149,6 +161,63 @@ export default function ProjectForm({
           .replace(/\s+/g, "-")
       );
     }
+  };
+
+  const handleChallengePointChange = (
+    index: number,
+    field: "title" | "description",
+    val: string
+  ) => {
+    setChallengePoints((prev) =>
+      prev.map((pt, i) => (i === index ? { ...pt, [field]: val } : pt))
+    );
+  };
+
+  const handleSolutionPointChange = (
+    index: number,
+    field: "title" | "description",
+    val: string
+  ) => {
+    setSolutionPoints((prev) =>
+      prev.map((pt, i) => (i === index ? { ...pt, [field]: val } : pt))
+    );
+  };
+
+  const handleSpecChange = (
+    index: number,
+    field: "label" | "value",
+    val: string
+  ) => {
+    setSpecs((prev) =>
+      prev.map((s, i) => (i === index ? { ...s, [field]: val } : s))
+    );
+  };
+
+  const handleGlanceChange = (
+    index: number,
+    field: "label" | "value",
+    val: string
+  ) => {
+    setGlance((prev) =>
+      prev.map((g, i) => (i === index ? { ...g, [field]: val } : g))
+    );
+  };
+
+  const handleImpactStatChange = (
+    index: number,
+    field: "label" | "value",
+    val: string
+  ) => {
+    setImpactStats((prev) =>
+      prev.map((stat, i) => (i === index ? { ...stat, [field]: val } : stat))
+    );
+  };
+
+  const handleAddGalleryUrl = () => {
+    const trimmed = newGalleryUrl.trim();
+    if (!trimmed) return;
+    setGalleryUrls((prev) => [...prev, trimmed]);
+    setNewGalleryUrl("");
   };
 
   const handleImageUpload = async (
@@ -216,6 +285,7 @@ export default function ProjectForm({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg("");
+    setSuccessMsg("");
     setSaving(true);
 
     if (!title.trim()) {
@@ -224,47 +294,49 @@ export default function ProjectForm({
       return;
     }
 
+    const targetId = initialProject?.id || id || `proj-${Date.now()}`;
+
     const payload: Partial<Project> = {
-      id: id || `proj-${Date.now()}`,
-      title,
+      id: targetId,
+      title: title.trim(),
       category,
-      city,
-      state,
-      size,
-      date,
-      systemType,
-      description,
-      image: imageUrl,
-      gallery: galleryUrls.length > 0 ? galleryUrls : [imageUrl],
+      city: city.trim(),
+      state: state.trim(),
+      size: size.trim(),
+      date: date.trim(),
+      systemType: systemType.trim(),
+      description: description.trim(),
+      image: imageUrl.trim(),
+      gallery: galleryUrls.length > 0 ? galleryUrls : [imageUrl.trim()],
       story: story.filter((s) => s.trim().length > 0),
       specs: specs.filter((s) => s.label.trim() && s.value.trim()),
       overview: {
-        heading: overviewHeading || title,
+        heading: overviewHeading.trim() || title.trim(),
         paragraphs: overviewParagraphs.filter((p) => p.trim().length > 0),
       },
       challenge: {
-        heading: challengeHeading,
+        heading: challengeHeading.trim(),
         intro: challengeIntro.filter((p) => p.trim().length > 0),
         points: challengePoints.filter((p) => p.title.trim()),
       },
       solution: {
-        heading: solutionHeading,
+        heading: solutionHeading.trim(),
         intro: solutionIntro.filter((p) => p.trim().length > 0),
         points: solutionPoints.filter((p) => p.title.trim()),
       },
       glance: glance.filter((g) => g.label.trim() && g.value.trim()),
       impact: {
         paragraphs: impactParagraphs.filter((p) => p.trim().length > 0),
-        cumulativeSavings,
+        cumulativeSavings: cumulativeSavings.trim(),
         paybackYear: Number(paybackYear) || 4,
-        stats: glance.map((g) => ({ label: g.label, value: g.value })),
+        stats: impactStats.filter((s) => s.label.trim() && s.value.trim()),
       },
       testimonialIndex: Number(testimonialIndex) || 0,
     };
 
     try {
       const endpoint = isEditing
-        ? `/api/admin/projects/${initialProject?.id}`
+        ? `/api/admin/projects/${encodeURIComponent(targetId)}`
         : "/api/admin/projects";
       const method = isEditing ? "PUT" : "POST";
 
@@ -280,8 +352,12 @@ export default function ProjectForm({
         throw new Error(data.error || "Failed to save project.");
       }
 
-      router.push("/admin/projects");
-      router.refresh();
+      setSuccessMsg(isEditing ? "Project details saved successfully! Updating..." : "Project created successfully! Updating...");
+
+      setTimeout(() => {
+        router.push("/admin/projects");
+        router.refresh();
+      }, 700);
     } catch (err: any) {
       console.error("Save error:", err);
       setErrorMsg(err.message || "An unexpected error occurred.");
@@ -315,6 +391,7 @@ export default function ProjectForm({
       </div>
 
       {errorMsg && <div className={styles.errorAlert}>{errorMsg}</div>}
+      {successMsg && <div className={styles.successAlert}>{successMsg}</div>}
 
       <div className={styles.grid}>
         {/* Left Column: Information, Story, Overview, Challenges & Solutions */}
@@ -579,21 +656,13 @@ export default function ProjectForm({
                     type="text"
                     value={pt.title}
                     placeholder="Point Title"
-                    onChange={(e) => {
-                      const next = [...challengePoints];
-                      next[idx].title = e.target.value;
-                      setChallengePoints(next);
-                    }}
+                    onChange={(e) => handleChallengePointChange(idx, "title", e.target.value)}
                   />
                   <input
                     type="text"
                     value={pt.description}
                     placeholder="Point Description"
-                    onChange={(e) => {
-                      const next = [...challengePoints];
-                      next[idx].description = e.target.value;
-                      setChallengePoints(next);
-                    }}
+                    onChange={(e) => handleChallengePointChange(idx, "description", e.target.value)}
                   />
                   <button
                     type="button"
@@ -673,21 +742,13 @@ export default function ProjectForm({
                     type="text"
                     value={pt.title}
                     placeholder="Point Title"
-                    onChange={(e) => {
-                      const next = [...solutionPoints];
-                      next[idx].title = e.target.value;
-                      setSolutionPoints(next);
-                    }}
+                    onChange={(e) => handleSolutionPointChange(idx, "title", e.target.value)}
                   />
                   <input
                     type="text"
                     value={pt.description}
                     placeholder="Point Description"
-                    onChange={(e) => {
-                      const next = [...solutionPoints];
-                      next[idx].description = e.target.value;
-                      setSolutionPoints(next);
-                    }}
+                    onChange={(e) => handleSolutionPointChange(idx, "description", e.target.value)}
                   />
                   <button
                     type="button"
@@ -757,6 +818,24 @@ export default function ProjectForm({
               </label>
             </div>
 
+            <div className={styles.galleryUrlRow}>
+              <input
+                type="text"
+                placeholder="Or paste gallery image URL and press Enter"
+                value={newGalleryUrl}
+                onChange={(e) => setNewGalleryUrl(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    handleAddGalleryUrl();
+                  }
+                }}
+              />
+              <button type="button" onClick={handleAddGalleryUrl}>
+                <Plus size={14} /> Add URL
+              </button>
+            </div>
+
             <div className={styles.galleryGrid}>
               {galleryUrls.map((url, idx) => (
                 <div key={idx} className={styles.galleryItem}>
@@ -791,21 +870,13 @@ export default function ProjectForm({
                   type="text"
                   value={s.label}
                   placeholder="Label (e.g. Panels)"
-                  onChange={(e) => {
-                    const next = [...specs];
-                    next[idx].label = e.target.value;
-                    setSpecs(next);
-                  }}
+                  onChange={(e) => handleSpecChange(idx, "label", e.target.value)}
                 />
                 <input
                   type="text"
                   value={s.value}
                   placeholder="Value (e.g. 135 x 445W)"
-                  onChange={(e) => {
-                    const next = [...specs];
-                    next[idx].value = e.target.value;
-                    setSpecs(next);
-                  }}
+                  onChange={(e) => handleSpecChange(idx, "value", e.target.value)}
                 />
                 <button
                   type="button"
@@ -836,21 +907,13 @@ export default function ProjectForm({
                   type="text"
                   value={g.label}
                   placeholder="Metric Name"
-                  onChange={(e) => {
-                    const next = [...glance];
-                    next[idx].label = e.target.value;
-                    setGlance(next);
-                  }}
+                  onChange={(e) => handleGlanceChange(idx, "label", e.target.value)}
                 />
                 <input
                   type="text"
                   value={g.value}
                   placeholder="Value (e.g. ~₹6.96 Lakhs)"
-                  onChange={(e) => {
-                    const next = [...glance];
-                    next[idx].value = e.target.value;
-                    setGlance(next);
-                  }}
+                  onChange={(e) => handleGlanceChange(idx, "value", e.target.value)}
                 />
                 <button
                   type="button"
@@ -918,6 +981,40 @@ export default function ProjectForm({
                 placeholder="4"
               />
             </div>
+
+            <div className={styles.cardHeader} style={{ marginTop: "24px" }}>
+              <h2>Impact Key Statistics</h2>
+              <button
+                type="button"
+                className={styles.addBtn}
+                onClick={() => setImpactStats((prev) => [...prev, { label: "", value: "" }])}
+              >
+                <Plus size={14} /> Add Stat
+              </button>
+            </div>
+            {impactStats.map((stat, idx) => (
+              <div key={idx} className={styles.specRow}>
+                <input
+                  type="text"
+                  value={stat.label}
+                  placeholder="Stat Description (e.g. Annual clean energy)"
+                  onChange={(e) => handleImpactStatChange(idx, "label", e.target.value)}
+                />
+                <input
+                  type="text"
+                  value={stat.value}
+                  placeholder="Stat Value (e.g. ~90,000 kWh)"
+                  onChange={(e) => handleImpactStatChange(idx, "value", e.target.value)}
+                />
+                <button
+                  type="button"
+                  className={styles.removeBtn}
+                  onClick={() => setImpactStats(impactStats.filter((_, i) => i !== idx))}
+                >
+                  <Trash2 size={16} />
+                </button>
+              </div>
+            ))}
           </div>
 
           {/* Section: Client Testimonial */}

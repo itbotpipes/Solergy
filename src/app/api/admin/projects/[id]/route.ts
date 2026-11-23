@@ -8,7 +8,8 @@ export async function GET(
 ) {
   try {
     await requireAdmin();
-    const { id } = await params;
+    const { id: rawId } = await params;
+    const id = decodeURIComponent(rawId);
     const project = await getProjectById(id);
 
     if (!project) {
@@ -18,7 +19,7 @@ export async function GET(
     return NextResponse.json({ project });
   } catch (err: any) {
     if (err.message === 'UNAUTHORIZED' || err.message === 'FORBIDDEN') {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ error: 'Unauthorized. Please log in as admin.' }, { status: 401 });
     }
     return NextResponse.json({ error: err.message || 'Failed to fetch project' }, { status: 500 });
   }
@@ -30,8 +31,15 @@ export async function PUT(
 ) {
   try {
     await requireAdmin();
-    const { id } = await params;
-    const body = await req.json();
+    const { id: rawId } = await params;
+    const id = decodeURIComponent(rawId);
+
+    let body: any;
+    try {
+      body = await req.json();
+    } catch {
+      return NextResponse.json({ error: 'Invalid JSON request body' }, { status: 400 });
+    }
 
     const updated = await updateProject(id, body);
     if (!updated) {
@@ -41,7 +49,7 @@ export async function PUT(
     return NextResponse.json({ success: true, project: updated });
   } catch (err: any) {
     if (err.message === 'UNAUTHORIZED' || err.message === 'FORBIDDEN') {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ error: 'Unauthorized. Please log in as admin.' }, { status: 401 });
     }
     return NextResponse.json({ error: err.message || 'Failed to update project' }, { status: 500 });
   }
@@ -53,7 +61,8 @@ export async function DELETE(
 ) {
   try {
     await requireAdmin();
-    const { id } = await params;
+    const { id: rawId } = await params;
+    const id = decodeURIComponent(rawId);
     const deleted = await deleteProject(id);
     if (!deleted) {
       return NextResponse.json({ error: 'Project not found' }, { status: 404 });
@@ -62,7 +71,7 @@ export async function DELETE(
     return NextResponse.json({ success: true, message: 'Project deleted successfully' });
   } catch (err: any) {
     if (err.message === 'UNAUTHORIZED' || err.message === 'FORBIDDEN') {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ error: 'Unauthorized. Please log in as admin.' }, { status: 401 });
     }
     return NextResponse.json({ error: err.message || 'Failed to delete project' }, { status: 500 });
   }

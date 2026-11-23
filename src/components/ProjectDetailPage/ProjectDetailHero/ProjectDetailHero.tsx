@@ -22,7 +22,7 @@ export default function ProjectDetailHero({ project }: ProjectDetailHeroProps) {
         <div className={styles.grid}>
           <div className={styles.content}>
             <span className={styles.tag}>
-              {project.category} Solar &middot; {project.city}, {project.state || 'Gujarat'}
+              {project.category} Solar &middot; {project.city}{project.state ? `, ${project.state}` : ''}
             </span>
             <h1 className={styles.heading}>{project.title}</h1>
             <p className={styles.summary}>
@@ -34,7 +34,7 @@ export default function ProjectDetailHero({ project }: ProjectDetailHeroProps) {
               <div className={styles.metaItem}>
                 <div className={styles.metaLabel}>Location</div>
                 <div className={styles.metaValue}>
-                  {project.city}, {project.state || 'Gujarat'}
+                  {project.city}{project.state ? `, ${project.state}` : ''}
                 </div>
               </div>
               <div className={styles.metaItem}>

@@ -12,7 +12,7 @@ interface ProjectDetailTestimonialProps {
   project?: Project;
 }
 
-export default function ProjectDetailTestimonial({ project: _project }: ProjectDetailTestimonialProps) {
+export default function ProjectDetailTestimonial({ project }: ProjectDetailTestimonialProps) {
   const cardsRef = useRef<HTMLDivElement>(null);
   const visible = useInView(cardsRef);
   const sectionRef = useRef<HTMLElement>(null);
@@ -28,6 +28,19 @@ export default function ProjectDetailTestimonial({ project: _project }: ProjectD
       ref={sectionRef}
     >
       <div className={styles.inner}>
+        {project?.testimonial?.quote && (
+          <div className={styles.featuredQuoteBox}>
+            <blockquote className={styles.featuredQuote}>
+              &ldquo;{project.testimonial.quote}&rdquo;
+            </blockquote>
+            {(project.testimonial.author || project.testimonial.name) && (
+              <cite className={styles.featuredAuthor}>
+                &mdash; {project.testimonial.author || [project.testimonial.name, project.testimonial.role, project.testimonial.company].filter(Boolean).join(', ')}
+              </cite>
+            )}
+          </div>
+        )}
+
         <h2 className={styles.heading}>
           Real <span className={styles.highlight}>Homes.</span> Real{' '}
           <span className={styles.highlight}>Bills.</span> Real{' '}

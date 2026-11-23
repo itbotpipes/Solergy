@@ -34,6 +34,25 @@ export interface ProjectImpact {
   stats: Array<{ label: string; value: string }>;
 }
 
+export interface ProjectSEO {
+  title?: string;
+  description?: string;
+}
+
+export interface ProjectChartValues {
+  annualSavings?: number;
+  systemCost?: number;
+}
+
+export interface ProjectTestimonial {
+  quote: string;
+  name?: string;
+  role?: string;
+  company?: string;
+  author?: string;
+  rating?: number;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -45,6 +64,7 @@ export interface Project {
   systemType: string;
   image: string | StaticImageData;
   gallery: Array<string | StaticImageData>;
+  galleryAlts?: string[];
   description: string;
   story: string[];
   specs: ProjectSpec[];
@@ -54,6 +74,11 @@ export interface Project {
   glance: ProjectGlanceItem[];
   impact: ProjectImpact;
   testimonialIndex?: number;
+  testimonial?: ProjectTestimonial;
+  seo?: ProjectSEO;
+  badge?: string;
+  chartValues?: ProjectChartValues;
+  otherProjectIds?: string[];
 }
 
 export function getProjectImageUrl(img: string | StaticImageData | undefined): string {

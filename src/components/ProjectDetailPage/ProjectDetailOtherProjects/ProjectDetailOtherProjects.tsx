@@ -18,7 +18,19 @@ export default function ProjectDetailOtherProjects({ project, otherProjects: pas
   const visible = useInView(sectionRef, 0.1);
 
   const pool = passedOthers && passedOthers.length > 0 ? passedOthers : PROJECTS;
-  const otherProjects = pool.filter((p) => p.id !== project.id).slice(0, 3);
+
+  let otherProjects: Project[] = [];
+  if (project.otherProjectIds && project.otherProjectIds.length > 0) {
+    otherProjects = project.otherProjectIds
+      .map((id) =>
+        pool.find((p) => p.id === id || p.title.toLowerCase().includes(id.toLowerCase()))
+      )
+      .filter(Boolean) as Project[];
+  }
+
+  if (otherProjects.length === 0) {
+    otherProjects = pool.filter((p) => p.id !== project.id).slice(0, 3);
+  }
 
   return (
     <section
@@ -29,7 +41,7 @@ export default function ProjectDetailOtherProjects({ project, otherProjects: pas
     >
       <div className={styles.inner}>
         <h2 className={styles.heading}>
-          Explore More of <span className={styles.highlight}> Our Work.</span>
+          More Work <span className={styles.highlight}>Worth a Look.</span>
         </h2>
 
         <div className={styles.grid}>
