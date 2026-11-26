@@ -2,6 +2,9 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { requireAdmin } from '@/lib/firebase/auth';
 import { getAllProjects, createProject } from '@/services/projects';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
   try {
     await requireAdmin();

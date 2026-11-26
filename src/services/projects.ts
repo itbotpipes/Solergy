@@ -117,51 +117,44 @@ export function sanitizeProject(data: Partial<Project> & { id: string }): Projec
 }
 
 export async function getAllProjects(): Promise<Project[]> {
-  const localProjects = getLocalProjects().map(sanitizeProject);
   const db = getAdminFirestore();
-  if (!db) {
-    return localProjects;
+  if (db) {
+    try {
+      const snapshot = await db.collection('projects').get();
+      if (snapshot.empty) {
+        console.log('Firestore projects collection is empty. Auto-seeding from local template...');
+        await syncAllProjectsToFirestore(db);
+        const seededSnapshot = await db.collection('projects').get();
+        if (!seededSnapshot.empty) {
+          return seededSnapshot.docs.map((doc: QueryDocumentSnapshot) =>
+            sanitizeProject({
+              id: doc.id,
+              ...(doc.data() as Omit<Project, 'id'>),
+            })
+          );
+        }
+      } else {
+        return snapshot.docs.map((doc: QueryDocumentSnapshot) =>
+          sanitizeProject({
+            id: doc.id,
+            ...(doc.data() as Omit<Project, 'id'>),
+          })
+        );
+      }
+    } catch (err) {
+      console.error('Error querying projects from Firestore:', err);
+    }
   }
 
-  try {
-    const snapshot = await db.collection('projects').get();
-    if (snapshot.empty) {
-      return localProjects;
-    }
-
-    const firestoreProjects = snapshot.docs.map((doc: QueryDocumentSnapshot) =>
-      sanitizeProject({
-        id: doc.id,
-        ...(doc.data() as Omit<Project, 'id'>),
-      })
-    );
-
-    // Merge: local projects take precedence for matching IDs so local edits never get reverted by stale Firestore reads
-    const map = new Map<string, Project>();
-    for (const p of firestoreProjects) {
-      map.set(p.id, p);
-    }
-    for (const p of localProjects) {
-      map.set(p.id, p);
-    }
-
-    return Array.from(map.values());
-  } catch (err) {
-    console.error('Error fetching projects from Firestore:', err);
-    return localProjects;
-  }
+  // Fallback to local projects if Firestore is unconfigured or unreachable
+  return getLocalProjects().map(sanitizeProject);
 }
 
 export async function getProjectById(id: string): Promise<Project | null> {
   const decodedId = decodeURIComponent(id);
-  const localProjects = getLocalProjects();
-  let found = localProjects.find((p) => p.id === id || p.id === decodedId) || null;
-
-  if (found) {
-    return sanitizeProject(found);
-  }
-
   const db = getAdminFirestore();
+
+  // 1. In production / cloud, Firestore is authoritative
   if (db) {
     try {
       let doc = await db.collection('projects').doc(id).get();
@@ -174,6 +167,13 @@ export async function getProjectById(id: string): Promise<Project | null> {
     } catch (err) {
       console.error(`Error fetching project ${id} from Firestore:`, err);
     }
+  }
+
+  // 2. Fallback to local projects if not in Firestore or Firestore disabled
+  const localProjects = getLocalProjects();
+  const found = localProjects.find((p) => p.id === id || p.id === decodedId) || null;
+  if (found) {
+    return sanitizeProject(found);
   }
 
   return null;
@@ -247,11 +247,10 @@ export async function updateProject(id: string, data: Partial<Project>): Promise
   const decodedId = decodeURIComponent(id);
   const current = getLocalProjects();
 
-  let existingIdx = current.findIndex((p) => p.id === id || p.id === decodedId);
-  let existing: Project | null = existingIdx !== -1 ? current[existingIdx] : null;
+  let existing: Project | null = null;
 
-  // If not found in local JSON, check Firestore
-  if (!existing && db) {
+  // 1. In cloud / production, check Firestore first
+  if (db) {
     try {
       let doc = await db.collection('projects').doc(id).get();
       if (!doc.exists && id !== decodedId) {
@@ -263,6 +262,12 @@ export async function updateProject(id: string, data: Partial<Project>): Promise
     } catch (err) {
       console.warn(`Could not fetch project ${id} from Firestore:`, err);
     }
+  }
+
+  // 2. Fallback to local JSON template if not yet in Firestore
+  let existingIdx = current.findIndex((p) => p.id === id || p.id === decodedId);
+  if (!existing && existingIdx !== -1) {
+    existing = current[existingIdx];
   }
 
   if (!existing) {
@@ -313,32 +318,37 @@ export async function updateProject(id: string, data: Partial<Project>): Promise
     return typeof img === 'string' ? img : img?.src || '/images/projects/why-solergy-house.jpg';
   }
 
-  // 1. Update in local file
-  let newCurrent = [...current];
-  if (idChanged) {
-    newCurrent = newCurrent.filter((p) => p.id !== targetId && p.id !== id);
-    newCurrent.unshift(updated);
-  } else if (existingIdx !== -1) {
-    newCurrent[existingIdx] = updated;
-  } else {
-    newCurrent.unshift(updated);
-  }
-  saveLocalProjects(newCurrent);
-
-  // 2. Sync to Firestore
+  // 1. Sync to Firestore (primary persistent database)
   if (db) {
     try {
       const { id: docId, ...payload } = updated;
-      await db.collection('projects').doc(docId).set(payload, { merge: true });
+      await db.collection('projects').doc(docId).set(payload);
       if (idChanged) {
         await db.collection('projects').doc(targetId).delete();
       }
     } catch (err) {
-      console.warn(`Could not update project ${id} in Firestore:`, err);
+      console.error(`Error saving project ${finalId} to Firestore:`, err);
+      throw new Error(`Failed to persist project update to database: ${(err as any)?.message}`);
     }
   }
 
-  // 3. Revalidate paths
+  // 2. Best-effort update to local file (safely ignored in read-only serverless runtimes)
+  try {
+    let newCurrent = [...current];
+    if (idChanged) {
+      newCurrent = newCurrent.filter((p) => p.id !== targetId && p.id !== id);
+      newCurrent.unshift(updated);
+    } else if (existingIdx !== -1) {
+      newCurrent[existingIdx] = updated;
+    } else {
+      newCurrent.unshift(updated);
+    }
+    saveLocalProjects(newCurrent);
+  } catch (err) {
+    console.warn('Local file write skipped (serverless environment):', err);
+  }
+
+  // 3. Revalidate paths across Next.js ISR/SSR
   try {
     revalidatePath('/');
     revalidatePath('/projects');

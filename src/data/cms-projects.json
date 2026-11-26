@@ -1,14 +1,13 @@
 [
   {
-    "id": "ci-indore-ralson-tyres",
-    "title": "Ralson Solar Plant",
+    "id": "ralson-tyres-ltd",
+    "title": "Ralson Tyres ltd",
     "category": "Industrial",
     "city": "Indore",
     "state": "Madhya Pradesh",
     "size": "4.2 MW",
     "date": "February 2025",
     "systemType": "On-Grid Solar",
-    "badge": "On-Grid Solar · 4.2 MW · Rooftop",
     "image": "/images/projects/service1.jpg",
     "gallery": [
       "/images/projects/service1.jpg",
@@ -18,19 +17,38 @@
       "/images/projects/hero-house.png",
       "/images/projects/hero-house-new.webp"
     ],
-    "galleryAlts": [
-      "Aerial view of the 4.2 MW solar plant installed for Ralson in Indore",
-      "Rows of solar panels at the Ralson facility, Indore",
-      "String inverters at the Ralson solar plant",
-      "Solergy team installing mounting structures and panels",
-      "Close-up of Mono PERC solar panels, Ralson plant",
-      "Completed 4.2 MW solar installation, Indore"
-    ],
     "description": "A 4.2 MW on-grid solar system built to cut one of an industrial facility’s biggest recurring costs, electricity, and turn available space into long-term clean power.",
-    "seo": {
-      "title": "Ralson 4.2 MW Solar Plant, Indore | Solergy India",
-      "description": "See how Solergy India designed and installed a 4.2 MW solar plant for Ralson in Indore, built to cut industrial electricity costs and generate clean energy."
-    },
+    "story": [
+      "Ralson’s Indore facility had a heavy daytime load and an electricity bill that kept climbing with it. They wanted a system big enough to make a real dent in that bill, delivered without slowing down operations.",
+      "We designed a 4.2 MW on-grid plant across the available area, sequencing the installation to keep disruption to a minimum.",
+      "The system now covers a significant share of the facility’s daytime consumption, with savings visible from the very first billing cycle."
+    ],
+    "specs": [
+      {
+        "label": "System Size",
+        "value": "4.2 MW"
+      },
+      {
+        "label": "Panels Installed",
+        "value": "~7,640 × 550 Wp Mono PERC"
+      },
+      {
+        "label": "Inverter",
+        "value": "42 × 100 kW String Inverters"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~63,00,000 units"
+      },
+      {
+        "label": "Monthly Bill Savings",
+        "value": "Up to ₹36.75 Lakhs"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~3.8 years"
+      }
+    ],
     "overview": {
       "heading": "4.2 Megawatts Built to Carry a Big Load.",
       "paragraphs": [
@@ -111,37 +129,6 @@
         "value": "25+ Years"
       }
     ],
-    "story": [
-      "Ralson’s Indore facility had a heavy daytime load and an electricity bill that kept climbing with it. They wanted a system big enough to make a real dent in that bill, delivered without slowing down operations.",
-      "We designed a 4.2 MW on-grid plant across the available area, sequencing the installation to keep disruption to a minimum.",
-      "The system now covers a significant share of the facility’s daytime consumption, with savings visible from the very first billing cycle."
-    ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "4.2 MW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "~7,640 × 550 Wp Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "42 × 100 kW String Inverters"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~63,00,000 units"
-      },
-      {
-        "label": "Monthly Bill Savings",
-        "value": "Up to ₹36.75 Lakhs"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~3.8 years"
-      }
-    ],
     "impact": {
       "paragraphs": [
         "The completed system now generates approximately 63,00,000 kWh of clean electricity every year, helping Ralson reduce its dependence on conventional grid power.",
@@ -169,20 +156,32 @@
         }
       ]
     },
-    "chartValues": {
-      "annualSavings": 441,
-      "systemCost": 1680
-    },
     "testimonialIndex": 0,
     "testimonial": {
       "quote": "Solergy sized the system around our actual load, not just the space we had. The installation was well planned, work on the floor carried on as usual, and the savings showed up from the first bill.",
-      "name": "Management Team, Ralson",
-      "role": "Indore, Madhya Pradesh"
+      "author": "Management Team, Ralson"
+    },
+    "seo": {
+      "title": "Ralson 4.2 MW Solar Plant, Indore | Solergy India",
+      "description": "See how Solergy India designed and installed a 4.2 MW solar plant for Ralson in Indore, built to cut industrial electricity costs and generate clean energy."
+    },
+    "badge": "On-Grid Solar · 4.2 MW · Rooftop",
+    "chartValues": {
+      "annualSavings": 441,
+      "systemCost": 1680
     },
     "otherProjectIds": [
       "ci-ludhiana-garg-acrylics",
       "ci-sonipat-bonn-nutrients",
       "ci-bhopal-deepak-fasteners"
+    ],
+    "galleryAlts": [
+      "Aerial view of the 4.2 MW solar plant installed for Ralson in Indore",
+      "Rows of solar panels at the Ralson facility, Indore",
+      "String inverters at the Ralson solar plant",
+      "Solergy team installing mounting structures and panels",
+      "Close-up of Mono PERC solar panels, Ralson plant",
+      "Completed 4.2 MW solar installation, Indore"
     ]
   },
   {

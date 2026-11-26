@@ -21,8 +21,8 @@ export default function AdminProjectsTable({
   }, [initialProjects]);
 
   useEffect(() => {
-    // Background fetch to guarantee zero-stale cache on return/refresh
-    fetch("/api/admin/projects")
+    // Force fresh fetch on mount with no-store to guarantee zero-stale cache
+    fetch("/api/admin/projects", { cache: "no-store" })
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
         if (data?.projects && Array.isArray(data.projects)) {
