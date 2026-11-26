@@ -139,7 +139,24 @@ export default function ProjectForm({
         ]
   );
 
-  // 10. Linked Client Testimonial
+  // 10. Solution Badge
+  const [badge, setBadge] = useState<string>(initialProject?.badge || "");
+
+  // 11. Custom Case Study Client Quote
+  const [testimonialQuote, setTestimonialQuote] = useState<string>(
+    initialProject?.testimonial?.quote || ""
+  );
+  const [testimonialAuthor, setTestimonialAuthor] = useState<string>(
+    initialProject?.testimonial?.author || initialProject?.testimonial?.name || ""
+  );
+
+  // 12. SEO Metadata
+  const [seoTitle, setSeoTitle] = useState<string>(initialProject?.seo?.title || "");
+  const [seoDescription, setSeoDescription] = useState<string>(
+    initialProject?.seo?.description || ""
+  );
+
+  // 13. Linked Testimonials Marquee
   const [testimonialIndex, setTestimonialIndex] = useState<number>(
     initialProject?.testimonialIndex ?? 0
   );
@@ -294,10 +311,12 @@ export default function ProjectForm({
       return;
     }
 
-    const targetId = initialProject?.id || id || `proj-${Date.now()}`;
+    const originalId = initialProject?.id;
+    const newSlug = id.trim() || originalId || `proj-${Date.now()}`;
 
-    const payload: Partial<Project> = {
-      id: targetId,
+    const payload: any = {
+      id: newSlug,
+      newId: newSlug,
       title: title.trim(),
       category,
       city: city.trim(),
@@ -331,12 +350,19 @@ export default function ProjectForm({
         paybackYear: Number(paybackYear) || 4,
         stats: impactStats.filter((s) => s.label.trim() && s.value.trim()),
       },
+      badge: badge.trim(),
+      testimonial: testimonialQuote.trim()
+        ? { quote: testimonialQuote.trim(), author: testimonialAuthor.trim() }
+        : undefined,
+      seo: (seoTitle.trim() || seoDescription.trim())
+        ? { title: seoTitle.trim(), description: seoDescription.trim() }
+        : undefined,
       testimonialIndex: Number(testimonialIndex) || 0,
     };
 
     try {
-      const endpoint = isEditing
-        ? `/api/admin/projects/${encodeURIComponent(targetId)}`
+      const endpoint = isEditing && originalId
+        ? `/api/admin/projects/${encodeURIComponent(originalId)}`
         : "/api/admin/projects";
       const method = isEditing ? "PUT" : "POST";
 
@@ -355,9 +381,8 @@ export default function ProjectForm({
       setSuccessMsg(isEditing ? "Project details saved successfully! Updating..." : "Project created successfully! Updating...");
 
       setTimeout(() => {
-        router.push("/admin/projects");
-        router.refresh();
-      }, 700);
+        window.location.href = "/admin/projects";
+      }, 500);
     } catch (err: any) {
       console.error("Save error:", err);
       setErrorMsg(err.message || "An unexpected error occurred.");
@@ -412,13 +437,19 @@ export default function ProjectForm({
 
             <div className={styles.row}>
               <div className={styles.field}>
-                <label>Project Slug / ID *</label>
+                <label>
+                  Project Slug / ID *
+                  {isEditing && (
+                    <span style={{ fontSize: "12px", color: "#888", fontWeight: "normal", marginLeft: "6px" }}>
+                      (editable URL slug)
+                    </span>
+                  )}
+                </label>
                 <input
                   type="text"
                   value={id}
                   onChange={(e) => setId(e.target.value)}
                   placeholder="e.g. res-janpath-ludhiana"
-                  disabled={isEditing}
                   required
                 />
               </div>
@@ -721,6 +752,16 @@ export default function ProjectForm({
                 </div>
               ))}
 
+              <div className={styles.field} style={{ marginBottom: "16px" }}>
+                <label>Solution Badge (Optional tag shown on case study)</label>
+                <input
+                  type="text"
+                  value={badge}
+                  onChange={(e) => setBadge(e.target.value)}
+                  placeholder="e.g. On-Grid Solar · 4.2 MW · Rooftop"
+                />
+              </div>
+
               <div className={styles.cardHeader} style={{ marginTop: "16px" }}>
                 <label>Solution Key Points</label>
                 <button
@@ -1019,9 +1060,27 @@ export default function ProjectForm({
 
           {/* Section: Client Testimonial */}
           <div className={styles.card}>
-            <h2>Featured Client Testimonial</h2>
+            <h2>Client Quote & Testimonial</h2>
+            <div className={styles.field} style={{ marginBottom: "16px" }}>
+              <label>Custom Case Study Client Quote (Optional)</label>
+              <textarea
+                rows={3}
+                value={testimonialQuote}
+                onChange={(e) => setTestimonialQuote(e.target.value)}
+                placeholder="e.g. Solergy sized the system around our actual load, not just the space we had..."
+              />
+            </div>
+            <div className={styles.field} style={{ marginBottom: "16px" }}>
+              <label>Quote Attribution / Author</label>
+              <input
+                type="text"
+                value={testimonialAuthor}
+                onChange={(e) => setTestimonialAuthor(e.target.value)}
+                placeholder="e.g. Management Team, Ralson, Indore"
+              />
+            </div>
             <div className={styles.field}>
-              <label>Select Testimonial to Feature on this Case Study</label>
+              <label>Select Fallback Testimonial from Marquee</label>
               <select
                 value={testimonialIndex}
                 onChange={(e) => setTestimonialIndex(parseInt(e.target.value, 10))}
@@ -1032,6 +1091,29 @@ export default function ProjectForm({
                   </option>
                 ))}
               </select>
+            </div>
+          </div>
+
+          {/* Section: SEO Metadata */}
+          <div className={styles.card}>
+            <h2>SEO & Search Metadata</h2>
+            <div className={styles.field} style={{ marginBottom: "16px" }}>
+              <label>SEO Page Title (Optional)</label>
+              <input
+                type="text"
+                value={seoTitle}
+                onChange={(e) => setSeoTitle(e.target.value)}
+                placeholder="e.g. Ralson 4.2 MW Solar Plant, Indore | Solergy India"
+              />
+            </div>
+            <div className={styles.field}>
+              <label>SEO Meta Description (Optional)</label>
+              <textarea
+                rows={3}
+                value={seoDescription}
+                onChange={(e) => setSeoDescription(e.target.value)}
+                placeholder="e.g. See how Solergy India designed and installed a 4.2 MW solar plant..."
+              />
             </div>
           </div>
         </div>

@@ -117,39 +117,51 @@ export function sanitizeProject(data: Partial<Project> & { id: string }): Projec
 }
 
 export async function getAllProjects(): Promise<Project[]> {
+  const localProjects = getLocalProjects().map(sanitizeProject);
   const db = getAdminFirestore();
   if (!db) {
-    return getLocalProjects().map(sanitizeProject);
+    return localProjects;
   }
 
   try {
-    await seedFirestoreIfEmpty(db);
-
     const snapshot = await db.collection('projects').get();
     if (snapshot.empty) {
-      return getLocalProjects().map(sanitizeProject);
+      return localProjects;
     }
 
-    const projects: Project[] = snapshot.docs.map((doc: QueryDocumentSnapshot) =>
+    const firestoreProjects = snapshot.docs.map((doc: QueryDocumentSnapshot) =>
       sanitizeProject({
         id: doc.id,
         ...(doc.data() as Omit<Project, 'id'>),
       })
     );
 
-    return projects;
+    // Merge: local projects take precedence for matching IDs so local edits never get reverted by stale Firestore reads
+    const map = new Map<string, Project>();
+    for (const p of firestoreProjects) {
+      map.set(p.id, p);
+    }
+    for (const p of localProjects) {
+      map.set(p.id, p);
+    }
+
+    return Array.from(map.values());
   } catch (err) {
     console.error('Error fetching projects from Firestore:', err);
-    return getLocalProjects().map(sanitizeProject);
+    return localProjects;
   }
 }
 
 export async function getProjectById(id: string): Promise<Project | null> {
-  const db = getAdminFirestore();
   const decodedId = decodeURIComponent(id);
+  const localProjects = getLocalProjects();
+  let found = localProjects.find((p) => p.id === id || p.id === decodedId) || null;
 
-  let rawProject: Project | null = null;
+  if (found) {
+    return sanitizeProject(found);
+  }
 
+  const db = getAdminFirestore();
   if (db) {
     try {
       let doc = await db.collection('projects').doc(id).get();
@@ -157,23 +169,14 @@ export async function getProjectById(id: string): Promise<Project | null> {
         doc = await db.collection('projects').doc(decodedId).get();
       }
       if (doc.exists) {
-        rawProject = { id: doc.id, ...(doc.data() as Omit<Project, 'id'>) };
+        return sanitizeProject({ id: doc.id, ...(doc.data() as Omit<Project, 'id'>) });
       }
     } catch (err) {
       console.error(`Error fetching project ${id} from Firestore:`, err);
     }
   }
 
-  if (!rawProject) {
-    const projects = getLocalProjects();
-    rawProject = projects.find((p) => p.id === id || p.id === decodedId) || null;
-  }
-
-  if (!rawProject) {
-    return null;
-  }
-
-  return sanitizeProject(rawProject);
+  return null;
 }
 
 export async function createProject(data: Partial<Project>): Promise<Project> {
@@ -268,11 +271,13 @@ export async function updateProject(id: string, data: Partial<Project>): Promise
 
   const baseProject = sanitizeProject(existing);
   const targetId = baseProject.id;
+  const finalId = ((data as any).newId || data.id || targetId).trim();
+  const idChanged = finalId !== targetId;
 
   const updated: Project = sanitizeProject({
     ...baseProject,
     ...data,
-    id: targetId, // Keep verified ID intact
+    id: finalId, // Allow slug/id changes
     overview: {
       heading: data.overview?.heading ?? baseProject.overview.heading,
       paragraphs: data.overview?.paragraphs ?? baseProject.overview.paragraphs,
@@ -308,19 +313,26 @@ export async function updateProject(id: string, data: Partial<Project>): Promise
     return typeof img === 'string' ? img : img?.src || '/images/projects/why-solergy-house.jpg';
   }
 
-  // 1. Update or append in local file
-  if (existingIdx !== -1) {
-    current[existingIdx] = updated;
+  // 1. Update in local file
+  let newCurrent = [...current];
+  if (idChanged) {
+    newCurrent = newCurrent.filter((p) => p.id !== targetId && p.id !== id);
+    newCurrent.unshift(updated);
+  } else if (existingIdx !== -1) {
+    newCurrent[existingIdx] = updated;
   } else {
-    current.unshift(updated);
+    newCurrent.unshift(updated);
   }
-  saveLocalProjects(current);
+  saveLocalProjects(newCurrent);
 
   // 2. Sync to Firestore
   if (db) {
     try {
       const { id: docId, ...payload } = updated;
       await db.collection('projects').doc(docId).set(payload, { merge: true });
+      if (idChanged) {
+        await db.collection('projects').doc(targetId).delete();
+      }
     } catch (err) {
       console.warn(`Could not update project ${id} in Firestore:`, err);
     }
@@ -331,8 +343,10 @@ export async function updateProject(id: string, data: Partial<Project>): Promise
     revalidatePath('/');
     revalidatePath('/projects');
     revalidatePath(`/project/${targetId}`);
+    revalidatePath(`/project/${finalId}`);
     revalidatePath('/admin/projects');
     revalidatePath(`/admin/projects/${targetId}/edit`);
+    revalidatePath(`/admin/projects/${finalId}/edit`);
   } catch (err) {
     console.warn('Could not revalidate paths:', err);
   }

@@ -20,6 +20,18 @@ export default function AdminProjectsTable({
     setProjects(initialProjects);
   }, [initialProjects]);
 
+  useEffect(() => {
+    // Background fetch to guarantee zero-stale cache on return/refresh
+    fetch("/api/admin/projects")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data?.projects && Array.isArray(data.projects)) {
+          setProjects(data.projects);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
   const handleDelete = async (id: string, title: string) => {
     if (!window.confirm(`Are you sure you want to delete project "${title}"?`)) {
       return;

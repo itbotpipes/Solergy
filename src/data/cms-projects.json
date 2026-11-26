@@ -931,14 +931,13 @@
   },
   {
     "id": "res-pushpanjali-delhi",
-    "title": "Pushpanjali 90 kW Rooftop System",
+    "title": "Pushpanjali Rooftop System",
     "category": "Residential",
     "city": "Delhi",
     "state": "Delhi",
     "size": "90 kW",
     "date": "January 2025",
     "systemType": "On-Grid Solar",
-    "badge": "On-Grid Solar · 90 kW · Rooftop",
     "image": "/images/projects/hero-house-new.webp",
     "gallery": [
       "/images/projects/hero-house-new.webp",
@@ -948,19 +947,38 @@
       "/images/projects/service3.jpg",
       "/images/projects/hero-house.png"
     ],
-    "galleryAlts": [
-      "90 kW rooftop solar system on a home in Pushpanjali, Delhi",
-      "Solar panels laid out across the rooftop, Pushpanjali",
-      "Three-phase string inverter installed for a 90 kW home solar system",
-      "Solergy team installing rooftop solar panels in Delhi",
-      "Close-up of Mono PERC solar panels on a residential rooftop",
-      "Completed 90 kW on-grid rooftop solar installation, Delhi"
-    ],
     "description": "A large on-grid rooftop system built to cover a big share of a high-consumption home’s daytime electricity use.",
-    "seo": {
-      "title": "90 kW Rooftop Solar, Pushpanjali, Delhi | Solergy India",
-      "description": "See how Solergy India designed and installed a 90 kW rooftop solar system in Pushpanjali, Delhi, helping a large home cut its electricity bill."
-    },
+    "story": [
+      "This household in Pushpanjali, Delhi had a spacious rooftop and a steadily rising electricity bill driven by a large daytime load. They wanted a system substantial enough to make a real dent in that bill, without an overly complex installation.",
+      "We designed a 90 kW on-grid array across the available roof area, sequencing the installation to keep disruption to a minimum.",
+      "The system now covers a significant share of the household’s daytime consumption, with savings visible from the very first billing cycle."
+    ],
+    "specs": [
+      {
+        "label": "System Size",
+        "value": "90 kW"
+      },
+      {
+        "label": "Panels Installed",
+        "value": "~202 × 445W Mono PERC"
+      },
+      {
+        "label": "Inverter",
+        "value": "90 kW Three-Phase String Inverter"
+      },
+      {
+        "label": "Annual Generation",
+        "value": "~1,35,000 units"
+      },
+      {
+        "label": "Monthly Bill Savings",
+        "value": "Up to ₹95,625"
+      },
+      {
+        "label": "Estimated Payback",
+        "value": "~4.3 years"
+      }
+    ],
     "overview": {
       "heading": "90 kW on the Roof. Lower Bills Below.",
       "paragraphs": [
@@ -1041,37 +1059,6 @@
         "value": "25+ Years"
       }
     ],
-    "story": [
-      "This household in Pushpanjali, Delhi had a spacious rooftop and a steadily rising electricity bill driven by a large daytime load. They wanted a system substantial enough to make a real dent in that bill, without an overly complex installation.",
-      "We designed a 90 kW on-grid array across the available roof area, sequencing the installation to keep disruption to a minimum.",
-      "The system now covers a significant share of the household’s daytime consumption, with savings visible from the very first billing cycle."
-    ],
-    "specs": [
-      {
-        "label": "System Size",
-        "value": "90 kW"
-      },
-      {
-        "label": "Panels Installed",
-        "value": "~202 × 445W Mono PERC"
-      },
-      {
-        "label": "Inverter",
-        "value": "90 kW Three-Phase String Inverter"
-      },
-      {
-        "label": "Annual Generation",
-        "value": "~1,35,000 units"
-      },
-      {
-        "label": "Monthly Bill Savings",
-        "value": "Up to ₹95,625"
-      },
-      {
-        "label": "Estimated Payback",
-        "value": "~4.3 years"
-      }
-    ],
     "impact": {
       "paragraphs": [
         "The completed system now generates approximately 1,35,000 kWh of clean electricity every year, helping this Pushpanjali household reduce its dependence on conventional grid power.",
@@ -1099,20 +1086,33 @@
         }
       ]
     },
-    "chartValues": {
-      "annualSavings": 11.475,
-      "systemCost": 49.5
-    },
     "testimonialIndex": 0,
     "testimonial": {
       "quote": "Our bills were climbing every year, so we wanted something substantial. Solergy sized it properly, kept the installation tidy, and we saw the difference from the first bill.",
       "name": "Homeowner, Pushpanjali",
       "role": "Pushpanjali, Delhi"
     },
+    "seo": {
+      "title": "90 kW Rooftop Solar, Pushpanjali, Delhi | Solergy India",
+      "description": "See how Solergy India designed and installed a 90 kW rooftop solar system in Pushpanjali, Delhi, helping a large home cut its electricity bill."
+    },
+    "badge": "On-Grid Solar · 90 kW · Rooftop",
+    "chartValues": {
+      "annualSavings": 11.475,
+      "systemCost": 49.5
+    },
     "otherProjectIds": [
       "res-pushpanjali-140kw-delhi",
       "res-janpath-ludhiana",
       "res-paschim-vihar-delhi"
+    ],
+    "galleryAlts": [
+      "90 kW rooftop solar system on a home in Pushpanjali, Delhi",
+      "Solar panels laid out across the rooftop, Pushpanjali",
+      "Three-phase string inverter installed for a 90 kW home solar system",
+      "Solergy team installing rooftop solar panels in Delhi",
+      "Close-up of Mono PERC solar panels on a residential rooftop",
+      "Completed 90 kW on-grid rooftop solar installation, Delhi"
     ]
   },
   {
