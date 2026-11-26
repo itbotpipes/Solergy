@@ -3,6 +3,8 @@ import { getFirestore, Firestore } from "firebase-admin/firestore";
 import { getAuth, Auth } from "firebase-admin/auth";
 
 let adminApp: App | null = null;
+let firestoreInstance: Firestore | null = null;
+let firestoreSettingsApplied = false;
 
 export function getFirebaseAdminApp(): App | null {
   const apps = getApps();
@@ -17,7 +19,7 @@ export function getFirebaseAdminApp(): App | null {
   let privateKey = process.env.FIREBASE_PRIVATE_KEY;
 
   if (privateKey) {
-    privateKey = privateKey.replace(/\\n/g, "\n");
+    privateKey = privateKey.replace(/^"|"$/g, "").replace(/\\n/g, "\n");
   }
 
   // Only initialize Firebase Admin if full service account credentials are provided
@@ -53,13 +55,27 @@ export function getFirebaseAdminApp(): App | null {
 }
 
 export function getAdminFirestore(): Firestore | null {
+  if (firestoreInstance) {
+    return firestoreInstance;
+  }
+
   const app = getFirebaseAdminApp();
   if (!app) return null;
+
   try {
     const firestore = getFirestore(app);
-    firestore.settings({ ignoreUndefinedProperties: true });
-    return firestore;
-  } catch {
+    if (!firestoreSettingsApplied) {
+      try {
+        firestore.settings({ ignoreUndefinedProperties: true });
+      } catch {
+        // Ignore if settings were already applied on a cached/HMR Firestore instance
+      }
+      firestoreSettingsApplied = true;
+    }
+    firestoreInstance = firestore;
+    return firestoreInstance;
+  } catch (err) {
+    console.warn("getAdminFirestore initialization error:", err);
     return null;
   }
 }

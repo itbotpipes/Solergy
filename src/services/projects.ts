@@ -22,15 +22,17 @@ export function getLocalProjects(): Project[] {
   return [];
 }
 
-export function saveLocalProjects(projects: Project[]): void {
+export function saveLocalProjects(projects: Project[]): boolean {
   try {
     const dir = path.dirname(LOCAL_PROJECTS_FILE);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
     fs.writeFileSync(LOCAL_PROJECTS_FILE, JSON.stringify(projects, null, 2), 'utf-8');
+    return true;
   } catch (err) {
     console.warn('Error saving local projects file:', err);
+    return false;
   }
 }
 
@@ -180,8 +182,10 @@ export async function getProjectById(id: string): Promise<Project | null> {
 }
 
 export async function createProject(data: Partial<Project>): Promise<Project> {
-  const id = data.id || `proj-${Date.now()}`;
-  const newProject: Project = {
+  const rawId = (data.id || `proj-${Date.now()}`).trim();
+  const id = rawId.replace(/\s+/g, '-').replace(/\/+/g, '-');
+  const newProject: Project = sanitizeProject({
+    ...data,
     id,
     title: data.title || 'Untitled Project',
     category: data.category || 'Residential',
@@ -206,9 +210,21 @@ export async function createProject(data: Partial<Project>): Promise<Project> {
       stats: [],
     },
     testimonialIndex: data.testimonialIndex ?? 0,
-  };
+  });
 
-  // 1. Save local
+  // 1. Sync to Firestore (primary persistent database)
+  const db = getAdminFirestore();
+  if (db) {
+    try {
+      const { id: docId, ...payload } = newProject;
+      await db.collection('projects').doc(docId).set(payload);
+    } catch (err) {
+      console.error('Could not write project to Firestore:', err);
+      throw new Error(`Failed to persist new project to database: ${(err as any)?.message}`);
+    }
+  }
+
+  // 2. Save local (best-effort)
   const current = getLocalProjects();
   const existingIdx = current.findIndex((p) => p.id === id);
   if (existingIdx >= 0) {
@@ -216,17 +232,10 @@ export async function createProject(data: Partial<Project>): Promise<Project> {
   } else {
     current.unshift(newProject);
   }
-  saveLocalProjects(current);
+  const savedLocally = saveLocalProjects(current);
 
-  // 2. Sync to Firestore
-  const db = getAdminFirestore();
-  if (db) {
-    try {
-      const { id: docId, ...payload } = newProject;
-      await db.collection('projects').doc(docId).set(payload);
-    } catch (err) {
-      console.warn('Could not write project to Firestore:', err);
-    }
+  if (!db && !savedLocally) {
+    throw new Error('Persistence failed: Cloud Firestore is not configured and local filesystem is read-only.');
   }
 
   // 3. Revalidate paths
@@ -276,13 +285,22 @@ export async function updateProject(id: string, data: Partial<Project>): Promise
 
   const baseProject = sanitizeProject(existing);
   const targetId = baseProject.id;
-  const finalId = ((data as any).newId || data.id || targetId).trim();
+  const rawNewId = ((data as any).newId || data.id || targetId).trim();
+  const finalId = rawNewId.replace(/\s+/g, '-').replace(/\/+/g, '-') || targetId;
   const idChanged = finalId !== targetId;
 
   const updated: Project = sanitizeProject({
     ...baseProject,
     ...data,
     id: finalId, // Allow slug/id changes
+    testimonial:
+      (data as any).testimonial === null
+        ? undefined
+        : data.testimonial ?? baseProject.testimonial,
+    seo:
+      (data as any).seo === null
+        ? undefined
+        : data.seo ?? baseProject.seo,
     overview: {
       heading: data.overview?.heading ?? baseProject.overview.heading,
       paragraphs: data.overview?.paragraphs ?? baseProject.overview.paragraphs,
@@ -333,19 +351,24 @@ export async function updateProject(id: string, data: Partial<Project>): Promise
   }
 
   // 2. Best-effort update to local file (safely ignored in read-only serverless runtimes)
+  let savedLocally = false;
   try {
     let newCurrent = [...current];
     if (idChanged) {
-      newCurrent = newCurrent.filter((p) => p.id !== targetId && p.id !== id);
+      newCurrent = newCurrent.filter((p) => p.id !== targetId && p.id !== id && p.id !== finalId);
       newCurrent.unshift(updated);
     } else if (existingIdx !== -1) {
       newCurrent[existingIdx] = updated;
     } else {
       newCurrent.unshift(updated);
     }
-    saveLocalProjects(newCurrent);
+    savedLocally = saveLocalProjects(newCurrent);
   } catch (err) {
     console.warn('Local file write skipped (serverless environment):', err);
+  }
+
+  if (!db && !savedLocally) {
+    throw new Error('Persistence failed: Cloud Firestore is not configured and local filesystem is read-only.');
   }
 
   // 3. Revalidate paths across Next.js ISR/SSR

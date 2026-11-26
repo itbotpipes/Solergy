@@ -312,7 +312,8 @@ export default function ProjectForm({
     }
 
     const originalId = initialProject?.id;
-    const newSlug = id.trim() || originalId || `proj-${Date.now()}`;
+    const rawSlug = id.trim() || originalId || `proj-${Date.now()}`;
+    const newSlug = rawSlug.replace(/\s+/g, "-").replace(/\/+/g, "-");
 
     const payload: any = {
       id: newSlug,
@@ -353,10 +354,10 @@ export default function ProjectForm({
       badge: badge.trim(),
       testimonial: testimonialQuote.trim()
         ? { quote: testimonialQuote.trim(), author: testimonialAuthor.trim() }
-        : undefined,
+        : null,
       seo: (seoTitle.trim() || seoDescription.trim())
         ? { title: seoTitle.trim(), description: seoDescription.trim() }
-        : undefined,
+        : null,
       testimonialIndex: Number(testimonialIndex) || 0,
     };
 
